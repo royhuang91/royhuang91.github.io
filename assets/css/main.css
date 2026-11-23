@@ -201,6 +201,126 @@ h1 {
   display: none;
 }
 
+.note-copy a {
+  border-bottom: 1px solid var(--color-ink);
+}
+
+.note-copy a:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.article-meta {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+}
+
+.chain,
+.chain-scenarios {
+  padding-block: 8px 32px;
+}
+
+.chain-title {
+  margin: 0 0 20px;
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.chain-node {
+  padding: 20px 22px;
+  border: 1px solid var(--color-line);
+  border-radius: 6px;
+}
+
+.chain-node h3 {
+  margin: 0 0 8px;
+  font-family: var(--font-display);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.chain-node p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.chain-node--accent {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+}
+
+.chain-node--accent h3,
+.chain-node--accent p {
+  color: var(--color-paper);
+}
+
+.chain-node--outline {
+  border-width: 1.5px;
+  border-color: var(--color-accent);
+}
+
+.chain-arrow {
+  margin: 8px 0;
+  text-align: center;
+  color: var(--color-muted);
+  font-size: 18px;
+}
+
+.chain-split {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.chain-split p {
+  flex: 1;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-line);
+}
+
+.chain-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.chain-grid--three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.chain-grid--two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.chain-scenarios .chain-node {
+  margin-bottom: 16px;
+}
+
+.chain-read {
+  padding-block: 8px 48px;
+}
+
+.chain-read ol,
+.chain-read p {
+  color: var(--color-muted);
+  font-size: 15px;
+  line-height: 2;
+}
+
+.chain-read ol {
+  margin: 0 0 16px;
+  padding-left: 22px;
+}
+
+.chain-read p {
+  margin: 0 0 16px;
+}
+
 .site-footer {
   gap: 16px;
   padding-block: 28px;
@@ -255,6 +375,20 @@ h1 {
 
   .mobile-break {
     display: inline;
+  }
+
+  .chain-title {
+    font-size: 21px;
+  }
+
+  .chain-grid--three,
+  .chain-grid--two {
+    grid-template-columns: 1fr;
+  }
+
+  .chain-split {
+    flex-direction: column;
+    gap: 0;
   }
 
   .site-footer {
