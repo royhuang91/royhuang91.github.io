@@ -1,0 +1,264 @@
+:root {
+  color-scheme: light;
+  --color-paper: #f6f4ed;
+  --color-ink: #272e2a;
+  --color-muted: #60685f;
+  --color-accent: #b53e2b;
+  --color-line: #d7d9cd;
+  --font-body: "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-display: "Songti SC", "Noto Serif CJK SC", "SimSun", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 6px;
+}
+
+::selection {
+  background: #ead7b8;
+  color: var(--color-ink);
+}
+
+.skip-link {
+  position: absolute;
+  top: 12px;
+  left: 24px;
+  z-index: 1;
+  padding: 12px;
+  transform: translateY(-200%);
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.page {
+  width: min(1120px, calc(100% - 96px));
+  margin-inline: auto;
+}
+
+.site-header,
+.site-name,
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-header {
+  min-height: 120px;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.site-name {
+  gap: 14px;
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.site-mark {
+  display: grid;
+  width: 36px;
+  height: 40px;
+  place-items: center;
+  border: 1px solid var(--color-accent);
+  border-radius: 3px;
+  color: var(--color-accent);
+  font-size: 23px;
+}
+
+.site-note,
+.eyebrow,
+.site-footer {
+  color: var(--color-muted);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+}
+
+.welcome {
+  position: relative;
+  padding-block: 90px 96px;
+}
+
+.eyebrow {
+  margin: 0 0 30px;
+  font-family: Georgia, serif;
+}
+
+h1 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(44px, 6.5vw, 80px);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.03em;
+}
+
+.accent {
+  color: var(--color-accent);
+}
+
+.welcome-copy {
+  margin: 28px 0 32px;
+  color: var(--color-muted);
+  font-size: 15px;
+  line-height: 2;
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 28px;
+  padding-block: 10px;
+  border-bottom: 1px solid var(--color-ink);
+  font-size: 14px;
+}
+
+.github-link:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.waterscape {
+  position: absolute;
+  right: -12px;
+  bottom: 62px;
+  width: 43%;
+  pointer-events: none;
+}
+
+.sun {
+  fill: #d9a481;
+}
+
+.horizon,
+.water,
+.boat {
+  stroke: var(--color-muted);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+}
+
+.horizon,
+.water {
+  stroke: #a3ada1;
+}
+
+.note {
+  display: grid;
+  grid-template-columns: 160px 1fr auto;
+  align-items: center;
+  gap: 24px;
+  padding-block: 32px;
+  border-top: 1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.note-label {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 12px;
+  letter-spacing: 0.15em;
+}
+
+.note-copy {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 19px;
+  line-height: 1.8;
+}
+
+.note-symbol {
+  color: var(--color-accent);
+  font-size: 30px;
+}
+
+.mobile-break {
+  display: none;
+}
+
+.site-footer {
+  gap: 16px;
+  padding-block: 28px;
+  font-size: 11px;
+}
+
+@media (max-width: 760px) {
+  .page {
+    width: calc(100% - 48px);
+  }
+
+  .site-header {
+    min-height: 92px;
+  }
+
+  .site-note {
+    display: none;
+  }
+
+  .welcome {
+    padding-block: 64px 24px;
+  }
+
+  .eyebrow {
+    font-size: 10px;
+  }
+
+  .welcome-copy {
+    font-size: 14px;
+  }
+
+  .waterscape {
+    position: static;
+    display: block;
+    width: min(100%, 400px);
+    margin: 12px 0 0 auto;
+  }
+
+  .note {
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    padding-block: 24px;
+  }
+
+  .note-label {
+    grid-column: 1 / -1;
+  }
+
+  .note-copy {
+    font-size: 18px;
+  }
+
+  .mobile-break {
+    display: inline;
+  }
+
+  .site-footer {
+    flex-wrap: wrap;
+    letter-spacing: 0.04em;
+  }
+}
