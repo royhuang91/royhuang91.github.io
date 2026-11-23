@@ -142,30 +142,13 @@ h1 {
   color: var(--color-accent);
 }
 
-.waterscape {
-  position: absolute;
-  right: -12px;
-  bottom: 62px;
-  width: 43%;
-  pointer-events: none;
+.catalog-title {
+  margin-block: clamp(28px, 6vw, 72px);
 }
 
-.sun {
-  fill: #d9a481;
-}
-
-.horizon,
-.water,
-.boat {
-  stroke: var(--color-muted);
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.5;
-}
-
-.horizon,
-.water {
-  stroke: #a3ada1;
+.catalog-link {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 
 .note {
@@ -352,17 +335,14 @@ h1 {
     font-size: 14px;
   }
 
-  .waterscape {
-    position: static;
-    display: block;
-    width: min(100%, 400px);
-    margin: 12px 0 0 auto;
-  }
-
   .note {
     grid-template-columns: 1fr auto;
     gap: 16px;
     padding-block: 24px;
+  }
+
+  .catalog {
+    grid-template-columns: 1fr;
   }
 
   .note-label {
