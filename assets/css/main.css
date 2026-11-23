@@ -142,8 +142,34 @@ h1 {
   color: var(--color-accent);
 }
 
-.catalog-title {
-  margin-block: clamp(28px, 6vw, 72px);
+.catalog-intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-block: clamp(28px, 5vw, 60px);
+}
+
+.catalog-intro h1 {
+  font-size: clamp(30px, 5.5vw, 72px);
+}
+
+.catalog-intro p {
+  color: var(--color-muted);
+  line-height: 1.8;
+}
+
+.waterscape {
+  width: clamp(76px, 28%, 280px);
+  flex-shrink: 0;
+  stroke: var(--color-muted);
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+
+.waterscape .sun {
+  fill: #d9a481;
+  stroke: none;
 }
 
 .catalog-link {
