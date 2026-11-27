@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="五年级附加题：两个正方形边长 4 cm 和 5 cm，EC = 3 cm，求橙色面积。分步讲解，外加拉窗帘等积变形练习。">
+    <meta name="theme-color" content="#f6f4ed">
+    <title>学习 / 两个正方形求橙色面积 · 渔夫的小站</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/liang-ge-zheng-fang-xing-qiu-cheng-se-mian-ji.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳至正文</a>
+    <div class="page">
+      <header class="site-header">
+        <a class="site-name" href="../index.html" aria-label="渔夫的小站首页">
+          <span class="site-mark" aria-hidden="true">渔</span>
+          <span>渔夫的小站</span>
+        </a>
+      </header>
+
+      <main id="main">
+      <header class="problem">
+        <h1>两个正方形，<span class="hl">橙色</span>部分有多大？</h1>
+        <p class="problem-text">
+          左边是一个边长 <b>4 cm</b> 的正方形 <b>ABCD</b>，右边斜放着一个边长 <b>5 cm</b> 的大正方形，
+          它的一条边正好是 <b>DE</b>。点 <b>E</b> 在 BC 上，<b>EC = 3 cm</b>。图中的三块橙色，求它们的总面积。
+        </p>
+        <div class="given" aria-label="已知条件">
+          <span class="chip">小正方形边长 <em>4 cm</em></span>
+          <span class="chip">大正方形边长 <em>5 cm</em></span>
+          <span class="chip">EC <em>= 3 cm</em></span>
+          <span class="chip">求 <em>橙色面积</em></span>
+        </div>
+        <p class="article-meta">2026 年 11 月 27 日 · 五年级数学互动讲解</p>
+      </header>
+
+      <div class="stage">
+        <div class="board-card">
+          <svg id="board" data-step="1" viewBox="0 0 560 470" role="img"
+               aria-label="几何图形：左边正方形 ABCD，右边倾斜正方形 DEGF，橙色部分是被 DE 和 DC 分成三块的三角形 ADG">
+            <defs>
+              <marker id="arrHead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0 0L10 5L0 10z" fill="#ffd23e"/>
+              </marker>
+            </defs>
+            <!-- faint 1cm grid -->
+            <g stroke="#ffffff" stroke-opacity=".08" stroke-width="1">
+              <path d="M60 0V470M112 0V470M164 0V470M216 0V470M268 0V470M320 0V470M372 0V470M424 0V470M476 0V470M528 0V470" fill="none"/>
+              <path d="M0 40H560M0 92H560M0 144H560M0 196H560M0 248H560M0 300H560M0 352H560M0 404H560M0 456H560" fill="none"/>
+            </g>
+
+            <!-- the two squares -->
+            <polygon points="60,40 268,40 268,248 60,248" fill="#ffffff" fill-opacity=".05" stroke="#f4f8f4" stroke-width="3" stroke-linejoin="round"/>
+            <polygon points="112,248 268,40 476,196 320,404" fill="#ffffff" fill-opacity=".05" stroke="#f4f8f4" stroke-width="3" stroke-linejoin="round"/>
+
+            <!-- rotating copy of triangle DEC (step 5) -->
+            <g class="rot-source">
+              <polygon points="268,40 268,248 112,248" fill="#ffd23e" fill-opacity=".18" stroke="#ffd23e" stroke-width="2" stroke-dasharray="6 5" stroke-linejoin="round"/>
+            </g>
+            <g class="rot-tri" id="rotTri">
+              <polygon points="268,40 268,248 112,248" fill="#ffd23e" fill-opacity=".55" stroke="#fff3c4" stroke-width="2" stroke-linejoin="round"/>
+              <text x="238" y="170" class="dim" font-size="16">△DEC</text>
+            </g>
+
+            <!-- rotated landing spot DHG -->
+            <g class="rot-target">
+              <polygon points="268,40 476,40 476,196" fill="#0e7c86" fill-opacity=".45" stroke="#7fe3ec" stroke-width="2" stroke-linejoin="round"/>
+            </g>
+
+            <!-- height construction: extend AD to H, drop HG -->
+            <g class="height-group">
+              <line x1="268" y1="40" x2="476" y2="40" stroke="#7fe3ec" stroke-width="2.5" stroke-dasharray="8 6"/>
+              <line x1="476" y1="40" x2="476" y2="196" stroke="#7fe3ec" stroke-width="2.5" stroke-dasharray="8 6"/>
+              <path d="M458 40 V58 H476" fill="none" stroke="#7fe3ec" stroke-width="2"/>
+              <text x="484" y="34" class="lbl" fill="#7fe3ec">H</text>
+              <text x="452" y="128" class="dim-teal" transform="rotate(90 462 118)">HG = 3 cm</text>
+            </g>
+
+            <!-- orange pieces: A-D-P, D-P-Q, D-Q-G -->
+            <polygon class="piece" points="60,40 268,40 222,101" fill="#f07d1e" stroke="#ffb066" stroke-width="1.5" stroke-linejoin="round"/>
+            <polygon class="piece" points="268,40 222,101 268,118" fill="#f07d1e" stroke="#ffb066" stroke-width="1.5" stroke-linejoin="round"/>
+            <polygon class="piece" points="268,40 268,118 476,196" fill="#f07d1e" stroke="#ffb066" stroke-width="1.5" stroke-linejoin="round"/>
+            <text class="piece-num" x="168" y="66">①</text>
+            <text class="piece-num" x="243" y="92">②</text>
+            <text class="piece-num" x="330" y="128">③</text>
+            <text class="pt-lbl" x="196" y="94">P</text>
+            <text class="pt-lbl" x="276" y="140">Q</text>
+
+            <!-- triangle ADG outline -->
+            <polygon class="tri-outline" points="60,40 268,40 476,196" fill="none" stroke="#ffffff" stroke-width="3.5" stroke-linejoin="round"/>
+            <!-- base AD highlight in final step -->
+            <line class="base-ad" x1="60" y1="40" x2="268" y2="40" stroke="#ffd23e" stroke-width="7" stroke-linecap="round"/>
+
+            <!-- step 4-5: why the rotation must fit exactly -->
+            <g class="fit-group">
+              <path d="M196 136 A120 120 0 0 0 364 112" fill="none" stroke="#ffd23e" stroke-width="3" marker-end="url(#arrHead)"/>
+              <polyline points="247.6,67.2 274.8,87.6 295.2,60.4" fill="none" stroke="#ffd23e" stroke-width="2.5"/>
+              <line x1="180.4" y1="136.8" x2="199.6" y2="151.2" stroke="#ffd23e" stroke-width="3.5"/>
+              <line x1="364.8" y1="127.6" x2="379.2" y2="108.4" stroke="#ffd23e" stroke-width="3.5"/>
+              <circle cx="112" cy="248" r="9" fill="none" stroke="#ffd23e" stroke-width="3"/>
+              <circle cx="476" cy="196" r="9" fill="none" stroke="#ffd23e" stroke-width="3"/>
+              <circle cx="268" cy="248" r="9" fill="none" stroke="#7fe3ec" stroke-width="3"/>
+              <circle cx="476" cy="40" r="9" fill="none" stroke="#7fe3ec" stroke-width="3"/>
+            </g>
+
+            <!-- construction lines inside -->
+            <line x1="60" y1="40" x2="476" y2="196" stroke="#f4f8f4" stroke-width="2.5"/>
+            <line x1="268" y1="40" x2="268" y2="248" stroke="#f4f8f4" stroke-width="2.5"/>
+
+            <!-- dimensions -->
+            <text x="138" y="26" class="dim">4 cm</text>
+            <text x="352" y="98" class="dim" transform="rotate(37 372 108)">5 cm</text>
+            <text x="172" y="238" class="dim">3 cm</text>
+
+            <!-- point labels -->
+            <text x="34" y="36" class="lbl">A</text>
+            <text x="278" y="34" class="lbl">D</text>
+            <text x="32" y="276" class="lbl">B</text>
+            <text x="278" y="276" class="lbl">C</text>
+            <text x="100" y="276" class="lbl">E</text>
+            <text x="488" y="206" class="lbl">G</text>
+            <text x="306" y="434" class="lbl">F</text>
+          </svg>
+          <div class="board-tools">
+            <p class="hint">图按 1 格 = 1 cm 画出。第 4 步先看清为什么能补上，到第 5 步再亲手把黄色三角形转过去验证。</p>
+            <button type="button" class="btn-rotate" id="btnRotate">▶ 播放旋转</button>
+          </div>
+        </div>
+
+        <div class="steps-card">
+          <div class="dots" role="tablist" aria-label="讲解步骤" id="dots"></div>
+          <p class="step-kicker" id="stepKicker"></p>
+          <h2 id="stepTitle"></h2>
+          <div class="body" id="stepBody"></div>
+          <div class="formula" id="stepFormula"></div>
+          <div class="answer-banner" id="answerBanner">
+            橙色面积 = 6 cm²
+            <small>底 AD = 4 cm，高 = 3 cm，4 × 3 ÷ 2 = 6</small>
+          </div>
+          <div class="nav-row">
+            <button type="button" class="btn-prev" id="btnPrev">← 上一步</button>
+            <button type="button" class="btn-next" id="btnNext">下一步 →</button>
+          </div>
+        </div>
+      </div>
+
+      <section class="more">
+        <h2>再多懂一点</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>为什么不能一块一块硬算？</h3>
+            <p>三块橙色被线段 DE 和 DC 切开，切口交点（图中 P、Q 两点）的位置题目没有给，
+               每一块单独算都缺条件。这正是这道题的“坑”：<b>单块算不出，合起来正好是一个完整的三角形</b>。</p>
+            <p>看到被切碎的阴影，先想一句：<b>它们拼起来是什么图形？</b></p>
+          </div>
+          <div class="card">
+            <h3>换个方法验算：装进大长方形</h3>
+            <p>把三角形 ADG 装进宽 8 cm、高 3 cm 的长方形（A 到 H 那一段正好 8 cm），
+               长方形面积 8 × 3 = 24。减去两边两个空白直角三角形：</p>
+            <div class="formula">24 − 8×3÷2 − 4×3÷2 = 24 − 12 − 6 = 6 cm² ✓</div>
+            <p>两种方法答案一致，放心。</p>
+          </div>
+        </div>
+        <div class="summary">
+          <p><b>一句话记住这道题：</b>橙色三块拼成一个三角形（等积变形），底是现成的 4 cm；
+             高藏起来了，把小直角三角形 △DEC 绕点 D 旋转 90°——DE 与 DG 同为大正方形的边、等长且夹角正好 90°，
+             所以 E、C 分毫不差地落在 G、H 上，高就等于 EC = 3 cm（旋转）。
+             这正是“正方形两大考点”——<b>等积变形 + 旋转</b>。</p>
+        </div>
+      </section>
+
+      <section class="curtain">
+        <h2>拉窗帘实验室：<span class="hl">等积变形</span></h2>
+        <p class="curtain-intro">
+          上面那道题用的是“拼”和“转”。还有一种等积变形叫<b>拉窗帘</b>：三角形的<b>底不动</b>，
+          顶点在一条<b>与底平行的线</b>上滑动——就像拉窗帘，形状一直在变，<b>面积却纹丝不动</b>，因为同底等高。
+          下面三道例题先不给动画、不给答案，<b>先自己想</b>：点动起来以后，什么在变、什么不变？
+          想好了点“播放动画”，动画播完，金色的点就能用手拖着到处拉。
+        </p>
+
+        <!-- 例一 -->
+        <article class="ex-card" id="ex1">
+          <h3><span class="tag">例一 · 入门</span>长方形里的三角形</h3>
+          <p class="ex-problem">长方形 ABCD 长 <b>10 cm</b>、宽 <b>6 cm</b>。P 是上边 CD 上的任意一点，
+             连出三角形 PAB。P 在最左边时 △PAB 的面积好算；<b>P 滑到别的位置，面积还是这么大吗？</b></p>
+          <div class="board-card">
+            <svg class="curtain-board" id="ex1Svg" data-state="think" viewBox="0 0 560 420" role="img"
+                 aria-label="长方形 ABCD，上边 CD 上有一点 P，三角形 PAB 涂成橙色">
+              <g stroke="#ffffff" stroke-opacity=".08" stroke-width="1">
+                <path d="M60 0V420M112 0V420M164 0V420M216 0V420M268 0V420M320 0V420M372 0V420M424 0V420M476 0V420M528 0V420" fill="none"/>
+                <path d="M0 40H560M0 92H560M0 144H560M0 196H560M0 248H560M0 300H560M0 352H560M0 404H560" fill="none"/>
+              </g>
+              <polygon id="ex1Tri" points="270,90 70,330 470,330" fill="#f07d1e" fill-opacity=".88" stroke="#ffb066" stroke-width="1.5" stroke-linejoin="round"/>
+              <rect x="70" y="90" width="400" height="240" fill="none" stroke="#f4f8f4" stroke-width="3"/>
+              <line id="ex1H" x1="270" y1="90" x2="270" y2="330" stroke="#7fe3ec" stroke-width="2.5" stroke-dasharray="8 6"/>
+              <text x="282" y="216" class="c-dim-teal">高 6</text>
+              <text x="238" y="366" class="c-dim">10 cm</text>
+              <text x="486" y="216" class="c-dim" transform="rotate(90 492 210)">6 cm</text>
+              <text x="44" y="356" class="c-lbl">A</text>
+              <text x="480" y="356" class="c-lbl">B</text>
+              <text x="480" y="84" class="c-lbl">C</text>
+              <text x="44" y="84" class="c-lbl">D</text>
+              <text id="ex1PLbl" x="258" y="66" class="c-lbl" fill="#ffd23e">P</text>
+              <circle class="handle-ring" id="ex1Ring" cx="270" cy="90" r="17"/>
+              <circle class="handle-dot" id="ex1Dot" cx="270" cy="90" r="8"/>
+              <circle class="handle-hit" id="ex1Hit" cx="270" cy="90" r="30"/>
+            </svg>
+            <div class="board-tools">
+              <p class="hint" id="ex1Status">先自己想：P 从左滑到右，三角形变“瘦”了，面积会跟着变小吗？</p>
+              <button type="button" class="btn-rotate" id="ex1Play">▶ 播放动画</button>
+            </div>
+          </div>
+          <div class="stats" aria-label="实时数据">
+            <span class="stat"><em>底 AB</em>10 cm</span>
+            <span class="stat"><em>高（P 到 AB 的距离）</em>6 cm</span>
+            <span class="stat area"><em>△PAB 面积</em><span class="val" id="ex1Area">？ cm²</span></span>
+          </div>
+          <div class="why" id="ex1Why">
+            <p><b>为什么不变：</b>不管 P 滑到哪，P 到底边 AB 的距离都等于长方形的宽 6 cm——
+               <b>同底（AB）等高</b>，面积当然一样，而且正好是长方形面积的一半。P 就像窗帘的拉环，
+               在与底边平行的 CD 上滑动，这就是“拉窗帘”。</p>
+            <div class="formula">10 × 6 ÷ 2 = 30（cm²）</div>
+          </div>
+        </article>
+
+        <!-- 例二 -->
+        <article class="ex-card" id="ex2">
+          <h3><span class="tag">例二 · 模型</span>平行线上的点</h3>
+          <p class="ex-problem">三角形 ABC 的底 BC = <b>14 cm</b>，高 <b>6 cm</b>。过顶点 A 作一条
+             BC 的平行线 l，P 在 l 上任意滑动。<b>△PBC 和原来的 △ABC，面积一样大吗？</b></p>
+          <div class="board-card">
+            <svg class="curtain-board" id="ex2Svg" data-state="think" viewBox="0 0 560 420" role="img"
+                 aria-label="底边 BC，上方有一条平行线 l，点 P 在 l 上，三角形 PBC 涂成橙色">
+              <g stroke="#ffffff" stroke-opacity=".08" stroke-width="1">
+                <path d="M60 0V420M112 0V420M164 0V420M216 0V420M268 0V420M320 0V420M372 0V420M424 0V420M476 0V420M528 0V420" fill="none"/>
+                <path d="M0 40H560M0 92H560M0 144H560M0 196H560M0 248H560M0 300H560M0 352H560M0 404H560" fill="none"/>
+              </g>
+              <polygon id="ex2Tri" points="230,130 60,340 550,340" fill="#f07d1e" fill-opacity=".88" stroke="#ffb066" stroke-width="1.5" stroke-linejoin="round"/>
+              <line x1="24" y1="130" x2="536" y2="130" stroke="#7fe3ec" stroke-width="2.5" stroke-dasharray="10 7"/>
+              <line id="ex2H" x1="230" y1="130" x2="230" y2="340" stroke="#7fe3ec" stroke-width="2.5" stroke-dasharray="8 6"/>
+              <text x="242" y="240" class="c-dim-teal">高 6</text>
+              <line x1="60" y1="340" x2="550" y2="340" stroke="#f4f8f4" stroke-width="3"/>
+              <circle cx="230" cy="130" r="4" fill="#f4f8f4"/>
+              <text x="216" y="112" class="c-lbl">A</text>
+              <text x="30" y="368" class="c-lbl">B</text>
+              <text x="522" y="368" class="c-lbl">C</text>
+              <text x="258" y="384" class="c-dim">14 cm</text>
+              <text x="500" y="118" class="c-dim-teal">l ∥ BC</text>
+              <text id="ex2PLbl" x="218" y="106" class="c-lbl" fill="#ffd23e" style="display:none">P</text>
+              <circle class="handle-ring" id="ex2Ring" cx="230" cy="130" r="17"/>
+              <circle class="handle-dot" id="ex2Dot" cx="230" cy="130" r="8"/>
+              <circle class="handle-hit" id="ex2Hit" cx="230" cy="130" r="30"/>
+            </svg>
+            <div class="board-tools">
+              <p class="hint" id="ex2Status">先自己想：P 滑出原来的三角形范围，跑到很远的地方，面积还守得住吗？</p>
+              <button type="button" class="btn-rotate" id="ex2Play">▶ 播放动画</button>
+            </div>
+          </div>
+          <div class="stats" aria-label="实时数据">
+            <span class="stat"><em>底 BC</em>14 cm</span>
+            <span class="stat"><em>高（P 到 BC 的距离）</em>6 cm</span>
+            <span class="stat area"><em>△PBC 面积</em><span class="val" id="ex2Area">？ cm²</span></span>
+          </div>
+          <div class="why" id="ex2Why">
+            <p><b>为什么不变：</b>两条平行线之间的距离处处相等。P 在 l 上滑得再远，
+               它到 BC 的距离永远是 6 cm。<b>同底等高，面积相等</b>——这就是拉窗帘模型最核心的一句话：
+               顶点在平行线上滑动，面积不变。</p>
+            <div class="formula">14 × 6 ÷ 2 = 42（cm²）</div>
+          </div>
+        </article>
+
+        <!-- 例三 -->
+        <article class="ex-card" id="ex3">
+          <h3><span class="tag">例三 · 应用</span>草坪里的斜小路</h3>
+          <p class="ex-problem">一块长方形草坪，长 <b>16 m</b>、宽 <b>10 m</b>，中间修了一条宽
+             <b>1 m</b> 的斜小路。<b>草地（不算小路）有多少平方米？</b>先猜一猜：小路修得更斜，草地会变少吗？</p>
+          <div class="board-card">
+            <svg class="curtain-board" id="ex3Svg" data-state="think" viewBox="0 0 560 420" role="img"
+                 aria-label="长方形草坪，中间有一条斜着的平行四边形小路，路的下端点可以拖动">
+              <g stroke="#ffffff" stroke-opacity=".08" stroke-width="1">
+                <path d="M60 0V420M112 0V420M164 0V420M216 0V420M268 0V420M320 0V420M372 0V420M424 0V420M476 0V420M528 0V420" fill="none"/>
+                <path d="M0 40H560M0 92H560M0 144H560M0 196H560M0 248H560M0 300H560M0 352H560M0 404H560" fill="none"/>
+              </g>
+              <rect x="56" y="60" width="448" height="280" fill="#ffffff" fill-opacity=".07" stroke="#f4f8f4" stroke-width="3"/>
+              <rect x="250" y="60" width="28" height="280" fill="none" stroke="#7fe3ec" stroke-width="2" stroke-dasharray="7 6"/>
+              <polygon id="ex3Path" points="250,60 278,60 358,340 330,340" fill="#efe9dc" fill-opacity=".92" stroke="#fff8ea" stroke-width="2" stroke-linejoin="round"/>
+              <text x="238" y="376" class="c-dim">16 m</text>
+              <text x="516" y="206" class="c-dim">10 m</text>
+              <text x="196" y="46" class="c-note">小路宽 1 m</text>
+              <text x="330" y="316" class="c-lbl" fill="#ffd23e" id="ex3PLbl">P</text>
+              <circle class="handle-ring" id="ex3Ring" cx="330" cy="340" r="17"/>
+              <circle class="handle-dot" id="ex3Dot" cx="330" cy="340" r="8"/>
+              <circle class="handle-hit" id="ex3Hit" cx="330" cy="340" r="30"/>
+            </svg>
+            <div class="board-tools">
+              <p class="hint" id="ex3Status">先自己想：斜着的路不好量。能不能想个办法，把它“拉直”了再算？</p>
+              <button type="button" class="btn-rotate" id="ex3Play">▶ 播放动画</button>
+            </div>
+          </div>
+          <div class="stats" aria-label="实时数据">
+            <span class="stat"><em>草坪总面积</em>16 × 10 = 160 m²</span>
+            <span class="stat"><em>小路（平行四边形）</em>底 1 m × 高 10 m</span>
+            <span class="stat area"><em>草地面积</em><span class="val" id="ex3Area">？ m²</span></span>
+          </div>
+          <div class="why" id="ex3Why">
+            <p><b>为什么不变：</b>小路是一个平行四边形，它的下边在草坪的底边上滑动——正是拉窗帘：
+               底（路宽 1 m）不变、高（草坪宽 10 m）不变，路再斜，面积都是 1 × 10 = 10 m²。
+               把路拉直到和左边重合（图中的虚线框），草地就是一块 15 m × 10 m 的长方形，一眼能看清。</p>
+            <div class="formula">草地 = 160 − 1 × 10 = 150（m²）</div>
+          </div>
+        </article>
+      </section>
+      <p><a class="github-link" href="../index.html#learning">返回学习目录</a></p>
+      </main>
+
+      <footer class="site-footer">
+        <span>渔夫的小站</span>
+        <a href="https://github.com/royhuang91">GitHub ↗</a>
+      </footer>
+    </div>
+    <script src="../assets/js/liang-ge-zheng-fang-xing-qiu-cheng-se-mian-ji.js"></script>
+  </body>
+</html>
