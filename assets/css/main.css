@@ -219,6 +219,15 @@ h1 {
   color: var(--color-accent);
 }
 
+.catalog > div {
+  grid-column: 2;
+}
+
+.catalog > div + div {
+  border-top: 1px solid var(--color-line);
+  padding-top: 24px;
+}
+
 .article-meta {
   margin: 0;
   color: var(--color-muted);
@@ -369,6 +378,10 @@ h1 {
 
   .catalog {
     grid-template-columns: 1fr;
+  }
+
+  .catalog > div {
+    grid-column: auto;
   }
 
   .note-label {
