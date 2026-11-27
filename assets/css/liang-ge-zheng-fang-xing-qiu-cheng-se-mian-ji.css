@@ -205,79 +205,6 @@
       .summary p { margin: 0; }
       .summary b { color: var(--teal); }
 
-      /* ---------- 拉窗帘实验室 ---------- */
-      section.curtain { margin-top: 40px; }
-      section.curtain > h2 {
-        font-family: "Songti SC", "Noto Serif CJK SC", "SimSun", serif;
-        font-size: 22px; margin: 0 0 8px;
-      }
-      section.curtain > h2 .hl { color: var(--orange); }
-      .curtain-intro { color: var(--ink-soft); font-size: 16px; margin: 0 0 6px; max-width: 46em; }
-      .curtain-intro b { color: var(--ink); }
-      .ex-card {
-        background: var(--panel);
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        box-shadow: var(--shadow);
-        padding: 20px 20px 18px;
-        margin-top: 18px;
-      }
-      .ex-card h3 {
-        font-family: "Songti SC", "Noto Serif CJK SC", "SimSun", serif;
-        font-size: 20px; margin: 0 0 6px; line-height: 1.4;
-      }
-      .ex-card h3 .tag {
-        font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
-        font-size: 12px; font-weight: 900; letter-spacing: .08em;
-        background: var(--teal-soft); color: var(--teal);
-        border-radius: 999px; padding: 3px 10px;
-        vertical-align: 3px; margin-right: 8px; white-space: nowrap;
-      }
-      .ex-problem { color: var(--ink-soft); font-size: 16px; margin: 0 0 14px; }
-      .ex-problem b { color: var(--ink); }
-      .ex-card .board-card { box-shadow: none; }
-      .stats { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
-      .stat {
-        border: 1px solid var(--line); border-radius: 10px;
-        padding: 7px 14px; font-size: 15px; font-weight: 700;
-        font-variant-numeric: tabular-nums;
-      }
-      .stat em { font-style: normal; color: var(--ink-soft); font-weight: 500; margin-right: 6px; }
-      .stat.area { background: var(--orange-soft); border-color: transparent; }
-      .stat.area em { color: var(--orange-deep); }
-      .stat.area .val { color: var(--orange-deep); font-weight: 900; }
-      .why {
-        display: none;
-        margin-top: 14px;
-        background: var(--teal-soft);
-        border-radius: 12px;
-        padding: 14px 18px;
-        font-size: 15.5px;
-      }
-      .why.show { display: block; }
-      .why p { margin: 0 0 8px; }
-      .why p:last-child { margin-bottom: 0; }
-      .why b { color: var(--teal); }
-      .why .formula { margin: 10px 0 2px; font-size: 17px; }
-
-      /* curtain SVG bits */
-      .c-lbl { font-family: "PingFang SC", "Microsoft YaHei", sans-serif; font-weight: 900; fill: var(--chalk); font-size: 20px; font-style: italic; }
-      .c-dim { font-family: "PingFang SC", "Microsoft YaHei", sans-serif; font-weight: 900; fill: var(--gold); font-size: 18px; }
-      .c-dim-teal { font-family: "PingFang SC", "Microsoft YaHei", sans-serif; font-weight: 900; fill: #7fe3ec; font-size: 17px; }
-      .c-note { font-family: "PingFang SC", "Microsoft YaHei", sans-serif; font-weight: 700; fill: #cfe6d6; font-size: 15px; }
-      .handle-ring { fill: none; stroke: var(--gold); stroke-width: 2.5; opacity: .55; }
-      .handle-dot { fill: var(--gold); stroke: #43300a; stroke-width: 2; }
-      .handle-hit { fill: transparent; }
-      .curtain-board[data-state="think"] .handle-ring,
-      .curtain-board[data-state="think"] .handle-dot { opacity: .45; }
-      .curtain-board[data-state="free"] .handle-hit { cursor: grab; }
-      .curtain-board[data-state="free"] .handle-hit:active { cursor: grabbing; }
-      .curtain-board[data-state="free"] .handle-ring { animation: pulse 1.6s ease-in-out infinite; }
-      @keyframes pulse { 0%, 100% { opacity: .45; } 50% { opacity: 1; } }
-      @media (prefers-reduced-motion: reduce) {
-        .curtain-board[data-state="free"] .handle-ring { animation: none; }
-      }
-
       /* ---------- SVG state machine ---------- */
       .lbl { font-family: "PingFang SC", "Microsoft YaHei", sans-serif; font-weight: 900; fill: var(--chalk); font-size: 21px; font-style: italic; }
       .dim { font-family: "PingFang SC", "Microsoft YaHei", sans-serif; font-weight: 900; fill: var(--gold); font-size: 19px; }
@@ -318,6 +245,7 @@
       svg[data-step="2"] .piece { filter: brightness(1.12); }
       @media (prefers-reduced-motion: reduce) {
         .rot-tri.played { transition: none; }
-        * { transition: none !important; }
+        .piece, .piece-num, .tri-outline, .height-group,
+        .rot-target, .fit-group, .rot-source, .base-ad { transition: none; }
       }
     

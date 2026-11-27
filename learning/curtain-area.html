@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="面向小学四至六年级的拉窗帘面积题库：13个可拖动演示、18道分层练习，讲清同底等高、面积比、等积替换与小路应用。">
+    <title>拉窗帘：图形面积题库 · 渔夫的小站</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/curtain-area.css">
+    <script src="../assets/js/curtain-area.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳至正文</a>
+    <div class="page">
+      <header class="site-header">
+        <a class="site-name" href="../index.html" aria-label="渔夫的小站首页"><span class="site-mark" aria-hidden="true">渔</span><span>渔夫的小站</span></a>
+      </header>
+      <main id="main">
+        <header class="curtain-header">
+          <p class="eyebrow">学习 / 小学图形面积</p>
+          <h1>拉窗帘：<span class="accent">图形面积题库</span></h1>
+          <p>先拖一拖，找出不变量；再独立做题，想清楚以后展开提示与解答。以五、六年级为主，四年级可以先从长方形与三角形的基础演示读起。</p>
+        </header>
+        <nav class="curtain-nav" aria-label="文章章节">
+          <a href="#rules">先懂规则</a>
+          <a href="#demos">13 个演示</a>
+          <a href="#basic">基础 6 题</a>
+          <a href="#intermediate">进阶 8 题</a>
+          <a href="#challenge">挑战 4 题</a>
+          <a href="#checklist">易错检查</a>
+        </nav>
+        <section class="curtain-section" id="rules" aria-labelledby="rules-title">
+          <h2 id="rules-title">不看胖瘦，看底和高</h2>
+          <div class="curtain-rule">
+            <p><strong>三角形面积 = 底 × 高 ÷ 2。</strong>固定同一条底边，顶点沿与底平行的直线移动，垂直高不变，面积也不变，这就是“拉窗帘”。</p>
+            <p>高是顶点到底边<strong>所在直线的垂直距离</strong>：可以落在底边外，也可以随着图形转斜。别把斜边当高，别把“点动了”直接当成等积的理由。</p>
+            <p>比较不同三角形时，同高则面积比等于底边比；同底则面积比等于高的比。等积不意味着形状相同或周长相同。</p>
+          </div>
+          <p>演示中的数据直接显示，方便边动边比较；练习的答案分别折叠，方便先思考。所有小路题都会明确“截段长度”或垂直距离，不含糊地写成斜路的“宽”。</p>
+        </section>
+        <section class="curtain-section" id="demos" aria-labelledby="demos-title">
+          <h2 id="demos-title">13 个演示：成立条件、反例与应用</h2>
+          <p>演示覆盖本页练习使用的模型。每张图都能播放、暂停、拖动和复位；也可以使用滑块及键盘方向键。示意图不按统一比例绘制，以标注条件为准。</p>
+          <noscript><p>交互演示需要启用 JavaScript。题面、演示解释、下方全部静态练习图和解答仍可阅读。</p></noscript>
+          <ul class="scenario-list">
+            <li><a href="#demo-rectangle">01 · 长方形：中间、端点都一样</a></li>
+            <li><a href="#demo-extension">02 · 顶点移到外面，高落到延长线上</a></li>
+            <li><a href="#demo-tilted">03 · 底边斜着放，规则也成立</a></li>
+            <li><a href="#demo-height">04 · 只固定底，面积未必不变</a></li>
+            <li><a href="#demo-base">05 · 只固定高，底变化也会变积</a></li>
+            <li><a href="#demo-split">06 · 一个三角形分成两块</a></li>
+            <li><a href="#demo-trapezoid">07 · 梯形上底平移</a></li>
+            <li><a href="#demo-diagonals">08 · 梯形对角线旁，两块为什么等积</a></li>
+            <li><a href="#demo-parallelogram">09 · 平行四边形拉直</a></li>
+            <li><a href="#demo-road">10 · 一条斜小路：先说明 1 米指什么</a></li>
+            <li><a href="#demo-two-roads">11 · 两条互不相交的小路</a></li>
+            <li><a href="#demo-crossroads">12 · 两条路相交：重叠只能扣一次</a></li>
+            <li><a href="#demo-opposite">13 · 对边上的两个三角形，一增一减</a></li>
+          </ul>
+          <article class="curtain-demo" id="demo-rectangle" data-scene="triangle" data-axis="x" data-origin="130" data-scale="30">
+            <header>
+              <p class="demo-tag">演示 01 / 同底等高 · 入门</p>
+              <h3>长方形：中间、端点都一样</h3>
+              <p>长方形 ABCD 的 AB = 10 cm，宽 6 cm。P 沿 CD 从 D 移到 C，△PAB 的面积会变吗？</p>
+            </header>
+            <div class="demo-picture"><p>交互图形需要 JavaScript，已知条件见题面。</p></div>
+            <div class="demo-controls">
+              <label for="range-rectangle">P 在 CD 上的位置（0 是 D，10 是 C）</label>
+              <input id="range-rectangle" type="range" min="0" max="10" step="0.1" value="5" disabled>
+              <div class="demo-buttons">
+                <button class="demo-play" type="button" disabled>播放演示</button>
+                <button class="demo-reset" type="button" disabled>复位</button>
+              </div>
+              <output for="range-rectangle" aria-live="off">移动后，在这里比较底、高和面积。</output>
+              <p class="demo-status" aria-live="polite">滑块与拖动功能需要 JavaScript。</p>
+              <details><summary>为什么？展开讲解</summary><p>底 AB 始终是 10 cm，P 到 AB 所在直线的垂直距离始终是 6 cm，所以面积是 10 × 6 ÷ 2 = 30 cm²。P 与 D 或 C 重合时仍是三角形，结论不变。</p></details>
+            </div>
+          </article>
+          <article class="curtain-demo" id="demo-extension" data-scene="extension" data-axis="x" data-origin="190" data-scale="15">
+            <header>
+              <p class="demo-tag">演示 02 / 外部位置 · 不看胖瘦</p>
+              <h3>顶点移到外面，高落到延长线上</h3>
+              <p>BC = 12 cm，A 到 BC 的高为 6 cm。P 在过 A 且平行于 BC 的直线上移动，允许越过 B、C 的上方。</p>
+            </header>
+            <div class="demo-picture"><p>交互图形需要 JavaScript，已知条件见题面。</p></div>
+            <div class="demo-controls">
+              <label for="range-extension">P 的横向位置（0、12 分别在 B、C 正上方）</label>
+              <input id="range-extension" type="range" min="-10" max="22" step="0.1" value="4" disabled>
+              <div class="demo-buttons">
+                <button class="demo-play" type="button" disabled>播放演示</button>
+                <button class="demo-reset" type="button" disabled>复位</button>
+              </div>
+              <output for="range-extension" aria-live="off">移动后，在这里比较底、高和面积。</output>
+              <p class="demo-status" aria-live="polite">滑块与拖动功能需要 JavaScript。</p>
+              <details><summary>为什么？展开讲解</summary><p>△ABC 的白色轮廓保留作比较。P 移到 B 左侧或 C 右侧后，垂足落在 BC 的延长线上；高仍是两条平行线之间的垂直距离，不是三角形的斜边。面积始终为 12 × 6 ÷ 2 = 36 cm²。</p></details>
+            </div>
+          </article>
+          <article class="curtain-demo" id="demo-tilted" data-scene="tilted" data-axis="x" data-origin="90" data-scale="20" data-angle="-20">
+            <header>
+              <p class="demo-tag">演示 03 / 方向变化 · 看垂直距离</p>
+              <h3>底边斜着放，规则也成立</h3>
+              <p>BC 长 10 cm，P 所在直线与 BC 平行，两条线的垂直距离为 5 cm。把图斜着放，面积会变吗？</p>
+            </header>
+            <div class="demo-picture"><p>交互图形需要 JavaScript，已知条件见题面。</p></div>
+            <div class="demo-controls">
+              <label for="range-tilted">P 沿斜平行线的位置</label>
+              <input id="range-tilted" type="range" min="0" max="19" step="0.1" value="9" disabled>
+              <div class="demo-buttons">
+                <button class="demo-play" type="button" disabled>播放演示</button>
+                <button class="demo-reset" type="button" disabled>复位</button>
+              </div>
+              <output for="range-tilted" aria-live="off">移动后，在这里比较底、高和面积。</output>
+              <p class="demo-status" aria-live="polite">滑块与拖动功能需要 JavaScript。</p>
+              <details><summary>为什么？展开讲解</summary><p>整个图形转动后，长度和角度不变。图中的直角标记说明虚线段仍垂直于底边，面积为 10 × 5 ÷ 2 = 25 cm²。“高”不一定竖直向下，应看它与所选底边是否垂直。</p></details>
+            </div>
+          </article>
+          <article class="curtain-demo" id="demo-height" data-scene="height" data-axis="y" data-origin="180" data-scale="18">
+            <header>
+              <p class="demo-tag">演示 04 / 反例 · 两侧与零高度</p>
+              <h3>只固定底，面积未必不变</h3>
+              <p>固定底 AB = 8 cm，让 P 上下移动。正数表示 P 在 AB 上方，负数表示下方；比较 +6、0、−6 三个位置。</p>
+            </header>
+            <div class="demo-picture"><p>交互图形需要 JavaScript，已知条件见题面。</p></div>
+            <div class="demo-controls">
+              <label for="range-height">P 相对底边的有向位置（cm）</label>
+              <input id="range-height" type="range" min="-6" max="6" step="0.1" value="6" disabled>
+              <div class="demo-buttons">
+                <button class="demo-play" type="button" disabled>播放演示</button>
+                <button class="demo-reset" type="button" disabled>复位</button>
+              </div>
+              <output for="range-height" aria-live="off">移动后，在这里比较底、高和面积。</output>
+              <p class="demo-status" aria-live="polite">滑块与拖动功能需要 JavaScript。</p>
+              <details><summary>为什么？展开讲解</summary><p>面积用的是距离，所以高没有负数。P 从高 6 cm 移到高 3 cm，面积由 24 变为 12 cm²；P 落到底边上时面积为 0，图形退化。P 在底边另一侧且距底边仍为 6 cm 时，面积又是 24 cm²。</p></details>
+            </div>
+          </article>
+          <article class="curtain-demo" id="demo-base" data-scene="base" data-axis="x" data-origin="100" data-scale="30">
+            <header>
+              <p class="demo-tag">演示 05 / 反例 · 同高看底</p>
+              <h3>只固定高，底变化也会变积</h3>
+              <p>P 到 AB 所在直线的高固定为 6 cm，A 不动，B 沿底边直线移动。</p>
+            </header>
+            <div class="demo-picture"><p>交互图形需要 JavaScript，已知条件见题面。</p></div>
+            <div class="demo-controls">
+              <label for="range-base">底 AB 的长度（cm）</label>
+              <input id="range-base" type="range" min="2" max="12" step="0.1" value="8" disabled>
+              <div class="demo-buttons">
+                <button class="demo-play" type="button" disabled>播放演示</button>
+                <button class="demo-reset" type="button" disabled>复位</button>
+              </div>
+              <output for="range-base" aria-live="off">移动后，在这里比较底、高和面积。</output>
+              <p class="demo-status" aria-live="polite">滑块与拖动功能需要 JavaScript。</p>
+              <details><summary>为什么？展开讲解</summary><p>同高的三角形，面积与底成正比。底从 4 cm 变成 8 cm，面积从 12 cm² 变成 24 cm²。仅仅“点在平行线上”还不够，比较时还要确认底有没有改变。</p></details>
+            </div>
+          </article>
+          <article class="curtain-demo" id="demo-split" data-scene="split" data-axis="x" data-origin="100" data-scale="30">
+            <header>
+              <p class="demo-tag">演示 06 / 分割 · 同高面积比</p>
+              <h3>一个三角形分成两块</h3>
+              <p>△PAB 的 AB = 12 cm，高 6 cm。M 在 AB 内移动，比较 △PAM 与 △PMB。</p>
+            </header>
+            <div class="demo-picture"><p>交互图形需要 JavaScript，已知条件见题面。</p></div>
+            <div class="demo-controls">
+              <label for="range-split">AM 的长度（cm）</label>
+              <input id="range-split" type="range" min="1" max="11" step="0.1" value="4" disabled>
+              <div class="demo-buttons">
+                <button class="demo-play" type="button" disabled>播放演示</button>
+                <button class="demo-reset" type="button" disabled>复位</button>
+              </div>
+              <output for="range-split" aria-live="off">移动后，在这里比较底、高和面积。</output>
+              <p class="demo-status" aria-live="polite">滑块与拖动功能需要 JavaScript。</p>
+              <details><summary>为什么？展开讲解</summary><p>两个小三角形共享从 P 到 AB 的高，所以面积比等于 AM∶MB。橙色变大时蓝色变小，但它们合起来始终是 △PAB，面积总和为 36 cm²。</p></details>
+            </div>
+          </article>
+          <article class="curtain-demo" id="demo-trapezoid" data-scene="trapezoid" data-axis="x" data-origin="60" data-scale="25">
+            <header>
+              <p class="demo-tag">演示 07 / 推广 · 两底与高固定</p>
+              <h3>梯形上底平移</h3>
+              <p>梯形 ABCD 的 DC ∥ AB，上底 6 cm，下底 12 cm，高 6 cm。保持上底长度，左右移动整条上底。</p>
+            </header>
+            <div class="demo-picture"><p>交互图形需要 JavaScript，已知条件见题面。</p></div>
+            <div class="demo-controls">
+              <label for="range-trapezoid">上底的横向位置</label>
+              <input id="range-trapezoid" type="range" min="0" max="11" step="0.1" value="4" disabled>
+              <div class="demo-buttons">
+                <button class="demo-play" type="button" disabled>播放演示</button>
+                <button class="demo-reset" type="button" disabled>复位</button>
+              </div>
+              <output for="range-trapezoid" aria-live="off">移动后，在这里比较底、高和面积。</output>
+              <p class="demo-status" aria-live="polite">滑块与拖动功能需要 JavaScript。</p>
+              <details><summary>为什么？展开讲解</summary><p>上下底与高都不变，梯形面积就是 (6 + 12) × 6 ÷ 2 = 54 cm²。上底可以伸到底边端点外；只要保持两底平行、高固定，斜腰的变化不影响面积。</p></details>
+            </div>
+          </article>
+          <article class="curtain-demo" id="demo-diagonals" data-scene="diagonals" data-axis="x" data-origin="60" data-scale="25">
+            <header>
+              <p class="demo-tag">演示 08 / 等积替换 · 减去公共部分</p>
+              <h3>梯形对角线旁，两块为什么等积</h3>
+              <p>梯形 ABCD 中 DC ∥ AB，对角线 AC、BD 交于 O。橙色 △ADO 与蓝色 △BCO 是否始终一样大？</p>
+            </header>
+            <div class="demo-picture"><p>交互图形需要 JavaScript，已知条件见题面。</p></div>
+            <div class="demo-controls">
+              <label for="range-diagonals">上底的横向位置</label>
+              <input id="range-diagonals" type="range" min="0" max="11" step="0.1" value="4" disabled>
+              <div class="demo-buttons">
+                <button class="demo-play" type="button" disabled>播放演示</button>
+                <button class="demo-reset" type="button" disabled>复位</button>
+              </div>
+              <output for="range-diagonals" aria-live="off">移动后，在这里比较底、高和面积。</output>
+              <p class="demo-status" aria-live="polite">滑块与拖动功能需要 JavaScript。</p>
+              <details><summary>为什么？展开讲解</summary><p>△ADC 与 △BDC 共用底 DC，A、B 都在与 DC 平行的 AB 上，所以它们等积。从两个大三角形中分别减去共同的 △DOC，剩下的 △ADO 与 △BCO 就等积。无需用相似三角形。</p></details>
+            </div>
+          </article>
+          <article class="curtain-demo" id="demo-parallelogram" data-scene="parallelogram" data-axis="x" data-origin="60" data-scale="30">
+            <header>
+              <p class="demo-tag">演示 09 / 推广 · 斜边不是高</p>
+              <h3>平行四边形拉直</h3>
+              <p>平行四边形的底固定为 8 cm，高固定为 5 cm。平移上边，让它从斜变直、再变斜。</p>
+            </header>
+            <div class="demo-picture"><p>交互图形需要 JavaScript，已知条件见题面。</p></div>
+            <div class="demo-controls">
+              <label for="range-parallelogram">上边的横向位置（2 时成为长方形）</label>
+              <input id="range-parallelogram" type="range" min="0" max="6" step="0.1" value="4" disabled>
+              <div class="demo-buttons">
+                <button class="demo-play" type="button" disabled>播放演示</button>
+                <button class="demo-reset" type="button" disabled>复位</button>
+              </div>
+              <output for="range-parallelogram" aria-live="off">移动后，在这里比较底、高和面积。</output>
+              <p class="demo-status" aria-live="polite">滑块与拖动功能需要 JavaScript。</p>
+              <details><summary>为什么？展开讲解</summary><p>平行四边形面积为底 × 高，即 8 × 5 = 40 cm²。白色长方形是等积参照。斜边长会变化，不能把斜边当成高直接相乘。</p></details>
+            </div>
+          </article>
+          <article class="curtain-demo" id="demo-road" data-scene="road" data-axis="x" data-origin="80" data-scale="25">
+            <header>
+              <p class="demo-tag">演示 10 / 生活应用 · 宽度定义</p>
+              <h3>一条斜小路：先说明 1 米指什么</h3>
+              <p>16 m × 10 m 的草坪中，小路是平行四边形，贯穿上下边。它在上、下边截得的水平线段都长 1 m；这不是斜路两条长边间的垂直宽度。</p>
+            </header>
+            <div class="demo-picture"><p>交互图形需要 JavaScript，已知条件见题面。</p></div>
+            <div class="demo-controls">
+              <label for="range-road">小路下端左点距草坪左边的水平距离（m）</label>
+              <input id="range-road" type="range" min="0" max="15" step="0.1" value="10" disabled>
+              <div class="demo-buttons">
+                <button class="demo-play" type="button" disabled>播放演示</button>
+                <button class="demo-reset" type="button" disabled>复位</button>
+              </div>
+              <output for="range-road" aria-live="off">移动后，在这里比较底、高和面积。</output>
+              <p class="demo-status" aria-live="polite">滑块与拖动功能需要 JavaScript。</p>
+              <details><summary>为什么？展开讲解</summary><p>以草坪上边截得的 1 m 为底，高就是草坪宽 10 m。小路面积恒为 10 m²，草地为 160 − 10 = 150 m²。拉直后左右仍是两块草地，平移拼合后才得到 15 m × 10 m 的长方形。</p></details>
+            </div>
+          </article>
+          <article class="curtain-demo" id="demo-two-roads" data-scene="two-roads" data-axis="x" data-origin="170" data-scale="22">
+            <header>
+              <p class="demo-tag">演示 11 / 组合应用 · 可以直接相加的条件</p>
+              <h3>两条互不相交的小路</h3>
+              <p>18 m × 10 m 的草坪中，两条平行四边形小路贯穿上下边，在上下边的截段分别长 1 m、2 m。两路始终不相交，并一起改变倾斜程度。</p>
+            </header>
+            <div class="demo-picture"><p>交互图形需要 JavaScript，已知条件见题面。</p></div>
+            <div class="demo-controls">
+              <label for="range-two-roads">两路下端相对初始位置的水平位移（m）</label>
+              <input id="range-two-roads" type="range" min="-4" max="5" step="0.1" value="2" disabled>
+              <div class="demo-buttons">
+                <button class="demo-play" type="button" disabled>播放演示</button>
+                <button class="demo-reset" type="button" disabled>复位</button>
+              </div>
+              <output for="range-two-roads" aria-live="off">移动后，在这里比较底、高和面积。</output>
+              <p class="demo-status" aria-live="polite">滑块与拖动功能需要 JavaScript。</p>
+              <details><summary>为什么？展开讲解</summary><p>两路没有重叠，面积可以直接相加：(1 + 2) × 10 = 30 m²。草地面积为 18 × 10 − 30 = 150 m²。如果小路相交，就不能直接扣掉两路面积之和。</p></details>
+            </div>
+          </article>
+          <article class="curtain-demo" id="demo-crossroads" data-scene="crossroads" data-axis="x" data-origin="80" data-scale="25">
+            <header>
+              <p class="demo-tag">演示 12 / 组合应用 · 重复扣除</p>
+              <h3>两条路相交：重叠只能扣一次</h3>
+              <p>16 m × 10 m 的草坪中，斜路贯穿上下边，上下截段长 1 m；另有贯穿左右边的水平道路，上下边相距 2 m。橙色是两路交叉部分。</p>
+            </header>
+            <div class="demo-picture"><p>交互图形需要 JavaScript，已知条件见题面。</p></div>
+            <div class="demo-controls">
+              <label for="range-crossroads">斜路下端左点距草坪左边的水平距离（m）</label>
+              <input id="range-crossroads" type="range" min="0" max="15" step="0.1" value="10" disabled>
+              <div class="demo-buttons">
+                <button class="demo-play" type="button" disabled>播放演示</button>
+                <button class="demo-reset" type="button" disabled>复位</button>
+              </div>
+              <output for="range-crossroads" aria-live="off">移动后，在这里比较底、高和面积。</output>
+              <p class="demo-status" aria-live="polite">滑块与拖动功能需要 JavaScript。</p>
+              <details><summary>为什么？展开讲解</summary><p>斜路面积为 1 × 10 = 10 m²，横路面积为 16 × 2 = 32 m²。交叉部分仍是平行四边形，以水平截段 1 m 为底、高 2 m，面积为 2 m²。直接减去 10 和 32 会把交叉处减两次，必须加回一次：160 − 10 − 32 + 2 = 120 m²。</p></details>
+            </div>
+          </article>
+          <article class="curtain-demo" id="demo-opposite" data-scene="opposite" data-axis="y" data-origin="290" data-scale="25">
+            <header>
+              <p class="demo-tag">演示 13 / 组合不变量 · 高的和不变</p>
+              <h3>对边上的两个三角形，一增一减</h3>
+              <p>长方形 ABCD 中 AB = 12 cm，宽 8 cm。P 沿内部竖线移动，比较 △PAB 与 △PCD 的面积和；也可移动到上下边。</p>
+            </header>
+            <div class="demo-picture"><p>交互图形需要 JavaScript，已知条件见题面。</p></div>
+            <div class="demo-controls">
+              <label for="range-opposite">P 到 AB 的距离（cm）</label>
+              <input id="range-opposite" type="range" min="0" max="8" step="0.1" value="3" disabled>
+              <div class="demo-buttons">
+                <button class="demo-play" type="button" disabled>播放演示</button>
+                <button class="demo-reset" type="button" disabled>复位</button>
+              </div>
+              <output for="range-opposite" aria-live="off">移动后，在这里比较底、高和面积。</output>
+              <p class="demo-status" aria-live="polite">滑块与拖动功能需要 JavaScript。</p>
+              <details><summary>为什么？展开讲解</summary><p>两个三角形底长都为 12 cm。它们的高分别是 P 到 AB、CD 的距离，两高之和恒为 8 cm。因此面积和为 12 × 8 ÷ 2 = 48 cm²，是长方形面积的一半。P 在边上时，其中一个三角形退化为零面积，和仍不变。</p></details>
+            </div>
+          </article>
+        </section>
+        <section class="curtain-section" id="basic" aria-labelledby="basic-title">
+          <h2 id="basic-title">基础：先找对底和高</h2>
+          <p>先在纸上画出所选底边对应的高。提示和完整解答可以分别展开；图形是示意图，以题面标注为准。</p>
+          <div class="practice-grid">
+            <article class="practice-card" id="practice-01" aria-labelledby="practice-title-01">
+              <p class="practice-tag">基础 / 第 01 题</p>
+              <h3 id="practice-title-01">顶点滑到端点</h3>
+              <p>长方形 ABCD 的 AB = 10 cm，宽 6 cm。P 在 CD 上，分别位于 D、中点、C 时，△PAB 的面积各是多少？</p>
+              <figure>
+                <img class="practice-image" src="../assets/images/curtain-practice-01.svg" width="560" height="360" loading="lazy" alt="长方形 AB 长10厘米、高6厘米，P 在与 AB 相对的上边。">
+                <figcaption class="diagram-note">示意图，以题面给出的条件为准。</figcaption>
+              </figure>
+              <details><summary>需要一点提示</summary><p>三次选择的底都是 AB，分别找 P 到 AB 的高。</p></details>
+              <details><summary>查看完整解答</summary><p>三个位置的底都是 10 cm，高都是 6 cm，因此每次面积均为 10 × 6 ÷ 2 = 30 cm²。P 与端点重合不会使这个三角形退化。</p><p class="practice-answer">三次都是 30 cm²。</p></details>
+            </article>
+            <article class="practice-card" id="practice-02" aria-labelledby="practice-title-02">
+              <p class="practice-tag">基础 / 第 02 题</p>
+              <h3 id="practice-title-02">顶点跑到底边外面</h3>
+              <p>AB = 12 cm，P 所在直线与 AB 平行，垂直距离为 6 cm。P 在 A 左侧时，△PAB 的面积是多少？与 P 在中间时相比呢？</p>
+              <figure>
+                <img class="practice-image" src="../assets/images/curtain-practice-02.svg" width="560" height="360" loading="lazy" alt="P 位于 A 左上方，AB 长12厘米，P 到 AB 延长线的高6厘米。">
+                <figcaption class="diagram-note">示意图，以题面给出的条件为准。</figcaption>
+              </figure>
+              <details><summary>需要一点提示</summary><p>高可以落在底边的延长线上。</p></details>
+              <details><summary>查看完整解答</summary><p>延长 AB 作高，仍得到 6 cm；面积为 12 × 6 ÷ 2 = 36 cm²。P 移到中间后底和高都不变。</p><p class="practice-answer">36 cm²，与在中间时相同。</p></details>
+            </article>
+            <article class="practice-card" id="practice-03" aria-labelledby="practice-title-03">
+              <p class="practice-tag">基础 / 第 03 题</p>
+              <h3 id="practice-title-03">同底就一定等积吗</h3>
+              <p>两个三角形共用底 AB = 8 cm，顶点 P、Q 到 AB 的高分别为 3 cm、5 cm。它们等积吗？相差多少？</p>
+              <figure>
+                <img class="practice-image" src="../assets/images/curtain-practice-03.svg" width="560" height="360" loading="lazy" alt="两三角形共用8厘米的底，高分别3厘米和5厘米。">
+                <figcaption class="diagram-note">示意图，以题面给出的条件为准。</figcaption>
+              </figure>
+              <details><summary>需要一点提示</summary><p>检查高有没有相同，不要只看共用底边。</p></details>
+              <details><summary>查看完整解答</summary><p>△PAB 面积为 8 × 3 ÷ 2 = 12 cm²；△QAB 面积为 8 × 5 ÷ 2 = 20 cm²。高不同，面积不同，相差 20 − 12 = 8 cm²。</p><p class="practice-answer">不等积，△QAB 大 8 cm²。</p></details>
+            </article>
+            <article class="practice-card" id="practice-04" aria-labelledby="practice-title-04">
+              <p class="practice-tag">基础 / 第 04 题</p>
+              <h3 id="practice-title-04">倒过来求高</h3>
+              <p>△PAB 的面积为 42 cm²，AB = 14 cm。P 沿一条与 AB 平行的直线滑动，这两条直线相距多少厘米？</p>
+              <figure>
+                <img class="practice-image" src="../assets/images/curtain-practice-04.svg" width="560" height="360" loading="lazy" alt="三角形底14厘米、面积42平方厘米，顶点在平行线上，高未知。">
+                <figcaption class="diagram-note">示意图，以题面给出的条件为准。</figcaption>
+              </figure>
+              <details><summary>需要一点提示</summary><p>由面积 = 底 × 高 ÷ 2，倒着求高。</p></details>
+              <details><summary>查看完整解答</summary><p>高 = 42 × 2 ÷ 14 = 6 cm。高正是两条平行线之间的垂直距离，与 P 的横向位置无关。</p><p class="practice-answer">相距 6 cm。</p></details>
+            </article>
+            <article class="practice-card" id="practice-05" aria-labelledby="practice-title-05">
+              <p class="practice-tag">基础 / 第 05 题</p>
+              <h3 id="practice-title-05">剩下的空白面积</h3>
+              <p>长方形 ABCD 的 AB = 12 cm，宽 8 cm。P 是 CD 上一点，涂色 △PAB，剩余未涂色部分的总面积是多少？</p>
+              <figure>
+                <img class="practice-image" src="../assets/images/curtain-practice-05.svg" width="560" height="360" loading="lazy" alt="12厘米乘8厘米的长方形，P 在上边，三角形 PAB 涂色。">
+                <figcaption class="diagram-note">示意图，以题面给出的条件为准。</figcaption>
+              </figure>
+              <details><summary>需要一点提示</summary><p>先算整个长方形，再减去三角形。</p></details>
+              <details><summary>查看完整解答</summary><p>长方形面积为 12 × 8 = 96 cm²，△PAB 面积为 12 × 8 ÷ 2 = 48 cm²。剩余两块即使形状不同，总面积仍为 96 − 48 = 48 cm²。</p><p class="practice-answer">48 cm²。</p></details>
+            </article>
+            <article class="practice-card" id="practice-06" aria-labelledby="practice-title-06">
+              <p class="practice-tag">基础 / 第 06 题</p>
+              <h3 id="practice-title-06">图转斜，小数照样算</h3>
+              <p>图中的底 AB = 7.5 cm，P 所在直线与 AB 平行，两线垂直距离 4 cm。△PAB 的面积是多少？</p>
+              <figure>
+                <img class="practice-image" src="../assets/images/curtain-practice-06.svg" width="560" height="360" loading="lazy" alt="底边倾斜的三角形，底7.5厘米，垂直高4厘米。">
+                <figcaption class="diagram-note">示意图，以题面给出的条件为准。</figcaption>
+              </figure>
+              <details><summary>需要一点提示</summary><p>虚线高与底边垂直；不把屏幕的竖直方向当成高。</p></details>
+              <details><summary>查看完整解答</summary><p>面积 = 7.5 × 4 ÷ 2 = 15 cm²。图形的朝向改变不会改变标注的底和高。</p><p class="practice-answer">15 cm²。</p></details>
+            </article>
+          </div>
+        </section>
+        <section class="curtain-section" id="intermediate" aria-labelledby="intermediate-title">
+          <h2 id="intermediate-title">进阶：分块、比较与等积替换</h2>
+          <p>先在纸上画出所选底边对应的高。提示和完整解答可以分别展开；图形是示意图，以题面标注为准。</p>
+          <div class="practice-grid">
+            <article class="practice-card" id="practice-07" aria-labelledby="practice-title-07">
+              <p class="practice-tag">进阶 / 第 07 题</p>
+              <h3 id="practice-title-07">分成一大一小两块</h3>
+              <p>△PAB 的 AB = 15 cm，高 8 cm。M 在 AB 上，AM = 5 cm。求 △PAM、△PMB 的面积及面积比。</p>
+              <figure>
+                <img class="practice-image" src="../assets/images/curtain-practice-07.svg" width="560" height="360" loading="lazy" alt="底15厘米、高8厘米的三角形，M 把底分成5厘米和10厘米。">
+                <figcaption class="diagram-note">示意图，以题面给出的条件为准。</figcaption>
+              </figure>
+              <details><summary>需要一点提示</summary><p>MB = AB − AM，两个小三角形有同一条高。</p></details>
+              <details><summary>查看完整解答</summary><p>MB = 15 − 5 = 10 cm。两块面积为 5 × 8 ÷ 2 = 20 cm²、10 × 8 ÷ 2 = 40 cm²；面积比 20∶40 = 1∶2。</p><p class="practice-answer">20 cm²、40 cm²，面积比 1∶2。</p></details>
+            </article>
+            <article class="practice-card" id="practice-08" aria-labelledby="practice-title-08">
+              <p class="practice-tag">进阶 / 第 08 题</p>
+              <h3 id="practice-title-08">同高的面积按底分</h3>
+              <p>△PAB 的 AB = 20 cm，高 6 cm，AM = 8 cm，MB = 12 cm。P 沿过原顶点的底边平行线移动后，△PAM 与 △PMB 的面积分别是多少？</p>
+              <figure>
+                <img class="practice-image" src="../assets/images/curtain-practice-08.svg" width="560" height="360" loading="lazy" alt="三角形底20厘米、高6厘米，底边分成8厘米和12厘米。">
+                <figcaption class="diagram-note">示意图，以题面给出的条件为准。</figcaption>
+              </figure>
+              <details><summary>需要一点提示</summary><p>先按两段底分别算；P 横移不会改变共同的高。</p></details>
+              <details><summary>查看完整解答</summary><p>△PAM 为 8 × 6 ÷ 2 = 24 cm²，△PMB 为 12 × 6 ÷ 2 = 36 cm²；P 横向移动后，两块仍分别保持这些面积。</p><p class="practice-answer">24 cm² 和 36 cm²。</p></details>
+            </article>
+            <article class="practice-card" id="practice-09" aria-labelledby="practice-title-09">
+              <p class="practice-tag">进阶 / 第 09 题</p>
+              <h3 id="practice-title-09">故意给一条斜边</h3>
+              <p>平行四边形的底是 9 cm，与这条底对应的高为 4 cm，另一条斜边长 6 cm。求面积，并解释为什么不能用 9 × 6。</p>
+              <figure>
+                <img class="practice-image" src="../assets/images/curtain-practice-09.svg" width="560" height="360" loading="lazy" alt="平行四边形底9厘米、垂直高4厘米，斜边长6厘米。">
+                <figcaption class="diagram-note">示意图，以题面给出的条件为准。</figcaption>
+              </figure>
+              <details><summary>需要一点提示</summary><p>公式需要对应的垂直高，而不是另一条边。</p></details>
+              <details><summary>查看完整解答</summary><p>面积 = 9 × 4 = 36 cm²。6 cm 是斜边长，不是到底边的垂直距离，所以 9 × 6 不能表示这个图形的面积。</p><p class="practice-answer">36 cm²；斜边不能当作高。</p></details>
+            </article>
+            <article class="practice-card" id="practice-10" aria-labelledby="practice-title-10">
+              <p class="practice-tag">进阶 / 第 10 题</p>
+              <h3 id="practice-title-10">梯形的上底错开</h3>
+              <p>梯形 ABCD 中 DC ∥ AB，上底 6 cm，下底 12 cm，高 5 cm。把整条上底向左平移，长度和高保持不变，面积是多少？</p>
+              <figure>
+                <img class="practice-image" src="../assets/images/curtain-practice-10.svg" width="560" height="360" loading="lazy" alt="梯形上底6厘米、下底12厘米、高5厘米。">
+                <figcaption class="diagram-note">示意图，以题面给出的条件为准。</figcaption>
+              </figure>
+              <details><summary>需要一点提示</summary><p>梯形公式只需要上下底和高。</p></details>
+              <details><summary>查看完整解答</summary><p>面积 = (6 + 12) × 5 ÷ 2 = 45 cm²。两腰的倾斜程度改变，三个计算条件不变。</p><p class="practice-answer">始终为 45 cm²。</p></details>
+            </article>
+            <article class="practice-card" id="practice-11" aria-labelledby="practice-title-11">
+              <p class="practice-tag">进阶 / 第 11 题</p>
+              <h3 id="practice-title-11">小路的 1.2 米怎么用</h3>
+              <p>16 m × 10 m 的长方形草坪中，有一条贯穿上下边的平行四边形斜路。小路在上下边截得的水平线段都长 1.2 m，草地面积是多少？</p>
+              <figure>
+                <img class="practice-image" src="../assets/images/curtain-practice-11.svg" width="560" height="360" loading="lazy" alt="16米乘10米的草坪，斜路上下水平截段均为1.2米。">
+                <figcaption class="diagram-note">示意图，以题面给出的条件为准。</figcaption>
+              </figure>
+              <details><summary>需要一点提示</summary><p>以水平截段为底，小路的高是草坪的10米。</p></details>
+              <details><summary>查看完整解答</summary><p>草坪面积为 16 × 10 = 160 m²。小路面积为 1.2 × 10 = 12 m²，所以草地面积为 160 − 12 = 148 m²。题中的 1.2 m 指水平截段，不是斜路的垂直宽度。</p><p class="practice-answer">148 m²。</p></details>
+            </article>
+            <article class="practice-card" id="practice-12" aria-labelledby="practice-title-12">
+              <p class="practice-tag">进阶 / 第 12 题</p>
+              <h3 id="practice-title-12">两条路没有相交</h3>
+              <p>20 m × 12 m 的草坪中，两条平行四边形小路贯穿上下边，水平截段分别长 1 m、2 m，始终不相交。草地面积是多少？</p>
+              <figure>
+                <img class="practice-image" src="../assets/images/curtain-practice-12.svg" width="560" height="360" loading="lazy" alt="20米乘12米的草坪，两条不相交斜路水平截段分别1米和2米。">
+                <figcaption class="diagram-note">示意图，以题面给出的条件为准。</figcaption>
+              </figure>
+              <details><summary>需要一点提示</summary><p>没有重叠时，两条路的面积可以相加。</p></details>
+              <details><summary>查看完整解答</summary><p>草坪面积为 20 × 12 = 240 m²；两路面积为 1 × 12 + 2 × 12 = 36 m²。草地为 240 − 36 = 204 m²。</p><p class="practice-answer">204 m²。</p></details>
+            </article>
+            <article class="practice-card" id="practice-13" aria-labelledby="practice-title-13">
+              <p class="practice-tag">进阶 / 第 13 题</p>
+              <h3 id="practice-title-13">不量长度，也能知道面积</h3>
+              <p>梯形 ABCD 中 AB ∥ DC，对角线 AC、BD 交于 O。已知 △ADO 面积是 18 cm²，求 △BCO 面积。</p>
+              <figure>
+                <img class="practice-image" src="../assets/images/curtain-practice-13.svg" width="560" height="360" loading="lazy" alt="梯形对角线交于 O，左侧三角形 ADO 面积18平方厘米，求右侧 BCO。">
+                <figcaption class="diagram-note">示意图，以题面给出的条件为准。</figcaption>
+              </figure>
+              <details><summary>需要一点提示</summary><p>比较 △ADC 与 △BDC，然后同时减去 △DOC。</p></details>
+              <details><summary>查看完整解答</summary><p>△ADC 与 △BDC 以 DC 为同一条底，A、B 到 DC 的高相等，因此等积。分别减去共同的 △DOC，剩下的 △ADO 与 △BCO 也等积。</p><p class="practice-answer">18 cm²。</p></details>
+            </article>
+            <article class="practice-card" id="practice-14" aria-labelledby="practice-title-14">
+              <p class="practice-tag">进阶 / 第 14 题</p>
+              <h3 id="practice-title-14">不知道 P 在哪，能算面积和吗</h3>
+              <p>长方形 ABCD 的 AB = 12 cm，宽 8 cm。P 是内部任意一点，求 △PAB 与 △PCD 的面积和。</p>
+              <figure>
+                <img class="practice-image" src="../assets/images/curtain-practice-14.svg" width="560" height="360" loading="lazy" alt="长方形长12厘米、宽8厘米，内部点 P 连向上下两条对边形成两三角形。">
+                <figcaption class="diagram-note">示意图，以题面给出的条件为准。</figcaption>
+              </figure>
+              <details><summary>需要一点提示</summary><p>两个底都长12厘米，两条对应高相加是多少？</p></details>
+              <details><summary>查看完整解答</summary><p>设两个高为 h₁、h₂。它们加起来等于长方形宽 8 cm，因此面积和 = 12 × (h₁ + h₂) ÷ 2 = 12 × 8 ÷ 2 = 48 cm²，不需要知道 P 的具体位置。</p><p class="practice-answer">48 cm²。</p></details>
+            </article>
+          </div>
+        </section>
+        <section class="curtain-section" id="challenge" aria-labelledby="challenge-title">
+          <h2 id="challenge-title">挑战：把几个关系串起来</h2>
+          <p>先在纸上画出所选底边对应的高。提示和完整解答可以分别展开；图形是示意图，以题面标注为准。</p>
+          <div class="practice-grid">
+            <article class="practice-card" id="practice-15" aria-labelledby="practice-title-15">
+              <p class="practice-tag">挑战 / 第 15 题</p>
+              <h3 id="practice-title-15">P 变位置，分块关系不变</h3>
+              <p>△PAB 的 AB = 18 cm，高 8 cm。M 在 AB 上，AM = 6 cm。P 沿底边的平行线移动到 A 左侧后，两块三角形 △PAM、△PMB 的面积会变吗？分别是多少？</p>
+              <figure>
+                <img class="practice-image" src="../assets/images/curtain-practice-15.svg" width="560" height="360" loading="lazy" alt="大三角形底18厘米、高8厘米，AM 为6厘米；顶点可以移到底边外侧。">
+                <figcaption class="diagram-note">示意图，以题面给出的条件为准。</figcaption>
+              </figure>
+              <details><summary>需要一点提示</summary><p>P 在外面时，两个高仍到底边所在直线。</p></details>
+              <details><summary>查看完整解答</summary><p>MB = 18 − 6 = 12 cm。两块的高都保持为 8 cm，面积分别为 6 × 8 ÷ 2 = 24 cm²、12 × 8 ÷ 2 = 48 cm²；和为 72 cm²，等于原大三角形面积。</p><p class="practice-answer">都不变，分别为 24 cm²、48 cm²。</p></details>
+            </article>
+            <article class="practice-card" id="practice-16" aria-labelledby="practice-title-16">
+              <p class="practice-tag">挑战 / 第 16 题</p>
+              <h3 id="practice-title-16">由一小块反推整个图形</h3>
+              <p>平行四边形 ABCD 的 AB = 12 cm。E 在 DC 上，M 在 AB 上，AM = 4 cm。已知 △AEM 面积为 16 cm²，求平行四边形面积、△MEB 面积，以及图中这两个小三角形以外的面积。</p>
+              <figure>
+                <img class="practice-image" src="../assets/images/curtain-practice-16.svg" width="560" height="360" loading="lazy" alt="平行四边形底12厘米，AM为4厘米，顶点E在对边，三角形 AEM 面积16平方厘米。">
+                <figcaption class="diagram-note">示意图，以题面给出的条件为准。</figcaption>
+              </figure>
+              <details><summary>需要一点提示</summary><p>先用小三角形求高；E 在平行的对边上，这也是平行四边形的高。</p></details>
+              <details><summary>查看完整解答</summary><p>高 = 16 × 2 ÷ 4 = 8 cm。平行四边形面积 = 12 × 8 = 96 cm²。MB = 12 − 4 = 8 cm，△MEB 面积 = 8 × 8 ÷ 2 = 32 cm²。剩余面积 = 96 − 16 − 32 = 48 cm²。</p><p class="practice-answer">平行四边形 96 cm²；△MEB 为32 cm²；剩余48 cm²。</p></details>
+            </article>
+            <article class="practice-card" id="practice-17" aria-labelledby="practice-title-17">
+              <p class="practice-tag">挑战 / 第 17 题</p>
+              <h3 id="practice-title-17">相交的两条路，不能多减</h3>
+              <p>16 m × 10 m 的草坪中，一条斜路贯穿上下边，水平截段长 1 m；一条横路贯穿左右边，上下边相距 2 m。两路相交，求草地面积。</p>
+              <figure>
+                <img class="practice-image" src="../assets/images/curtain-practice-17.svg" width="560" height="360" loading="lazy" alt="16米乘10米的草坪，水平截段1米的斜路与宽2米的横路相交。">
+                <figcaption class="diagram-note">示意图，以题面给出的条件为准。</figcaption>
+              </figure>
+              <details><summary>需要一点提示</summary><p>先求两路面积，再检查交叉处有没有被扣两次。</p></details>
+              <details><summary>查看完整解答</summary><p>斜路为 1 × 10 = 10 m²，横路为 16 × 2 = 32 m²。交叉处以 1 m 为底、2 m 为高，是面积 2 m² 的平行四边形。道路并集面积为 10 + 32 − 2 = 40 m²，草地为 160 − 40 = 120 m²。</p><p class="practice-answer">120 m²。</p></details>
+            </article>
+            <article class="practice-card" id="practice-18" aria-labelledby="practice-title-18">
+              <p class="practice-tag">挑战 / 第 18 题</p>
+              <h3 id="practice-title-18">面积比反推两条高</h3>
+              <p>长方形 ABCD 的 AB = 18 cm，宽 10 cm。P 在内部，△PAB 与 △PCD 的面积比为 2∶3。求两块面积，以及 P 到 AB 的距离。</p>
+              <figure>
+                <img class="practice-image" src="../assets/images/curtain-practice-18.svg" width="560" height="360" loading="lazy" alt="18厘米乘10厘米的长方形，内部点 P 连上下对边，两三角形面积比2比3。">
+                <figcaption class="diagram-note">示意图，以题面给出的条件为准。</figcaption>
+              </figure>
+              <details><summary>需要一点提示</summary><p>先求面积总和；按2份、3份分完后，再反求高。</p></details>
+              <details><summary>查看完整解答</summary><p>两块面积和为 18 × 10 ÷ 2 = 90 cm²。每份为 90 ÷ (2 + 3) = 18 cm²，所以 △PAB 为 18 × 2 = 36 cm²，△PCD 为 18 × 3 = 54 cm²。P 到 AB 的高为 36 × 2 ÷ 18 = 4 cm。</p><p class="practice-answer">两块面积为36、54 cm²；P 到 AB 为4 cm。</p></details>
+            </article>
+          </div>
+        </section>
+        <section class="curtain-section" id="checklist" aria-labelledby="checklist-title">
+          <h2 id="checklist-title">做完以后，检查这六件事</h2>
+          <ol>
+            <li><strong>底选对了吗？</strong>高必须与所选底边垂直，不一定是图上竖直的线。</li>
+            <li><strong>底、高到底谁没变？</strong>同底不代表同高，等高也不代表底一样长。</li>
+            <li><strong>顶点到了外面怎么办？</strong>必要时延长底边；不能因为图形变歪就改用斜边。</li>
+            <li><strong>公共部分处理了吗？</strong>等积图形同时减去同一块，剩下的仍等积；拼成总面积时不能漏算或重复。</li>
+            <li><strong>小路的长度如何量？</strong>以草坪边上的截段作底，配垂直高。多条路相交时，重叠部分只能扣一次。</li>
+            <li><strong>单位与退化位置检查了吗？</strong>长度用 cm、m，面积用 cm²、m²。顶点落在底边所在直线上时，三角形面积是 0。</li>
+          </ol>
+          <p>以上题目为本站编写的模型练习，挑战题也只使用小学面积公式、分数、比例和加减关系。</p>
+        </section>
+        <nav class="return-links" aria-label="相关内容">
+          <a class="github-link" href="../index.html#learning">返回学习目录</a>
+          <a class="github-link" href="./liang-ge-zheng-fang-xing-qiu-cheng-se-mian-ji.html">继续看：两个正方形求橙色面积</a>
+        </nav>
+      </main>
+      <footer class="site-footer"><span>渔夫的小站</span><a href="https://github.com/royhuang91">GitHub ↗</a></footer>
+    </div>
+  </body>
+</html>

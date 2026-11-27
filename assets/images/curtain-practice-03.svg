@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 360" role="img" aria-labelledby="title" font-family="sans-serif" font-weight="600">
+  <title id="title">拉窗帘练习 3 的已知条件图</title>
+  <rect width="560" height="360" fill="#17573a"/>
+  <polygon points="250,190 130,280 370,280" fill="#f59145" fill-opacity="0.72" stroke="#f59145" stroke-width="2.5" stroke-linejoin="round"/>
+  <polygon points="310,130 130,280 370,280" fill="#83dce0" fill-opacity="0.3" stroke="#83dce0" stroke-width="2.5" stroke-linejoin="round"/>
+  <line x1="250" y1="190" x2="250" y2="280" stroke="#f59145" stroke-width="2.5" stroke-dasharray="7 6"/>
+  <line x1="310" y1="130" x2="310" y2="280" stroke="#83dce0" stroke-width="2.5" stroke-dasharray="7 6"/>
+  <text x="108" y="312" fill="#f4f8f4" font-size="32">A</text>
+  <text x="375" y="312" fill="#f4f8f4" font-size="32">B</text>
+  <text x="225" y="183" fill="#f4f8f4" font-size="32">P</text>
+  <text x="312" y="113" fill="#f4f8f4" font-size="32">Q</text>
+  <text x="210" y="340" fill="#ffd23e" font-size="32">AB = 8 cm</text>
+  <text x="180" y="235" fill="#f59145" font-size="32">高 3</text>
+  <text x="375" y="195" fill="#83dce0" font-size="32">高 5</text>
+</svg>

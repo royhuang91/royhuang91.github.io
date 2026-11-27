@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 360" role="img" aria-labelledby="title" font-family="sans-serif" font-weight="600">
+  <title id="title">拉窗帘练习 10 的已知条件图</title>
+  <rect width="560" height="360" fill="#17573a"/>
+  <polygon points="100,280 460,280 400,100 220,100" fill="#f59145" fill-opacity="0.72" stroke="#f59145" stroke-width="2.5" stroke-linejoin="round"/>
+  <text x="74" y="312" fill="#f4f8f4" font-size="32">A</text>
+  <text x="467" y="312" fill="#f4f8f4" font-size="32" text-anchor="end">B</text>
+  <text x="405" y="88" fill="#f4f8f4" font-size="32" text-anchor="end">C</text>
+  <text x="195" y="88" fill="#f4f8f4" font-size="32">D</text>
+  <text x="246" y="78" fill="#ffd23e" font-size="32">6 cm</text>
+  <text x="210" y="340" fill="#ffd23e" font-size="32">12 cm</text>
+  <line x1="430" y1="100" x2="430" y2="280" stroke="#83dce0" stroke-width="2.5" stroke-dasharray="7 6"/>
+  <text x="440" y="195" fill="#83dce0" font-size="32" text-anchor="end">5 cm</text>
+</svg>

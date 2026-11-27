@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="description" content="五年级附加题：两个正方形边长 4 cm 和 5 cm，EC = 3 cm，求橙色面积。分步讲解，外加拉窗帘等积变形练习。">
+    <meta name="description" content="五年级附加题：两个正方形边长 4 cm 和 5 cm，EC = 3 cm，求橙色面积。分步讲解，并可继续进入拉窗帘图形题库。">
     <meta name="theme-color" content="#f6f4ed">
     <title>学习 / 两个正方形求橙色面积 · 渔夫的小站</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -39,7 +39,7 @@
       <div class="stage">
         <div class="board-card">
           <svg id="board" data-step="1" viewBox="0 0 560 470" role="img"
-               aria-label="几何图形：左边正方形 ABCD，右边倾斜正方形 DEGF，橙色部分是被 DE 和 DC 分成三块的三角形 ADG">
+               aria-label="几何图形：左边正方形 ABCD，右边倾斜正方形 DEFG，橙色部分是被 DE 和 DC 分成三块的三角形 ADG">
             <defs>
               <marker id="arrHead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
                 <path d="M0 0L10 5L0 10z" fill="#ffd23e"/>
@@ -150,9 +150,9 @@
         <h2>再多懂一点</h2>
         <div class="cards">
           <div class="card">
-            <h3>为什么不能一块一块硬算？</h3>
-            <p>三块橙色被线段 DE 和 DC 切开，切口交点（图中 P、Q 两点）的位置题目没有给，
-               每一块单独算都缺条件。这正是这道题的“坑”：<b>单块算不出，合起来正好是一个完整的三角形</b>。</p>
+            <h3>为什么先看整体更方便？</h3>
+            <p>三块橙色被线段 DE 和 DC 切开，切口交点（图中 P、Q 两点）的相关长度没有直接标出，
+               每一块单独计算还要先推导交点和相关长度，步骤更复杂。<b>先忽略内部切分线，三块合起来正好是一个完整的三角形</b>，直接求整体更简便。</p>
             <p>看到被切碎的阴影，先想一句：<b>它们拼起来是什么图形？</b></p>
           </div>
           <div class="card">
@@ -164,153 +164,20 @@
           </div>
         </div>
         <div class="summary">
-          <p><b>一句话记住这道题：</b>橙色三块拼成一个三角形（等积变形），底是现成的 4 cm；
+          <p><b>一句话记住这道题：</b>把橙色三块合看成一个三角形（面积相加），底是现成的 4 cm；
              高藏起来了，把小直角三角形 △DEC 绕点 D 旋转 90°——DE 与 DG 同为大正方形的边、等长且夹角正好 90°，
              所以 E、C 分毫不差地落在 G、H 上，高就等于 EC = 3 cm（旋转）。
-             这正是“正方形两大考点”——<b>等积变形 + 旋转</b>。</p>
+             这道题的两个关键动作是：<b>整体观察 + 旋转</b>。</p>
         </div>
       </section>
 
-      <section class="curtain">
-        <h2>拉窗帘实验室：<span class="hl">等积变形</span></h2>
-        <p class="curtain-intro">
-          上面那道题用的是“拼”和“转”。还有一种等积变形叫<b>拉窗帘</b>：三角形的<b>底不动</b>，
-          顶点在一条<b>与底平行的线</b>上滑动——就像拉窗帘，形状一直在变，<b>面积却纹丝不动</b>，因为同底等高。
-          下面三道例题先不给动画、不给答案，<b>先自己想</b>：点动起来以后，什么在变、什么不变？
-          想好了点“播放动画”，动画播完，金色的点就能用手拖着到处拉。
-        </p>
-
-        <!-- 例一 -->
-        <article class="ex-card" id="ex1">
-          <h3><span class="tag">例一 · 入门</span>长方形里的三角形</h3>
-          <p class="ex-problem">长方形 ABCD 长 <b>10 cm</b>、宽 <b>6 cm</b>。P 是上边 CD 上的任意一点，
-             连出三角形 PAB。P 在最左边时 △PAB 的面积好算；<b>P 滑到别的位置，面积还是这么大吗？</b></p>
-          <div class="board-card">
-            <svg class="curtain-board" id="ex1Svg" data-state="think" viewBox="0 0 560 420" role="img"
-                 aria-label="长方形 ABCD，上边 CD 上有一点 P，三角形 PAB 涂成橙色">
-              <g stroke="#ffffff" stroke-opacity=".08" stroke-width="1">
-                <path d="M60 0V420M112 0V420M164 0V420M216 0V420M268 0V420M320 0V420M372 0V420M424 0V420M476 0V420M528 0V420" fill="none"/>
-                <path d="M0 40H560M0 92H560M0 144H560M0 196H560M0 248H560M0 300H560M0 352H560M0 404H560" fill="none"/>
-              </g>
-              <polygon id="ex1Tri" points="270,90 70,330 470,330" fill="#f07d1e" fill-opacity=".88" stroke="#ffb066" stroke-width="1.5" stroke-linejoin="round"/>
-              <rect x="70" y="90" width="400" height="240" fill="none" stroke="#f4f8f4" stroke-width="3"/>
-              <line id="ex1H" x1="270" y1="90" x2="270" y2="330" stroke="#7fe3ec" stroke-width="2.5" stroke-dasharray="8 6"/>
-              <text x="282" y="216" class="c-dim-teal">高 6</text>
-              <text x="238" y="366" class="c-dim">10 cm</text>
-              <text x="486" y="216" class="c-dim" transform="rotate(90 492 210)">6 cm</text>
-              <text x="44" y="356" class="c-lbl">A</text>
-              <text x="480" y="356" class="c-lbl">B</text>
-              <text x="480" y="84" class="c-lbl">C</text>
-              <text x="44" y="84" class="c-lbl">D</text>
-              <text id="ex1PLbl" x="258" y="66" class="c-lbl" fill="#ffd23e">P</text>
-              <circle class="handle-ring" id="ex1Ring" cx="270" cy="90" r="17"/>
-              <circle class="handle-dot" id="ex1Dot" cx="270" cy="90" r="8"/>
-              <circle class="handle-hit" id="ex1Hit" cx="270" cy="90" r="30"/>
-            </svg>
-            <div class="board-tools">
-              <p class="hint" id="ex1Status">先自己想：P 从左滑到右，三角形变“瘦”了，面积会跟着变小吗？</p>
-              <button type="button" class="btn-rotate" id="ex1Play">▶ 播放动画</button>
-            </div>
-          </div>
-          <div class="stats" aria-label="实时数据">
-            <span class="stat"><em>底 AB</em>10 cm</span>
-            <span class="stat"><em>高（P 到 AB 的距离）</em>6 cm</span>
-            <span class="stat area"><em>△PAB 面积</em><span class="val" id="ex1Area">？ cm²</span></span>
-          </div>
-          <div class="why" id="ex1Why">
-            <p><b>为什么不变：</b>不管 P 滑到哪，P 到底边 AB 的距离都等于长方形的宽 6 cm——
-               <b>同底（AB）等高</b>，面积当然一样，而且正好是长方形面积的一半。P 就像窗帘的拉环，
-               在与底边平行的 CD 上滑动，这就是“拉窗帘”。</p>
-            <div class="formula">10 × 6 ÷ 2 = 30（cm²）</div>
-          </div>
-        </article>
-
-        <!-- 例二 -->
-        <article class="ex-card" id="ex2">
-          <h3><span class="tag">例二 · 模型</span>平行线上的点</h3>
-          <p class="ex-problem">三角形 ABC 的底 BC = <b>14 cm</b>，高 <b>6 cm</b>。过顶点 A 作一条
-             BC 的平行线 l，P 在 l 上任意滑动。<b>△PBC 和原来的 △ABC，面积一样大吗？</b></p>
-          <div class="board-card">
-            <svg class="curtain-board" id="ex2Svg" data-state="think" viewBox="0 0 560 420" role="img"
-                 aria-label="底边 BC，上方有一条平行线 l，点 P 在 l 上，三角形 PBC 涂成橙色">
-              <g stroke="#ffffff" stroke-opacity=".08" stroke-width="1">
-                <path d="M60 0V420M112 0V420M164 0V420M216 0V420M268 0V420M320 0V420M372 0V420M424 0V420M476 0V420M528 0V420" fill="none"/>
-                <path d="M0 40H560M0 92H560M0 144H560M0 196H560M0 248H560M0 300H560M0 352H560M0 404H560" fill="none"/>
-              </g>
-              <polygon id="ex2Tri" points="230,130 60,340 550,340" fill="#f07d1e" fill-opacity=".88" stroke="#ffb066" stroke-width="1.5" stroke-linejoin="round"/>
-              <line x1="24" y1="130" x2="536" y2="130" stroke="#7fe3ec" stroke-width="2.5" stroke-dasharray="10 7"/>
-              <line id="ex2H" x1="230" y1="130" x2="230" y2="340" stroke="#7fe3ec" stroke-width="2.5" stroke-dasharray="8 6"/>
-              <text x="242" y="240" class="c-dim-teal">高 6</text>
-              <line x1="60" y1="340" x2="550" y2="340" stroke="#f4f8f4" stroke-width="3"/>
-              <circle cx="230" cy="130" r="4" fill="#f4f8f4"/>
-              <text x="216" y="112" class="c-lbl">A</text>
-              <text x="30" y="368" class="c-lbl">B</text>
-              <text x="522" y="368" class="c-lbl">C</text>
-              <text x="258" y="384" class="c-dim">14 cm</text>
-              <text x="500" y="118" class="c-dim-teal">l ∥ BC</text>
-              <text id="ex2PLbl" x="218" y="106" class="c-lbl" fill="#ffd23e" style="display:none">P</text>
-              <circle class="handle-ring" id="ex2Ring" cx="230" cy="130" r="17"/>
-              <circle class="handle-dot" id="ex2Dot" cx="230" cy="130" r="8"/>
-              <circle class="handle-hit" id="ex2Hit" cx="230" cy="130" r="30"/>
-            </svg>
-            <div class="board-tools">
-              <p class="hint" id="ex2Status">先自己想：P 滑出原来的三角形范围，跑到很远的地方，面积还守得住吗？</p>
-              <button type="button" class="btn-rotate" id="ex2Play">▶ 播放动画</button>
-            </div>
-          </div>
-          <div class="stats" aria-label="实时数据">
-            <span class="stat"><em>底 BC</em>14 cm</span>
-            <span class="stat"><em>高（P 到 BC 的距离）</em>6 cm</span>
-            <span class="stat area"><em>△PBC 面积</em><span class="val" id="ex2Area">？ cm²</span></span>
-          </div>
-          <div class="why" id="ex2Why">
-            <p><b>为什么不变：</b>两条平行线之间的距离处处相等。P 在 l 上滑得再远，
-               它到 BC 的距离永远是 6 cm。<b>同底等高，面积相等</b>——这就是拉窗帘模型最核心的一句话：
-               顶点在平行线上滑动，面积不变。</p>
-            <div class="formula">14 × 6 ÷ 2 = 42（cm²）</div>
-          </div>
-        </article>
-
-        <!-- 例三 -->
-        <article class="ex-card" id="ex3">
-          <h3><span class="tag">例三 · 应用</span>草坪里的斜小路</h3>
-          <p class="ex-problem">一块长方形草坪，长 <b>16 m</b>、宽 <b>10 m</b>，中间修了一条宽
-             <b>1 m</b> 的斜小路。<b>草地（不算小路）有多少平方米？</b>先猜一猜：小路修得更斜，草地会变少吗？</p>
-          <div class="board-card">
-            <svg class="curtain-board" id="ex3Svg" data-state="think" viewBox="0 0 560 420" role="img"
-                 aria-label="长方形草坪，中间有一条斜着的平行四边形小路，路的下端点可以拖动">
-              <g stroke="#ffffff" stroke-opacity=".08" stroke-width="1">
-                <path d="M60 0V420M112 0V420M164 0V420M216 0V420M268 0V420M320 0V420M372 0V420M424 0V420M476 0V420M528 0V420" fill="none"/>
-                <path d="M0 40H560M0 92H560M0 144H560M0 196H560M0 248H560M0 300H560M0 352H560M0 404H560" fill="none"/>
-              </g>
-              <rect x="56" y="60" width="448" height="280" fill="#ffffff" fill-opacity=".07" stroke="#f4f8f4" stroke-width="3"/>
-              <rect x="250" y="60" width="28" height="280" fill="none" stroke="#7fe3ec" stroke-width="2" stroke-dasharray="7 6"/>
-              <polygon id="ex3Path" points="250,60 278,60 358,340 330,340" fill="#efe9dc" fill-opacity=".92" stroke="#fff8ea" stroke-width="2" stroke-linejoin="round"/>
-              <text x="238" y="376" class="c-dim">16 m</text>
-              <text x="516" y="206" class="c-dim">10 m</text>
-              <text x="196" y="46" class="c-note">小路宽 1 m</text>
-              <text x="330" y="316" class="c-lbl" fill="#ffd23e" id="ex3PLbl">P</text>
-              <circle class="handle-ring" id="ex3Ring" cx="330" cy="340" r="17"/>
-              <circle class="handle-dot" id="ex3Dot" cx="330" cy="340" r="8"/>
-              <circle class="handle-hit" id="ex3Hit" cx="330" cy="340" r="30"/>
-            </svg>
-            <div class="board-tools">
-              <p class="hint" id="ex3Status">先自己想：斜着的路不好量。能不能想个办法，把它“拉直”了再算？</p>
-              <button type="button" class="btn-rotate" id="ex3Play">▶ 播放动画</button>
-            </div>
-          </div>
-          <div class="stats" aria-label="实时数据">
-            <span class="stat"><em>草坪总面积</em>16 × 10 = 160 m²</span>
-            <span class="stat"><em>小路（平行四边形）</em>底 1 m × 高 10 m</span>
-            <span class="stat area"><em>草地面积</em><span class="val" id="ex3Area">？ m²</span></span>
-          </div>
-          <div class="why" id="ex3Why">
-            <p><b>为什么不变：</b>小路是一个平行四边形，它的下边在草坪的底边上滑动——正是拉窗帘：
-               底（路宽 1 m）不变、高（草坪宽 10 m）不变，路再斜，面积都是 1 × 10 = 10 m²。
-               把路拉直到和左边重合（图中的虚线框），草地就是一块 15 m × 10 m 的长方形，一眼能看清。</p>
-            <div class="formula">草地 = 160 − 1 × 10 = 150（m²）</div>
-          </div>
-        </article>
+      <section class="more" aria-labelledby="curtain-title">
+        <h2 id="curtain-title">继续练：拉窗帘与图形面积</h2>
+        <div class="summary">
+          <p>把分块面积合起来看，再用旋转找到高，是这道题的关键。还可以通过“同底等高”判断面积：
+             <a class="github-link" href="./curtain-area.html">进入拉窗帘图形题库</a>，体验 13 个可操作演示，完成 18 道分层练习。
+             原来的长方形、平行线和斜小路演示已迁入题库。</p>
+        </div>
       </section>
       <p><a class="github-link" href="../index.html#learning">返回学习目录</a></p>
       </main>
