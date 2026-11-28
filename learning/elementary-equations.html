@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="小学五、六年级方程图解教程：8个分步天平与线段图演示、16道分层练习，理解等式两边做相同操作，分清未知减数和未知除数。">
+    <meta name="theme-color" content="#f6f4ed">
+    <title>小学方程：把未知数一步步找出来 · 渔夫的小站</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/css/main.css?v=2f4cf76c5bbb">
+    <link rel="stylesheet" href="../assets/css/elementary-equations.css?v=330b0d89d633">
+    <script src="../assets/js/elementary-equations.js?v=49d23399fe98" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳至正文</a>
+    <div class="page">
+      <header class="site-header">
+        <a class="site-name" href="../index.html" aria-label="渔夫的小站首页"><span class="site-mark" aria-hidden="true">渔</span><span>渔夫的小站</span></a>
+      </header>
+      <main id="main" class="equation-lesson">
+        <header class="lesson-header">
+          <p class="eyebrow">学习 / 小学数学 / 方程入门</p>
+          <h1>把<span class="accent">未知数</span><br>一步步找出来。</h1>
+          <p class="lesson-lead">等号像一架平衡的天平。两边一起拿、一起放，就能慢慢看清盒子里藏着多少。</p>
+          <p>给刚接触方程的五、六年级同学：会四则运算就能开始。先看图，再走一步，最后把答案放回原题。</p>
+          <div class="lesson-meta"><span>8 个分步图解</span><span>16 道分层练习</span><span>天平 + 线段图</span></div>
+        </header>
+        <nav class="lesson-nav" aria-label="文章章节">
+          <a href="#rules">先懂规则</a><a href="#demos">8 个图解</a><a href="#basic">基础 6 题</a><a href="#intermediate">进阶 6 题</a><a href="#challenge">应用 4 题</a><a href="#checklist">易错检查</a>
+        </nav>
+        <section class="lesson-section" id="rules" aria-labelledby="rules-title">
+          <p class="section-number">01 / 先抓住一个不变的关系</p>
+          <h2 id="rules-title">两边一样多，就要一起变</h2>
+          <div class="rule-grid">
+            <div><h3>等号说的是“相等”</h3><p>等号左边和右边的数量相同。8 = 5 + 3 也正确，等号不是“后面写答案”的命令。</p></div>
+            <div><h3>x 是一个等待确定的数</h3><p>含有未知数的等式叫方程。找到让左右相等的 x，就是解方程。同一题中的 x 表示同一个数。</p></div>
+            <div><h3>两边做相同的操作</h3><p>同时加、减同一个数，或同时乘、除同一个<strong>不为 0 的数</strong>，可以保持等式的解不变。除数不能是 0。</p></div>
+          </div>
+          <p class="lesson-note">本页只讨论正数或 0 范围内的简单题，不用负数和复杂分数。方块表示数量，线段表示整体、部分或等份关系；示意长度不作为测量条件，以文字标注为准。蓝色带 x 的盒子表示未知数。</p>
+        </section>
+        <section class="lesson-section" id="demos" aria-labelledby="demos-title">
+          <p class="section-number">02 / 看图 → 走一步 → 检验</p>
+          <h2 id="demos-title">8 个图解，慢慢拆开方程</h2>
+          <p>点击“下一步”，同时观察图、算式和原因；也可以返回上一步或从头再看。按钮支持 Tab 及回车、空格操作；每个图解独立控制，不会自动播放。</p>
+          <noscript><p class="lesson-note">JavaScript 未启用：下方会直接显示全部步骤。练习、提示、解答仍可正常阅读。</p></noscript>
+          <ol class="demo-directory">
+            <li><a href="#demo-meaning">01 · 等号是一架平衡的天平</a></li>
+            <li><a href="#demo-add">02 · 多出来的 3，两边一起拿走</a></li>
+            <li><a href="#demo-subtract">03 · 拿走了 3，就把 3 加回来</a></li>
+            <li><a href="#demo-multiply">04 · 3 个一样的盒子，平均分成 3 份</a></li>
+            <li><a href="#demo-divide">05 · 每份有 4，合回 3 份就是全部</a></li>
+            <li><a href="#demo-subtrahend">06 · 8 减去一个数，剩下 3</a></li>
+            <li><a href="#demo-divisor">07 · 分成 3 份，每份到底有多少</a></li>
+            <li><a href="#demo-two-step">08 · 先拆外层，再拆里面</a></li>
+          </ol>
+          <article class="equation-demo" id="demo-meaning" aria-labelledby="title-meaning">
+            <header class="demo-header"><p class="demo-tag">图解 01 / 等式与未知数</p><h3 id="title-meaning">等号是一架平衡的天平</h3><p>等号表示两边的数量相等。一个数暂时不知道，可以用 x 表示；这里的 x 是字母，不是乘号 ×。</p></header>
+            <div class="demo-workspace">
+              <div class="demo-steps" id="steps-meaning">
+                <section class="demo-step" aria-labelledby="step-meaning-1">
+                  <h4 id="step-meaning-1">第 1 步 · 先读等号</h4>
+                  <p class="equation">3 + 2 = 5</p>
+                  <figure class="model">
+                    <div class="balance">
+                      <div class="balance-pan"><span class="model-label">左边</span><div class="tile-group"><span class="tile">3</span><span class="tile">2</span></div></div>
+                      <span class="balance-equal" aria-label="等于">=</span>
+                      <div class="balance-pan"><span class="model-label">右边</span><div class="tile-group"><span class="tile">5</span></div></div>
+                    </div>
+                    <figcaption>两边都是 5，天平保持水平。方块只表示数量，不按重量画大小。</figcaption>
+                  </figure>
+                  <p class="step-reason">读作“三加二等于五”。等号说明左右一样多，5 = 3 + 2 也成立。</p>
+                </section>
+                <section class="demo-step" aria-labelledby="step-meaning-2">
+                  <h4 id="step-meaning-2">第 2 步 · 把不知道的数装进盒子</h4>
+                  <p class="equation">x + 2 = 5</p>
+                  <figure class="model">
+                    <div class="balance">
+                      <div class="balance-pan"><span class="model-label">左边</span><div class="tile-group"><span class="tile tile-unknown">x</span><span class="tile">2</span></div></div>
+                      <span class="balance-equal" aria-label="等于">=</span>
+                      <div class="balance-pan"><span class="model-label">右边</span><div class="tile-group"><span class="tile">5</span></div></div>
+                    </div>
+                    <figcaption>盒子 x 表示一个确定、但还不知道的数。</figcaption>
+                  </figure>
+                  <p class="step-reason">含有未知数的等式叫方程。这里要找一个数，使它加 2 后恰好等于 5。</p>
+                </section>
+                <section class="demo-step" aria-labelledby="step-meaning-3">
+                  <h4 id="step-meaning-3">第 3 步 · 把答案放回去试</h4>
+                  <p class="equation">x = 3；3 + 2 = 5</p>
+                  <figure class="model">
+                    <div class="balance">
+                      <div class="balance-pan"><span class="model-label">左边</span><div class="tile-group"><span class="tile">3</span><span class="tile">2</span></div></div>
+                      <span class="balance-equal" aria-label="等于">=</span>
+                      <div class="balance-pan"><span class="model-label">右边</span><div class="tile-group"><span class="tile">5</span></div></div>
+                    </div>
+                    <figcaption>用 3 替换 x 后，两边仍然相等。</figcaption>
+                  </figure>
+                  <p class="step-reason">让方程左右两边相等的未知数的值，叫方程的解。注意：x + 2 只有式子、没有等号，不是方程。</p>
+                </section>
+              </div>
+              <div class="step-controls" role="group" aria-label="图解1分步控制" hidden>
+                <p class="step-progress" aria-live="polite" aria-atomic="true"></p>
+                <div class="step-buttons">
+                  <button type="button" data-action="previous" aria-controls="steps-meaning">上一步</button>
+                  <button type="button" data-action="next" aria-controls="steps-meaning">下一步</button>
+                  <button type="button" data-action="reset" aria-controls="steps-meaning">从头看</button>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="equation-demo" id="demo-add" aria-labelledby="title-add">
+            <header class="demo-header"><p class="demo-tag">图解 02 / 加法方程</p><h3 id="title-add">多出来的 3，两边一起拿走</h3><p>解方程 x + 3 = 8。目标是让等号的一边只留下一个 x。</p></header>
+            <div class="demo-workspace">
+              <div class="demo-steps" id="steps-add">
+                <section class="demo-step" aria-labelledby="step-add-1">
+                  <h4 id="step-add-1">第 1 步 · 看清原来的平衡</h4>
+                  <p class="equation">x + 3 = 8</p>
+                  <figure class="model">
+                    <div class="balance">
+                      <div class="balance-pan"><span class="model-label">左边</span><div class="tile-group"><span class="tile tile-unknown">x</span><span class="tile">3</span></div></div>
+                      <span class="balance-equal" aria-label="等于">=</span>
+                      <div class="balance-pan"><span class="model-label">右边</span><div class="tile-group"><span class="tile">8</span></div></div>
+                    </div>
+                    <figcaption>左边一个未知盒子和 3，合起来等于右边的 8。</figcaption>
+                  </figure>
+                  <p class="step-reason">不能只从左边拿走 3，否则左右就不一样多了。</p>
+                </section>
+                <section class="demo-step" aria-labelledby="step-add-2">
+                  <h4 id="step-add-2">第 2 步 · 两边同时减 3</h4>
+                  <p class="equation">x + 3 − 3 = 8 − 3</p>
+                  <figure class="model">
+                    <div class="balance">
+                      <div class="balance-pan"><span class="model-label">左边</span><div class="tile-group"><span class="tile tile-unknown">x</span><span class="tile tile-removed">3</span></div></div>
+                      <span class="balance-equal" aria-label="等于">=</span>
+                      <div class="balance-pan"><span class="model-label">右边</span><div class="tile-group"><span class="tile">5</span><span class="tile tile-removed">3</span></div></div>
+                    </div>
+                    <figcaption>划掉的部分表示拿走：两边各拿走 3。右边的 8 拆成 5 和 3。</figcaption>
+                  </figure>
+                  <p class="step-reason">同样多的两边减去同一个数，剩下的仍然同样多。左边的 +3 和 −3 正好抵消。</p>
+                </section>
+                <section class="demo-step" aria-labelledby="step-add-3">
+                  <h4 id="step-add-3">第 3 步 · 只剩一个 x</h4>
+                  <p class="equation">x = 5</p>
+                  <figure class="model">
+                    <div class="balance">
+                      <div class="balance-pan"><span class="model-label">左边</span><div class="tile-group"><span class="tile tile-unknown">x</span></div></div>
+                      <span class="balance-equal" aria-label="等于">=</span>
+                      <div class="balance-pan"><span class="model-label">右边</span><div class="tile-group"><span class="tile">5</span></div></div>
+                    </div>
+                    <figcaption>拿走以后，盒子 x 和 5 一样多。</figcaption>
+                  </figure>
+                  <p class="step-reason">检验：把 x = 5 代入原方程，左边 5 + 3 = 8，等于右边，所以解正确。</p>
+                </section>
+              </div>
+              <div class="step-controls" role="group" aria-label="图解2分步控制" hidden>
+                <p class="step-progress" aria-live="polite" aria-atomic="true"></p>
+                <div class="step-buttons">
+                  <button type="button" data-action="previous" aria-controls="steps-add">上一步</button>
+                  <button type="button" data-action="next" aria-controls="steps-add">下一步</button>
+                  <button type="button" data-action="reset" aria-controls="steps-add">从头看</button>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="equation-demo" id="demo-subtract" aria-labelledby="title-subtract">
+            <header class="demo-header"><p class="demo-tag">图解 03 / 减法方程 / 未知被减数</p><h3 id="title-subtract">拿走了 3，就把 3 加回来</h3><p>解方程 x − 3 = 5。原来有 x，拿走 3，还剩 5。</p></header>
+            <div class="demo-workspace">
+              <div class="demo-steps" id="steps-subtract">
+                <section class="demo-step" aria-labelledby="step-subtract-1">
+                  <h4 id="step-subtract-1">第 1 步 · 把整体与部分画出来</h4>
+                  <p class="equation">x − 3 = 5</p>
+                  <figure class="model line-model">
+                    <div class="bar-diagram"><div class="bar-row"><span class="bar-part bar-unknown">原来 x</span></div><div class="bar-row"><span class="bar-part">拿走 3</span><span class="bar-part">剩下 5</span></div></div>
+                    <figcaption>上面是整体，下面两部分合起来与整体一样多。各小段仅示意关系。</figcaption>
+                  </figure>
+                  <p class="step-reason">x 是原来的总量，不是拿走的那部分。要找原来有多少，把拿走的和剩下的合起来。</p>
+                </section>
+                <section class="demo-step" aria-labelledby="step-subtract-2">
+                  <h4 id="step-subtract-2">第 2 步 · 两边同时加 3</h4>
+                  <p class="equation">x − 3 + 3 = 5 + 3</p>
+                  <figure class="model">
+                    <div class="balance">
+                      <div class="balance-pan"><span class="model-label">左边</span><div class="tile-group"><span class="tile tile-unknown">x − 3</span><span class="tile">3</span></div></div>
+                      <span class="balance-equal" aria-label="等于">=</span>
+                      <div class="balance-pan"><span class="model-label">右边</span><div class="tile-group"><span class="tile">5</span><span class="tile">3</span></div></div>
+                    </div>
+                    <figcaption>左右各加回 3；左边先减 3 再加 3，恢复为 x。</figcaption>
+                  </figure>
+                  <p class="step-reason">等式两边加上同一个数，仍然相等。左边的 −3 和 +3 抵消。</p>
+                </section>
+                <section class="demo-step" aria-labelledby="step-subtract-3">
+                  <h4 id="step-subtract-3">第 3 步 · 恢复原来的总量</h4>
+                  <p class="equation">x = 8</p>
+                  <figure class="model line-model">
+                    <div class="bar-diagram"><div class="bar-row"><span class="bar-part bar-unknown">原来 x = 8</span></div><div class="bar-row"><span class="bar-part">拿走 3</span><span class="bar-part">剩下 5</span></div></div>
+                    <figcaption>3 与 5 合起来是 8。</figcaption>
+                  </figure>
+                  <p class="step-reason">检验：8 − 3 = 5，等于原方程右边。这里用加法恢复被减去之前的数量。</p>
+                </section>
+              </div>
+              <div class="step-controls" role="group" aria-label="图解3分步控制" hidden>
+                <p class="step-progress" aria-live="polite" aria-atomic="true"></p>
+                <div class="step-buttons">
+                  <button type="button" data-action="previous" aria-controls="steps-subtract">上一步</button>
+                  <button type="button" data-action="next" aria-controls="steps-subtract">下一步</button>
+                  <button type="button" data-action="reset" aria-controls="steps-subtract">从头看</button>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="equation-demo" id="demo-multiply" aria-labelledby="title-multiply">
+            <header class="demo-header"><p class="demo-tag">图解 04 / 乘法方程</p><h3 id="title-multiply">3 个一样的盒子，平均分成 3 份</h3><p>解方程 3 × x = 12。3 × x 也可以简写为 3x，表示 3 个 x 相加。</p></header>
+            <div class="demo-workspace">
+              <div class="demo-steps" id="steps-multiply">
+                <section class="demo-step" aria-labelledby="step-multiply-1">
+                  <h4 id="step-multiply-1">第 1 步 · 认出 3 个相同的 x</h4>
+                  <p class="equation">3 × x = 12</p>
+                  <figure class="model">
+                    <div class="balance">
+                      <div class="balance-pan"><span class="model-label">左边</span><div class="tile-group"><span class="tile tile-unknown">x</span><span class="tile tile-unknown">x</span><span class="tile tile-unknown">x</span></div></div>
+                      <span class="balance-equal" aria-label="等于">=</span>
+                      <div class="balance-pan"><span class="model-label">右边</span><div class="tile-group"><span class="tile">12</span></div></div>
+                    </div>
+                    <figcaption>3 个盒子里的数相同，合起来是 12。</figcaption>
+                  </figure>
+                  <p class="step-reason">同一道方程里的每个 x 表示同一个数。不能把三个盒子随意分成不同的数量。</p>
+                </section>
+                <section class="demo-step" aria-labelledby="step-multiply-2">
+                  <h4 id="step-multiply-2">第 2 步 · 两边同时除以 3</h4>
+                  <p class="equation">(3 × x) ÷ 3 = 12 ÷ 3</p>
+                  <figure class="model line-model">
+                    <div class="bar-diagram"><div class="bar-row"><span class="bar-part bar-unknown">x</span><span class="bar-part bar-unknown">x</span><span class="bar-part bar-unknown">x</span></div><div class="bar-row"><span class="bar-part">4</span><span class="bar-part">4</span><span class="bar-part">4</span></div></div>
+                    <figcaption>上下都平均分成 3 份，每一份一一对应。</figcaption>
+                  </figure>
+                  <p class="step-reason">等式两边除以同一个不为 0 的数，仍然相等。左边 3 个 x 分成 3 份，每份就是 x。</p>
+                </section>
+                <section class="demo-step" aria-labelledby="step-multiply-3">
+                  <h4 id="step-multiply-3">第 3 步 · 看其中的一份</h4>
+                  <p class="equation">x = 4</p>
+                  <figure class="model">
+                    <div class="balance">
+                      <div class="balance-pan"><span class="model-label">左边</span><div class="tile-group"><span class="tile tile-unknown">x</span></div></div>
+                      <span class="balance-equal" aria-label="等于">=</span>
+                      <div class="balance-pan"><span class="model-label">右边</span><div class="tile-group"><span class="tile">4</span></div></div>
+                    </div>
+                    <figcaption>每一个盒子都对应 4。</figcaption>
+                  </figure>
+                  <p class="step-reason">检验：3 × 4 = 12。不能只把右边除以 3，而让左边还写成 3 × x。</p>
+                </section>
+              </div>
+              <div class="step-controls" role="group" aria-label="图解4分步控制" hidden>
+                <p class="step-progress" aria-live="polite" aria-atomic="true"></p>
+                <div class="step-buttons">
+                  <button type="button" data-action="previous" aria-controls="steps-multiply">上一步</button>
+                  <button type="button" data-action="next" aria-controls="steps-multiply">下一步</button>
+                  <button type="button" data-action="reset" aria-controls="steps-multiply">从头看</button>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="equation-demo" id="demo-divide" aria-labelledby="title-divide">
+            <header class="demo-header"><p class="demo-tag">图解 05 / 除法方程 / 未知被除数</p><h3 id="title-divide">每份有 4，合回 3 份就是全部</h3><p>解方程 x ÷ 3 = 4。总数 x 平均分成 3 份，每份是 4。</p></header>
+            <div class="demo-workspace">
+              <div class="demo-steps" id="steps-divide">
+                <section class="demo-step" aria-labelledby="step-divide-1">
+                  <h4 id="step-divide-1">第 1 步 · 分清总数和每份数</h4>
+                  <p class="equation">x ÷ 3 = 4</p>
+                  <figure class="model">
+                    <div class="balance">
+                      <div class="balance-pan"><span class="model-label">左边的一份</span><div class="tile-group"><span class="tile tile-unknown">x ÷ 3</span></div></div>
+                      <span class="balance-equal" aria-label="等于">=</span>
+                      <div class="balance-pan"><span class="model-label">右边的一份</span><div class="tile-group"><span class="tile">4</span></div></div>
+                    </div>
+                    <figcaption>现在只看一份：总数 x 的三分之一，等于 4。</figcaption>
+                  </figure>
+                  <p class="step-reason">x 是总数。要从一份回到全部，需要把 3 份合起来。</p>
+                </section>
+                <section class="demo-step" aria-labelledby="step-divide-2">
+                  <h4 id="step-divide-2">第 2 步 · 两边同时乘 3</h4>
+                  <p class="equation">(x ÷ 3) × 3 = 4 × 3</p>
+                  <figure class="model line-model">
+                    <div class="bar-diagram"><div class="bar-row"><span class="bar-part bar-unknown">x</span></div><div class="bar-row"><span class="bar-part">4</span><span class="bar-part">4</span><span class="bar-part">4</span></div></div>
+                    <figcaption>3 份重新合起来，恢复整个 x。</figcaption>
+                  </figure>
+                  <p class="step-reason">等式两边乘同一个数，仍然相等。这里乘 3，让左边先除以 3 再乘 3，恢复为 x。</p>
+                </section>
+                <section class="demo-step" aria-labelledby="step-divide-3">
+                  <h4 id="step-divide-3">第 3 步 · 求出总数</h4>
+                  <p class="equation">x = 12</p>
+                  <figure class="model">
+                    <div class="balance">
+                      <div class="balance-pan"><span class="model-label">左边</span><div class="tile-group"><span class="tile tile-unknown">x</span></div></div>
+                      <span class="balance-equal" aria-label="等于">=</span>
+                      <div class="balance-pan"><span class="model-label">右边</span><div class="tile-group"><span class="tile">12</span></div></div>
+                    </div>
+                    <figcaption>总数是 3 个 4，也就是 12。</figcaption>
+                  </figure>
+                  <p class="step-reason">检验：12 ÷ 3 = 4。与 3 × x = 12 对照：一个已知总数求每份，一个已知每份求总数。</p>
+                </section>
+              </div>
+              <div class="step-controls" role="group" aria-label="图解5分步控制" hidden>
+                <p class="step-progress" aria-live="polite" aria-atomic="true"></p>
+                <div class="step-buttons">
+                  <button type="button" data-action="previous" aria-controls="steps-divide">上一步</button>
+                  <button type="button" data-action="next" aria-controls="steps-divide">下一步</button>
+                  <button type="button" data-action="reset" aria-controls="steps-divide">从头看</button>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="equation-demo" id="demo-subtrahend" aria-labelledby="title-subtrahend">
+            <header class="demo-header"><p class="demo-tag">图解 06 / 减法方程 / 未知减数</p><h3 id="title-subtrahend">8 减去一个数，剩下 3</h3><p>解方程 8 − x = 3。先看 x 在哪里：它是拿走的数量。</p></header>
+            <div class="demo-workspace">
+              <div class="demo-steps" id="steps-subtrahend">
+                <section class="demo-step" aria-labelledby="step-subtrahend-1">
+                  <h4 id="step-subtrahend-1">第 1 步 · 先画已知的整体</h4>
+                  <p class="equation">8 − x = 3</p>
+                  <figure class="model line-model">
+                    <div class="bar-diagram"><div class="bar-row"><span class="bar-part">一共 8</span></div><div class="bar-row"><span class="bar-part bar-unknown">拿走 x</span><span class="bar-part">剩下 3</span></div></div>
+                    <figcaption>x 和 3 是同一个整体 8 的两部分。</figcaption>
+                  </figure>
+                  <p class="step-reason">这和 x − 3 = 5 不同：现在总量 8 已知，未知的是减去多少。不能看见减号就算 3 + 8。</p>
+                </section>
+                <section class="demo-step" aria-labelledby="step-subtrahend-2">
+                  <h4 id="step-subtrahend-2">第 2 步 · 两边同时加 x</h4>
+                  <p class="equation">8 − x + x = 3 + x</p>
+                  <figure class="model line-model">
+                    <div class="bar-diagram"><div class="bar-row"><span class="bar-part">8</span></div><div class="bar-row"><span class="bar-part">3</span><span class="bar-part bar-unknown">x</span></div></div>
+                    <figcaption>把拿走的 x 加回来，右边的 3 也加上同一个 x。</figcaption>
+                  </figure>
+                  <p class="step-reason">左边减 x 再加 x，恢复成 8，得到 8 = 3 + x。这一步两边加的是同一个未知数，也能保持相等。</p>
+                </section>
+                <section class="demo-step" aria-labelledby="step-subtrahend-3">
+                  <h4 id="step-subtrahend-3">第 3 步 · 两边再同时减 3</h4>
+                  <p class="equation">8 − 3 = 3 + x − 3</p>
+                  <figure class="model">
+                    <div class="balance">
+                      <div class="balance-pan"><span class="model-label">左边</span><div class="tile-group"><span class="tile">5</span><span class="tile tile-removed">3</span></div></div>
+                      <span class="balance-equal" aria-label="等于">=</span>
+                      <div class="balance-pan"><span class="model-label">右边</span><div class="tile-group"><span class="tile tile-unknown">x</span><span class="tile tile-removed">3</span></div></div>
+                    </div>
+                    <figcaption>两边各拿走 3，剩下 5 = x。</figcaption>
+                  </figure>
+                  <p class="step-reason">先把右边写成 x + 3 再看，也很好理解。等号左右交换不改变相等关系，所以 x = 5。</p>
+                </section>
+                <section class="demo-step" aria-labelledby="step-subtrahend-4">
+                  <h4 id="step-subtrahend-4">第 4 步 · 回到原题检验</h4>
+                  <p class="equation">x = 5；8 − 5 = 3</p>
+                  <figure class="model line-model">
+                    <div class="bar-diagram"><div class="bar-row"><span class="bar-part">一共 8</span></div><div class="bar-row"><span class="bar-part">拿走 5</span><span class="bar-part">剩下 3</span></div></div>
+                    <figcaption>拿走的数量是 5，剩下的数量才是 3。</figcaption>
+                  </figure>
+                  <p class="step-reason">因此解是 x = 5。减法中未知数的位置会改变求解方法，要先分清整体与部分。</p>
+                </section>
+              </div>
+              <div class="step-controls" role="group" aria-label="图解6分步控制" hidden>
+                <p class="step-progress" aria-live="polite" aria-atomic="true"></p>
+                <div class="step-buttons">
+                  <button type="button" data-action="previous" aria-controls="steps-subtrahend">上一步</button>
+                  <button type="button" data-action="next" aria-controls="steps-subtrahend">下一步</button>
+                  <button type="button" data-action="reset" aria-controls="steps-subtrahend">从头看</button>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="equation-demo" id="demo-divisor" aria-labelledby="title-divisor">
+            <header class="demo-header"><p class="demo-tag">图解 07 / 除法方程 / 未知除数</p><h3 id="title-divisor">分成 3 份，每份到底有多少</h3><p>解方程 12 ÷ x = 3。本题把它理解为：12 个物品，每份装 x 个，能装 3 份。x 不能是 0。</p></header>
+            <div class="demo-workspace">
+              <div class="demo-steps" id="steps-divisor">
+                <section class="demo-step" aria-labelledby="step-divisor-1">
+                  <h4 id="step-divisor-1">第 1 步 · 给除法一个具体意思</h4>
+                  <p class="equation">12 ÷ x = 3</p>
+                  <figure class="model line-model">
+                    <div class="bar-diagram"><div class="bar-row"><span class="bar-part">一共 12</span></div><div class="bar-row"><span class="bar-part bar-unknown">每份 x</span><span class="bar-part bar-unknown">每份 x</span><span class="bar-part bar-unknown">每份 x</span></div></div>
+                    <figcaption>3 是份数，x 是每份的数量。3 个 x 合起来是 12。</figcaption>
+                  </figure>
+                  <p class="step-reason">注意和 x ÷ 3 = 4 比较：这里的 x 在除号后，是除数；不是总数。</p>
+                </section>
+                <section class="demo-step" aria-labelledby="step-divisor-2">
+                  <h4 id="step-divisor-2">第 2 步 · 按数量关系改写</h4>
+                  <p class="equation">3 × x = 12</p>
+                  <figure class="model">
+                    <div class="balance">
+                      <div class="balance-pan"><span class="model-label">左边</span><div class="tile-group"><span class="tile tile-unknown">x</span><span class="tile tile-unknown">x</span><span class="tile tile-unknown">x</span></div></div>
+                      <span class="balance-equal" aria-label="等于">=</span>
+                      <div class="balance-pan"><span class="model-label">右边</span><div class="tile-group"><span class="tile">12</span></div></div>
+                    </div>
+                    <figcaption>每份数量 × 份数 = 总数，所以 3 × x = 12。</figcaption>
+                  </figure>
+                  <p class="step-reason">依据“除数 × 商 = 被除数”来改写。这里不是把两边除以 12，也不是随意交换除号前后的数。</p>
+                </section>
+                <section class="demo-step" aria-labelledby="step-divisor-3">
+                  <h4 id="step-divisor-3">第 3 步 · 两边同时除以 3</h4>
+                  <p class="equation">x = 12 ÷ 3 = 4</p>
+                  <figure class="model line-model">
+                    <div class="bar-diagram"><div class="bar-row"><span class="bar-part bar-unknown">x</span><span class="bar-part bar-unknown">x</span><span class="bar-part bar-unknown">x</span></div><div class="bar-row"><span class="bar-part">4</span><span class="bar-part">4</span><span class="bar-part">4</span></div></div>
+                    <figcaption>把 12 平均分为 3 份，每份 4。</figcaption>
+                  </figure>
+                  <p class="step-reason">检验：12 ÷ 4 = 3，等于原方程右边，且 4 不为 0。未知除数与未知被除数要分开看。</p>
+                </section>
+              </div>
+              <div class="step-controls" role="group" aria-label="图解7分步控制" hidden>
+                <p class="step-progress" aria-live="polite" aria-atomic="true"></p>
+                <div class="step-buttons">
+                  <button type="button" data-action="previous" aria-controls="steps-divisor">上一步</button>
+                  <button type="button" data-action="next" aria-controls="steps-divisor">下一步</button>
+                  <button type="button" data-action="reset" aria-controls="steps-divisor">从头看</button>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="equation-demo" id="demo-two-step" aria-labelledby="title-two-step">
+            <header class="demo-header"><p class="demo-tag">图解 08 / 两步方程</p><h3 id="title-two-step">先拆外层，再拆里面</h3><p>解方程 2 × x + 3 = 11。先把“2 个 x”看成一个整体。</p></header>
+            <div class="demo-workspace">
+              <div class="demo-steps" id="steps-two-step">
+                <section class="demo-step" aria-labelledby="step-two-step-1">
+                  <h4 id="step-two-step-1">第 1 步 · 看清计算的顺序</h4>
+                  <p class="equation">2 × x + 3 = 11</p>
+                  <figure class="model line-model">
+                    <div class="bar-diagram"><div class="bar-row"><span class="bar-part">一共 11</span></div><div class="bar-row"><span class="bar-part bar-unknown">x</span><span class="bar-part bar-unknown">x</span><span class="bar-part">多出 3</span></div></div>
+                    <figcaption>先算 2 × x，再加 3。要还原 x，就倒过来拆。</figcaption>
+                  </figure>
+                  <p class="step-reason">先处理整体外面多出的 3，再把两个相同的 x 平均分开。不要只把 11 除以 2。</p>
+                </section>
+                <section class="demo-step" aria-labelledby="step-two-step-2">
+                  <h4 id="step-two-step-2">第 2 步 · 两边同时减 3</h4>
+                  <p class="equation">2 × x + 3 − 3 = 11 − 3</p>
+                  <figure class="model">
+                    <div class="balance">
+                      <div class="balance-pan"><span class="model-label">左边</span><div class="tile-group"><span class="tile tile-unknown">x</span><span class="tile tile-unknown">x</span><span class="tile tile-removed">3</span></div></div>
+                      <span class="balance-equal" aria-label="等于">=</span>
+                      <div class="balance-pan"><span class="model-label">右边</span><div class="tile-group"><span class="tile">8</span><span class="tile tile-removed">3</span></div></div>
+                    </div>
+                    <figcaption>两边各拿走 3，得到 2 × x = 8。</figcaption>
+                  </figure>
+                  <p class="step-reason">右边 11 − 3 = 8；左边只剩下两个 x。此时还不是 x = 8。</p>
+                </section>
+                <section class="demo-step" aria-labelledby="step-two-step-3">
+                  <h4 id="step-two-step-3">第 3 步 · 两边同时除以 2</h4>
+                  <p class="equation">(2 × x) ÷ 2 = 8 ÷ 2</p>
+                  <figure class="model line-model">
+                    <div class="bar-diagram"><div class="bar-row"><span class="bar-part bar-unknown">x</span><span class="bar-part bar-unknown">x</span></div><div class="bar-row"><span class="bar-part">4</span><span class="bar-part">4</span></div></div>
+                    <figcaption>两个 x 合起来是 8，平均分成两份，每份是 4。</figcaption>
+                  </figure>
+                  <p class="step-reason">等式两边同时除以 2，得到 x = 4。每一步只解开一层，写清楚两边做了什么。</p>
+                </section>
+                <section class="demo-step" aria-labelledby="step-two-step-4">
+                  <h4 id="step-two-step-4">第 4 步 · 放回最开始的方程</h4>
+                  <p class="equation">x = 4；2 × 4 + 3 = 11</p>
+                  <figure class="model">
+                    <div class="balance">
+                      <div class="balance-pan"><span class="model-label">左边</span><div class="tile-group"><span class="tile">4</span><span class="tile">4</span><span class="tile">3</span></div></div>
+                      <span class="balance-equal" aria-label="等于">=</span>
+                      <div class="balance-pan"><span class="model-label">右边</span><div class="tile-group"><span class="tile">11</span></div></div>
+                    </div>
+                    <figcaption>两个 4 再加 3，确实等于 11。</figcaption>
+                  </figure>
+                  <p class="step-reason">检验必须代入原方程：2 × 4 + 3 = 8 + 3 = 11。这样既检查了乘法，也检查了加法。</p>
+                </section>
+              </div>
+              <div class="step-controls" role="group" aria-label="图解8分步控制" hidden>
+                <p class="step-progress" aria-live="polite" aria-atomic="true"></p>
+                <div class="step-buttons">
+                  <button type="button" data-action="previous" aria-controls="steps-two-step">上一步</button>
+                  <button type="button" data-action="next" aria-controls="steps-two-step">下一步</button>
+                  <button type="button" data-action="reset" aria-controls="steps-two-step">从头看</button>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+        <section class="lesson-section" id="basic" aria-labelledby="basic-title">
+          <p class="section-number">03 / 基础 · 先找 x 的位置</p>
+          <h2 id="basic-title">基础 6 题：一步关系先看清</h2>
+          <p>每题先在纸上写清两边做了什么，再展开提示和解答。</p>
+          <div class="practice-grid">
+            <article class="practice" id="practice-01" aria-labelledby="practice-title-01">
+              <p class="demo-tag">练习 01</p>
+              <h3 id="practice-title-01">解方程 x + 4 = 10。</h3>
+              <figure class="model line-model">
+                <div class="bar-diagram"><div class="bar-row"><span class="bar-part bar-unknown">x</span><span class="bar-part">4</span></div><div class="bar-row"><span class="bar-part">10</span></div></div>
+                <figcaption>上下表示相同的数量。先观察整体、部分或等份关系。</figcaption>
+              </figure>
+              <details><summary>先看一点提示</summary><p>两边怎样同时拿走多出的 4？</p></details>
+              <details><summary>展开完整解答与检验</summary><p>两边同时减 4：x + 4 − 4 = 10 − 4，所以 x = 6。</p><p><strong>代回原题：</strong>6 + 4 = 10。</p></details>
+            </article>
+            <article class="practice" id="practice-02" aria-labelledby="practice-title-02">
+              <p class="demo-tag">练习 02</p>
+              <h3 id="practice-title-02">解方程 x − 7 = 5。</h3>
+              <figure class="model line-model">
+                <div class="bar-diagram"><div class="bar-row"><span class="bar-part bar-unknown">原来 x</span></div><div class="bar-row"><span class="bar-part">拿走 7</span><span class="bar-part">剩下 5</span></div></div>
+                <figcaption>上下表示相同的数量。先观察整体、部分或等份关系。</figcaption>
+              </figure>
+              <details><summary>先看一点提示</summary><p>未知的是原来的总数，需要把哪一部分加回来？</p></details>
+              <details><summary>展开完整解答与检验</summary><p>两边同时加 7：x − 7 + 7 = 5 + 7，所以 x = 12。</p><p><strong>代回原题：</strong>12 − 7 = 5。</p></details>
+            </article>
+            <article class="practice" id="practice-03" aria-labelledby="practice-title-03">
+              <p class="demo-tag">练习 03</p>
+              <h3 id="practice-title-03">解方程 4 × x = 20。</h3>
+              <figure class="model line-model">
+                <div class="bar-diagram"><div class="bar-row"><span class="bar-part bar-unknown">x</span><span class="bar-part bar-unknown">x</span><span class="bar-part bar-unknown">x</span><span class="bar-part bar-unknown">x</span></div><div class="bar-row"><span class="bar-part">一共 20</span></div></div>
+                <figcaption>上下表示相同的数量。先观察整体、部分或等份关系。</figcaption>
+              </figure>
+              <details><summary>先看一点提示</summary><p>4 个相同的 x 合起来是 20，每份多少？</p></details>
+              <details><summary>展开完整解答与检验</summary><p>两边同时除以 4：(4 × x) ÷ 4 = 20 ÷ 4，所以 x = 5。</p><p><strong>代回原题：</strong>4 × 5 = 20。</p></details>
+            </article>
+            <article class="practice" id="practice-04" aria-labelledby="practice-title-04">
+              <p class="demo-tag">练习 04</p>
+              <h3 id="practice-title-04">解方程 x ÷ 5 = 3。</h3>
+              <figure class="model line-model">
+                <div class="bar-diagram"><div class="bar-row"><span class="bar-part bar-unknown">总数 x</span></div><div class="bar-row"><span class="bar-part">3</span><span class="bar-part">3</span><span class="bar-part">3</span><span class="bar-part">3</span><span class="bar-part">3</span></div></div>
+                <figcaption>上下表示相同的数量。先观察整体、部分或等份关系。</figcaption>
+              </figure>
+              <details><summary>先看一点提示</summary><p>已知每份 3，一共有 5 份，怎样合回总数？</p></details>
+              <details><summary>展开完整解答与检验</summary><p>两边同时乘 5：(x ÷ 5) × 5 = 3 × 5，所以 x = 15。</p><p><strong>代回原题：</strong>15 ÷ 5 = 3。</p></details>
+            </article>
+            <article class="practice" id="practice-05" aria-labelledby="practice-title-05">
+              <p class="demo-tag">练习 05</p>
+              <h3 id="practice-title-05">解方程 14 − x = 6。</h3>
+              <figure class="model line-model">
+                <div class="bar-diagram"><div class="bar-row"><span class="bar-part">一共 14</span></div><div class="bar-row"><span class="bar-part bar-unknown">拿走 x</span><span class="bar-part">剩下 6</span></div></div>
+                <figcaption>上下表示相同的数量。先观察整体、部分或等份关系。</figcaption>
+              </figure>
+              <details><summary>先看一点提示</summary><p>14 是整体，6 是剩下的部分，未知的是另一部分。</p></details>
+              <details><summary>展开完整解答与检验</summary><p>两边同时加 x：14 = 6 + x；再同时减 6：8 = x，所以 x = 8。</p><p><strong>代回原题：</strong>14 − 8 = 6。</p></details>
+            </article>
+            <article class="practice" id="practice-06" aria-labelledby="practice-title-06">
+              <p class="demo-tag">练习 06</p>
+              <h3 id="practice-title-06">解方程 24 ÷ x = 6。</h3>
+              <figure class="model line-model">
+                <div class="bar-diagram"><div class="bar-row"><span class="bar-part">一共 24</span></div><div class="bar-row"><span class="bar-part bar-unknown">6 份，每份 x</span></div></div>
+                <figcaption>上下表示相同的数量。先观察整体、部分或等份关系。</figcaption>
+              </figure>
+              <details><summary>先看一点提示</summary><p>每份装 x 个，装了 6 份，一共 24 个。</p></details>
+              <details><summary>展开完整解答与检验</summary><p>由除法的意义得 6 × x = 24，两边同时除以 6，所以 x = 4（且 x 不能为 0）。</p><p><strong>代回原题：</strong>24 ÷ 4 = 6。</p></details>
+            </article>
+          </div>
+        </section>
+        <section class="lesson-section" id="intermediate" aria-labelledby="intermediate-title">
+          <p class="section-number">04 / 进阶 · 每次只拆一层</p>
+          <h2 id="intermediate-title">进阶 6 题：多一步，也别跳步</h2>
+          <p>先判断最外层是什么运算，消掉它以后，再处理里面的关系。</p>
+          <div class="practice-grid">
+            <article class="practice" id="practice-07" aria-labelledby="practice-title-07">
+              <p class="demo-tag">练习 07</p>
+              <h3 id="practice-title-07">解方程 3 × x + 2 = 17。</h3>
+              <figure class="model line-model">
+                <div class="bar-diagram"><div class="bar-row"><span class="bar-part">一共 17</span></div><div class="bar-row"><span class="bar-part bar-unknown">3 个 x</span><span class="bar-part">多出 2</span></div></div>
+                <figcaption>上下表示相同的数量。先观察整体、部分或等份关系。</figcaption>
+              </figure>
+              <details><summary>先看一点提示</summary><p>先拿走外面多出的 2，再把剩下的平均分成 3 份。</p></details>
+              <details><summary>展开完整解答与检验</summary><p>两边同时减 2，得 3 × x = 15；再同时除以 3，得 x = 5。</p><p><strong>代回原题：</strong>3 × 5 + 2 = 17。</p></details>
+            </article>
+            <article class="practice" id="practice-08" aria-labelledby="practice-title-08">
+              <p class="demo-tag">练习 08</p>
+              <h3 id="practice-title-08">解方程 4 × x − 3 = 21。</h3>
+              <figure class="model line-model">
+                <div class="bar-diagram"><div class="bar-row"><span class="bar-part bar-unknown">4 个 x</span></div><div class="bar-row"><span class="bar-part">拿走 3</span><span class="bar-part">剩下 21</span></div></div>
+                <figcaption>上下表示相同的数量。先观察整体、部分或等份关系。</figcaption>
+              </figure>
+              <details><summary>先看一点提示</summary><p>原来的 4 个 x，比剩下的 21 多多少？</p></details>
+              <details><summary>展开完整解答与检验</summary><p>两边同时加 3，得 4 × x = 24；再同时除以 4，得 x = 6。</p><p><strong>代回原题：</strong>4 × 6 − 3 = 21。</p></details>
+            </article>
+            <article class="practice" id="practice-09" aria-labelledby="practice-title-09">
+              <p class="demo-tag">练习 09</p>
+              <h3 id="practice-title-09">解方程 x ÷ 4 + 2 = 5。</h3>
+              <figure class="model line-model">
+                <div class="bar-diagram"><div class="bar-row"><span class="bar-part bar-unknown">每份 x ÷ 4</span><span class="bar-part">加上 2</span></div><div class="bar-row"><span class="bar-part">5</span></div></div>
+                <figcaption>上下表示相同的数量。先观察整体、部分或等份关系。</figcaption>
+              </figure>
+              <details><summary>先看一点提示</summary><p>先把 +2 抵消，还剩一份的数量；总数有 4 份。</p></details>
+              <details><summary>展开完整解答与检验</summary><p>两边同时减 2，得 x ÷ 4 = 3；再同时乘 4，得 x = 12。</p><p><strong>代回原题：</strong>12 ÷ 4 + 2 = 5。</p></details>
+            </article>
+            <article class="practice" id="practice-10" aria-labelledby="practice-title-10">
+              <p class="demo-tag">练习 10</p>
+              <h3 id="practice-title-10">解方程 18 − x = 7。</h3>
+              <figure class="model line-model">
+                <div class="bar-diagram"><div class="bar-row"><span class="bar-part">一共 18</span></div><div class="bar-row"><span class="bar-part bar-unknown">拿走 x</span><span class="bar-part">剩下 7</span></div></div>
+                <figcaption>上下表示相同的数量。先观察整体、部分或等份关系。</figcaption>
+              </figure>
+              <details><summary>先看一点提示</summary><p>不要只看减号，先确认 x 是被减数还是减数。</p></details>
+              <details><summary>展开完整解答与检验</summary><p>两边同时加 x，得 18 = 7 + x；再同时减 7，得 11 = x，所以 x = 11。</p><p><strong>代回原题：</strong>18 − 11 = 7。</p></details>
+            </article>
+            <article class="practice" id="practice-11" aria-labelledby="practice-title-11">
+              <p class="demo-tag">练习 11</p>
+              <h3 id="practice-title-11">解方程 35 ÷ x = 5。</h3>
+              <figure class="model line-model">
+                <div class="bar-diagram"><div class="bar-row"><span class="bar-part">一共 35</span></div><div class="bar-row"><span class="bar-part bar-unknown">5 份，每份 x</span></div></div>
+                <figcaption>上下表示相同的数量。先观察整体、部分或等份关系。</figcaption>
+              </figure>
+              <details><summary>先看一点提示</summary><p>把除法改写成“每份数量 × 份数 = 总数”。</p></details>
+              <details><summary>展开完整解答与检验</summary><p>改写成 5 × x = 35，两边同时除以 5，得 x = 7（且 x 不能为 0）。</p><p><strong>代回原题：</strong>35 ÷ 7 = 5。</p></details>
+            </article>
+            <article class="practice" id="practice-12" aria-labelledby="practice-title-12">
+              <p class="demo-tag">练习 12</p>
+              <h3 id="practice-title-12">解方程 2 × (x + 3) = 18。</h3>
+              <figure class="model line-model">
+                <div class="bar-diagram"><div class="bar-row"><span class="bar-part bar-unknown">x + 3</span><span class="bar-part bar-unknown">x + 3</span></div><div class="bar-row"><span class="bar-part">一共 18</span></div></div>
+                <figcaption>上下表示相同的数量。先观察整体、部分或等份关系。</figcaption>
+              </figure>
+              <details><summary>先看一点提示</summary><p>现在最外面是“2 份”，先求每一份，再拆开括号里的 +3。</p></details>
+              <details><summary>展开完整解答与检验</summary><p>两边同时除以 2，得 x + 3 = 9；再同时减 3，得 x = 6。</p><p><strong>代回原题：</strong>2 × (6 + 3) = 18。</p></details>
+            </article>
+          </div>
+        </section>
+        <section class="lesson-section" id="challenge" aria-labelledby="challenge-title">
+          <p class="section-number">05 / 应用 · 把生活写成等式</p>
+          <h2 id="challenge-title">应用 4 题：先列方程，再求解</h2>
+          <p>先说清楚 x 表示什么，找到等量关系，再列方程。算完后检查数值与单位。</p>
+          <div class="practice-grid">
+            <article class="practice" id="practice-13" aria-labelledby="practice-title-13">
+              <p class="demo-tag">练习 13</p>
+              <h3 id="practice-title-13">小雨有一些贴纸，又得到 6 张，现在有 19 张。原来有多少张？请先设未知数，再列方程。</h3>
+              <figure class="model line-model">
+                <div class="bar-diagram"><div class="bar-row"><span class="bar-part bar-unknown">原来 x</span><span class="bar-part">又得 6</span></div><div class="bar-row"><span class="bar-part">现在 19</span></div></div>
+                <figcaption>上下表示相同的数量。先观察整体、部分或等份关系。</figcaption>
+              </figure>
+              <details><summary>先看一点提示</summary><p>把“原来 + 又得到 = 现在”写成等量关系。</p></details>
+              <details><summary>展开完整解答与检验</summary><p>设原来有 x 张。列方程 x + 6 = 19；两边同时减 6，得 x = 13。答：原来有 13 张。</p><p><strong>代回原题：</strong>13 + 6 = 19，符合题意。</p></details>
+            </article>
+            <article class="practice" id="practice-14" aria-labelledby="practice-title-14">
+              <p class="demo-tag">练习 14</p>
+              <h3 id="practice-title-14">3 本同价的本子，加上一支 2 元的笔，一共 20 元。每本本子多少元？</h3>
+              <figure class="model line-model">
+                <div class="bar-diagram"><div class="bar-row"><span class="bar-part bar-unknown">3 本，每本 x 元</span><span class="bar-part">笔 2 元</span></div><div class="bar-row"><span class="bar-part">一共 20 元</span></div></div>
+                <figcaption>上下表示相同的数量。先观察整体、部分或等份关系。</figcaption>
+              </figure>
+              <details><summary>先看一点提示</summary><p>先写“本子的总价 + 笔价 = 总价”，别把本数当成本子的单价。</p></details>
+              <details><summary>展开完整解答与检验</summary><p>设每本本子 x 元。3 × x + 2 = 20；两边减 2 得 3 × x = 18，再同时除以 3，得 x = 6。答：每本 6 元。</p><p><strong>代回原题：</strong>3 × 6 + 2 = 20（元），符合总价。</p></details>
+            </article>
+            <article class="practice" id="practice-15" aria-labelledby="practice-title-15">
+              <p class="demo-tag">练习 15</p>
+              <h3 id="practice-title-15">一段 30 米的绳子，剪去一段后还剩 12 米。剪去了多少米？</h3>
+              <figure class="model line-model">
+                <div class="bar-diagram"><div class="bar-row"><span class="bar-part">一共 30 米</span></div><div class="bar-row"><span class="bar-part bar-unknown">剪去 x 米</span><span class="bar-part">剩下 12 米</span></div></div>
+                <figcaption>上下表示相同的数量。先观察整体、部分或等份关系。</figcaption>
+              </figure>
+              <details><summary>先看一点提示</summary><p>设剪去 x 米。这里的 x 在减号前还是后？</p></details>
+              <details><summary>展开完整解答与检验</summary><p>设剪去 x 米。30 − x = 12；两边同时加 x 得 30 = 12 + x，再同时减 12 得 x = 18。答：剪去 18 米。</p><p><strong>代回原题：</strong>30 − 18 = 12（米），符合题意。</p></details>
+            </article>
+            <article class="practice" id="practice-16" aria-labelledby="practice-title-16">
+              <p class="demo-tag">练习 16</p>
+              <h3 id="practice-title-16">有 36 颗珠子，每袋装同样多，正好装了 9 袋。每袋装多少颗？请用未知数作除数列方程。</h3>
+              <figure class="model line-model">
+                <div class="bar-diagram"><div class="bar-row"><span class="bar-part">一共 36 颗</span></div><div class="bar-row"><span class="bar-part bar-unknown">9 袋，每袋 x 颗</span></div></div>
+                <figcaption>上下表示相同的数量。先观察整体、部分或等份关系。</figcaption>
+              </figure>
+              <details><summary>先看一点提示</summary><p>“总数 ÷ 每袋数量 = 袋数”，袋数 9 应写在等号哪一边？</p></details>
+              <details><summary>展开完整解答与检验</summary><p>设每袋装 x 颗。36 ÷ x = 9（x 不为 0）；改写为 9 × x = 36，再两边除以 9，得 x = 4。答：每袋装 4 颗。</p><p><strong>代回原题：</strong>36 ÷ 4 = 9（袋），符合题意。</p></details>
+            </article>
+          </div>
+        </section>
+        <section class="lesson-section" id="checklist" aria-labelledby="checklist-title">
+          <p class="section-number">06 / 做完以后，再问自己</p>
+          <h2 id="checklist-title">别让运算符号骗了你</h2>
+          <dl class="mistake-list">
+            <div><dt>只改一边，天平还平吗？</dt><dd>x + 3 = 8 不能写成 x = 8。左边减 3，右边也必须减 3。</dd></div>
+            <div><dt>减号前后的 x，是一回事吗？</dt><dd>x − 3 = 5 的解是 8；8 − x = 3 的解是 5。先分清原有、拿走、剩下，别套“看到减号就加”的口诀。</dd></div>
+            <div><dt>除号前后的 x，是一回事吗？</dt><dd>x ÷ 3 = 4 求总数，x = 12；12 ÷ x = 3 求每份数，x = 4。除数 x 不能为 0。</dd></div>
+            <div><dt>两步方程，真的拆完了吗？</dt><dd>2 × x + 3 = 11，先得 2 × x = 8，还要两边除以 2，才有 x = 4。有括号时先看最外层，如 2 × (x + 3) = 18 先除以 2。</dd></div>
+            <div><dt>乘 0 或除以 0，可以吗？</dt><dd>不能除以 0。两边乘 0 虽然得到相等的 0 = 0，却丢掉了原来的条件，不能用它来找出 x。</dd></div>
+            <div><dt>答案放回的是原方程吗？</dt><dd>把求出的值代回最开始的题，分别算出左右两边。应用题还要写单位，检查答案是否符合故事里的条件。</dd></div>
+          </dl>
+          <p class="lesson-note">记住一个目标就好：保持两边相等，一步一步，让一边只剩一个 x。</p>
+          <p class="lesson-return"><a href="../index.html#learning">← 返回学习目录</a><a href="./curtain-area.html">继续看：拉窗帘图形面积题库 →</a></p>
+        </section>
+      </main>
+      <footer class="site-footer"><span>渔夫的小站</span><a href="https://github.com/royhuang91">GitHub ↗</a></footer>
+    </div>
+  </body>
+</html>
