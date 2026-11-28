@@ -184,15 +184,23 @@
         handle = [x, 280];
         break;
       case "split":
-        x = 100 + value * 30;
-        drawing = polygon("250,100 100,280 " + x + ",280", orange) +
-          polygon("250,100 " + x + ",280 460,280", teal) +
-          label(235, 83, "P") + label(75, 313, "A") + label(465, 313, "B") +
-          label(210, 340, "AB = 12 cm", gold) + label(380, 165, "高 6 cm", teal) + point(x, 280, "M");
-        result = "AM = " + number(value) + " cm，MB = " + number(12 - value) + " cm；两块面积 " +
-          number(3 * value) + " 和 " + number(36 - 3 * value) + " cm²，总和 36 cm²，面积比 " +
-          number(value) + "∶" + number(12 - value) + "。";
-        handle = [x, 280];
+        var movingApex = variant === "apex";
+        var partBase = movingApex ? 4 : 1 + value / 10;
+        var apexX = movingApex ? 70 + 4.5 * value : 250;
+        x = 100 + partBase * 30;
+        drawing = (movingApex ? line(35, 100, 540, 100, teal, true) + line(35, 280, 540, 280, chalk, true) : "") +
+          polygon(apexX + ",100 100,280 " + x + ",280", orange) +
+          polygon(apexX + ",100 " + x + ",280 460,280", teal) +
+          (movingApex ? height(apexX, 100, 280) + label(x - 12, 313, "M") : label(235, 83, "P")) +
+          label(75, 313, "A") + label(465, 313, "B") + label(245, 340, "12 cm", gold) +
+          label(380, 165, "高 6 cm", teal) + (movingApex ? point(apexX, 100, "P") : point(x, 280, "M"));
+        result = movingApex ? (apexX < 100 ? "P 已到 A 左侧。" : apexX > 460 ? "P 已到 B 右侧。" : "P 在 AB 上方。") +
+          "固定 M：AM = 4 cm，MB = 8 cm；两块面积各自保持 12 cm²、24 cm²，总和 36 cm²，面积比 1∶2。" :
+          "移动 M：AM = " + number(partBase) + " cm，MB = " + number(12 - partBase) + " cm；两块面积 " +
+          number(3 * partBase) + " 和 " + number(36 - 3 * partBase) + " cm²，总和 36 cm²，面积比 " +
+          number(partBase) + "∶" + number(12 - partBase) + "。";
+        handle = movingApex ? [apexX, 100] : [x, 280];
+        track = movingApex ? [[70, 100], [520, 100]] : [[130, 280], [430, 280]];
         break;
       case "trapezoid":
       case "diagonals":

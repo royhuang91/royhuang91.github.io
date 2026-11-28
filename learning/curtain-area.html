@@ -53,7 +53,7 @@
             <li><a href="#demo-tilted">03 · 底边斜着放，规则也成立</a></li>
             <li><a href="#demo-height">04 · 只固定底，面积未必不变</a></li>
             <li><a href="#demo-base">05 · 只固定高，底变化也会变积</a></li>
-            <li><a href="#demo-split">06 · 一个三角形分成两块</a></li>
+            <li><a href="#demo-split">06 · 分点移动与顶点横移，两种情况对比</a></li>
             <li><a href="#demo-trapezoid">07 · 梯形上底平移</a></li>
             <li><a href="#demo-diagonals">08 · 梯形对角线旁，两块为什么等积</a></li>
             <li><a href="#demo-parallelogram">09 · 平行四边形拉直</a></li>
@@ -160,23 +160,31 @@
               <details><summary>为什么？展开讲解</summary><p>同高的三角形，面积与底成正比。底从 4 cm 变成 8 cm，面积从 12 cm² 变成 24 cm²。仅仅“点在平行线上”还不够，比较时还要确认底有没有改变。</p></details>
             </div>
           </article>
-          <article class="curtain-demo" id="demo-split" data-scene="split" data-axis="x" data-origin="100" data-scale="30">
+          <article class="curtain-demo" id="demo-split" data-scene="split">
             <header>
-              <p class="demo-tag">演示 06 / 分割 · 同高面积比</p>
-              <h3>一个三角形分成两块</h3>
-              <p>△PAB 的 AB = 12 cm，高 6 cm。M 在 AB 内移动，比较 △PAM 与 △PMB。</p>
+              <p class="demo-tag">演示 06 / 分割 · 区分移动分点与移动顶点</p>
+              <h3>移动 M，还是移动 P？两种情况分开看</h3>
+              <p>△PAB 的 AB = 12 cm，高 6 cm，M 在 AB 内。选择移动分点 M，观察面积按底怎样分配；或固定 M，横向移动公共顶点 P，观察两块面积怎样同时保持不变。</p>
+              <p data-square-case="divider">移动 M：顶点 P 不动，两段底长改变，两块面积一增一减，面积比随 AM∶MB 改变，总面积保持 36 cm²。</p>
+              <p data-square-case="apex" hidden>移动 P：固定 AM = 4 cm、MB = 8 cm。让 P 沿与 AB 平行的直线横移，滑到两端可以看到 P 位于 A 左侧或 B 右侧。两块同步变形，但各自的底和高都不变，对应<a href="#practice-07">第 6 题的横移追问</a>。</p>
             </header>
             <div class="demo-picture"><p>交互图形需要 JavaScript，已知条件见题面。</p></div>
             <div class="demo-controls">
-              <label for="range-split">AM 的长度（cm）</label>
-              <input id="range-split" type="range" min="1" max="11" step="0.1" value="4" disabled>
+              <label for="split-mode">选择移动哪个点</label>
+              <select class="square-variant" id="split-mode" disabled>
+                <option value="divider">移动 M：面积按底分</option>
+                <option value="apex">移动 P：两块各自不变</option>
+              </select>
+              <label for="range-split">所选点的移动进度（0 到 100）</label>
+              <input id="range-split" type="range" min="0" max="100" step="1" value="30" disabled>
               <div class="demo-buttons">
                 <button class="demo-play" type="button" disabled>播放演示</button>
                 <button class="demo-reset" type="button" disabled>复位</button>
               </div>
-              <output for="range-split" aria-live="off">移动后，在这里比较底、高和面积。</output>
+              <output for="range-split" aria-live="off">选择移动 M 或 P，再比较两块面积。</output>
               <p class="demo-status" aria-live="polite">滑块与拖动功能需要 JavaScript。</p>
-              <details><summary>为什么？展开讲解</summary><p>两个小三角形共享从 P 到 AB 的高，所以面积比等于 AM∶MB。橙色变大时蓝色变小，但它们合起来始终是 △PAB，面积总和为 36 cm²。</p></details>
+              <details data-square-case="divider"><summary>移动 M：为什么按底分？</summary><p>两个小三角形共享从 P 到 AB 的高 6 cm，所以面积比等于 AM∶MB。M 移动时，一段底变长、另一段变短，两块面积随之变化，但它们合起来始终是 △PAB，面积总和为 36 cm²。</p></details>
+              <details data-square-case="apex" hidden><summary>移动 P：为什么两块都不变？</summary><p>M 固定后，△PAM 的底 AM = 4 cm、△PMB 的底 MB = 8 cm 都不变。P 只在与 AB 平行的直线上横移，两条对应高都保持 6 cm，因此两块面积分别为 4 × 6 ÷ 2 = 12 cm²、8 × 6 ÷ 2 = 24 cm²，面积比一直是 1∶2。P 移到 A 左侧或 B 右侧时，高落在底边延长线上，两块仍各自保面积。</p></details>
             </div>
           </article>
           <article class="curtain-demo" id="demo-trapezoid" data-scene="trapezoid" data-axis="x" data-origin="60" data-scale="25">
