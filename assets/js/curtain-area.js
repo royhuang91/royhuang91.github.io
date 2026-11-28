@@ -95,35 +95,36 @@
     };
   }
 
-  function doubleCurtain(value, stage) {
-    var first = stage === "first";
-    var source = first ? [40, 240] : [520, 160];
-    var target = first ? [180, 300] : [380, 300];
-    var x = source[0] + (target[0] - source[0]) * value / 100;
-    var y = source[1] + (target[1] - source[1]) * value / 100;
-    var current = first ? x + "," + y + " 520,160 380,100" : "180,300 " + x + "," + y + " 380,100";
+  function doubleCurtain(value, secondValue) {
+    var first = value < 100;
+    var left = [40 + 140 * value / 100, 240 + 60 * value / 100];
+    var right = [520 - 140 * secondValue / 100, 160 + 140 * secondValue / 100];
+    var current = left[0] + "," + left[1] + " " + right[0] + "," + right[1] + " 380,100";
     var before = first ? "40,240 520,160 380,100" : "180,300 520,160 380,100";
-    var result = first ? "第一拉：固定 BC，沿 AD 把 A 移到 D，△ABC 与 △DBC 等积。完成后继续第二拉。" :
-      value === 100 ? "两次等积替换：△ABC = △DBC = △DEC 的面积 = 10 × 10 ÷ 2 = 50 cm²。" :
+    var result = first ? "第一拉：固定 BC，沿 AD 把 A 移到 D，△ABC 与 △DBC 等积。播放将自动接着完成第二拉。" :
+      secondValue === 100 ? "两次等积替换：△ABC = △DBC = △DEC 的面积 = 10 × 10 ÷ 2 = 50 cm²。" :
         "第二拉：A 已移到 D。固定 DC，沿 BE 把 B 移到 E，终点将成为大正方形的一半。";
     return {
       drawing: polygon(before, chalk, 0.04) + polygon(current, orange) +
         rectangle(40, 100, 140, 140) + rectangle(180, 100, 200, 200) + rectangle(380, 160, 140, 140) +
         (first ? line(40, 300, 180, 300, teal, true) + line(40, 240, 40, 300, teal, true) +
           line(380, 100, 520, 100, teal, true) + line(520, 100, 520, 160, teal, true) : "") +
-        line(source[0], source[1], target[0], target[1], teal, true) +
+        line(40, 240, 180, 300, teal, true) + line(520, 160, 380, 300, teal, true) +
         (first ? line(520, 160, 380, 100, gold) : line(180, 300, 380, 100, gold)) +
         label(20, 274, "A") + label(550, 195, "B") + label(350, 88, "C") +
         label(155, 335, "D") + label(390, 335, "E") +
         label(80, 70, "7 cm", gold) + label(225, 70, "10 cm", gold) + label(485, 70, "7 cm", gold) +
-        point(x, y, value === 0 ? (first ? "P=A" : "P=B") : value === 100 ? (first ? "P=D" : "P=E") : "P"),
+        point(left[0], left[1], value === 100 ? "A=D" : "A") +
+        point(right[0], right[1], secondValue === 100 ? "B=E" : "B"),
       result: result,
-      handle: [x, y],
-      track: [source, target]
+      handle: left,
+      track: [[40, 240], [180, 300]],
+      secondaryHandle: right,
+      secondaryTrack: [[520, 160], [380, 300]]
     };
   }
 
-  function picture(type, value, variant, upperValue) {
+  function picture(type, value, variant, secondaryValue) {
     var drawing = "";
     var result = "";
     var handle;
@@ -131,7 +132,8 @@
     var y;
     var intersection;
     var track;
-    var upperHandle;
+    var secondaryHandle;
+    var secondaryTrack;
     switch (type) {
       case "triangle":
         x = 130 + value * 30;
@@ -257,7 +259,7 @@
         break;
       case "two-roads":
         x = 82 + (4 + value) * 22;
-        var upperX = 170 + upperValue * 22;
+        var upperX = 170 + secondaryValue * 22;
         drawing = polygon("82,60 478,60 478,280 82,280", teal, 0.12) +
           polygon(upperX + ",60 " + (upperX + 22) + ",60 " + (x + 22) + ",280 " + x + ",280", chalk, 0.75) +
           polygon((upperX + 154) + ",60 " + (upperX + 198) + ",60 " + (x + 198) + ",280 " + (x + 154) + ",280", chalk, 0.75) +
@@ -266,10 +268,10 @@
           rectangle(82, 60, 396, 220) + '<g transform="translate(' + upperX + ' 0)" text-anchor="middle">' +
           label(11, 43, "截段 1 m", gold) + label(176, 43, "截段 2 m", gold) + '</g>' +
           label(225, 324, "18 m", gold) + label(550, 195, "10 m", teal) + point(x, 280, "下") + point(upperX, 60, "上", true);
-        result = "上端位移 " + number(upperValue) + " m，下端位移 " + number(value) +
+        result = "上端位移 " + number(secondaryValue) + " m，下端位移 " + number(value) +
           " m。两条路互不相交，面积 (1 + 2) × 10 = 30 m²；草地 180 − 30 = 150 m²。";
         handle = [x, 280];
-        upperHandle = [upperX, 60];
+        secondaryHandle = [upperX, 60];
         break;
       case "opposite":
         y = 290 - value * 25;
@@ -290,16 +292,17 @@
         track = paired.track;
         break;
       case "double-curtain":
-        var doubleStep = doubleCurtain(value, variant);
+        var doubleStep = doubleCurtain(value, secondaryValue);
         drawing = doubleStep.drawing;
         result = doubleStep.result;
         handle = doubleStep.handle;
         track = doubleStep.track;
+        secondaryHandle = doubleStep.secondaryHandle;
+        secondaryTrack = doubleStep.secondaryTrack;
         break;
       case "three-squares":
-        var moveLeft = variant === "first";
-        var leftY = moveLeft ? 148 + 72 * value / 100 : 220;
-        var rightY = moveLeft ? 276 : 276 - 56 * value / 100;
+        var leftY = 148 + 72 * value / 100;
+        var rightY = 276 - 56 * secondaryValue / 100;
         drawing = polygon("56,148 308,80 504,276", chalk, 0.04) +
           polygon("56," + leftY + " 308,80 308,220", orange) +
           polygon("504," + rightY + " 308,80 308,220", teal) +
@@ -311,14 +314,17 @@
           line(308, rightY - 12, 320, rightY - 12, teal) + line(320, rightY - 12, 320, rightY, teal) +
           label(75, 53, "8 m", gold) + label(205, 53, "10 m", gold) + label(410, 53, "14 m", gold) +
           label(320, 113, "D") + label(320, 253, "E") + label(30, 253, "F") + label(550, 253, "G") +
-          label(540, 313, "R") + (moveLeft ? point(56, leftY, value === 100 ? "P=F" : "P", true) :
-            point(504, rightY, value === 100 ? "R=G" : "R"));
-        result = moveLeft ? "第一拉：固定 DE，沿左侧竖边的延长线把 P 下移到 F。左块面积不变，右块暂时不动。" +
-          (value === 100 ? "左点已到位，点击“下一拉”继续移动右点 R。" : "F 与 E 等高，在小正方形下边下方 2 m。") :
-          value === 100 ? "两点均到位：F、E、G 共线。底 FG = 8 + 10 + 14 = 32 m，高 DE = 10 m，△FDG 面积 = 160 m²。" :
-            "第二拉：保持左点在 F，仍固定 DE，把 R 沿大正方形右边上移到 G。G 比 R 的原位置高 4 m。";
-        handle = moveLeft ? [56, leftY] : [504, rightY];
-        track = moveLeft ? [[56, 148], [56, 220]] : [[504, 276], [504, 220]];
+          label(540, 313, "R") + point(56, leftY, value === 100 ? "P=F" : "P", true) +
+          point(504, rightY, secondaryValue === 100 ? "R=G" : "R");
+        result = "左点进度 " + number(value) + "%，右点进度 " + number(secondaryValue) + "%。" +
+          (value === 100 && secondaryValue === 100 ?
+            "两点均到位：F、E、G 共线。底 FG = 8 + 10 + 14 = 32 m，高 DE = 10 m，△FDG 面积 = 160 m²。" :
+            value < 100 ? "先把左点 P 下移到 F，再把右点 R 上移到 G；也可直接拖动任意金色点分别比较。" :
+              "左点已到 F，继续把右点 R 上移到 G；G 比 R 的原位置高 4 m。");
+        handle = [56, leftY];
+        secondaryHandle = [504, rightY];
+        track = [[56, 148], [56, 220]];
+        secondaryTrack = [[504, 276], [504, 220]];
         break;
     }
     return {
@@ -327,13 +333,14 @@
       result: result,
       handle: handle,
       track: track,
-      upperHandle: upperHandle
+      secondaryHandle: secondaryHandle,
+      secondaryTrack: secondaryTrack
     };
   }
 
   document.querySelectorAll(".curtain-demo").forEach(function (card) {
     var range = card.querySelector("input[type=range]");
-    var upperRange = card.querySelector(".demo-upper-range");
+    var secondaryRange = card.querySelector(".demo-secondary-range");
     var movingRange = range;
     var play = card.querySelector(".demo-play");
     var reset = card.querySelector(".demo-reset");
@@ -341,16 +348,15 @@
     var status = card.querySelector(".demo-status");
     var config = card.dataset;
     var variant = card.querySelector(".square-variant");
-    var nextStage = card.querySelector(".demo-next-stage");
     var initial = Number(range.value);
-    var upperInitial = upperRange ? Number(upperRange.value) : null;
-    var max = Number(range.max);
+    var secondaryInitial = secondaryRange ? Number(secondaryRange.value) : null;
     var image = document.createElement("img");
     var frameId = null;
     var dragging = false;
     var handle;
-    var upperHandle;
+    var secondaryHandle;
     var track;
+    var secondaryTrack;
     image.width = 560;
     image.height = 360;
     image.draggable = false;
@@ -359,11 +365,20 @@
 
     function draw(value) {
       movingRange.value = String(value);
+      if (config.scene === "double-curtain") {
+        // 换成 DC 作底前，A 必须到 D；退回第一拉则恢复原来的 BC。
+        if (movingRange === secondaryRange && Number(secondaryRange.value) > 0) {
+          range.value = range.max;
+        } else if (movingRange === range && Number(range.value) < Number(range.max)) {
+          secondaryRange.value = secondaryRange.min;
+        }
+      }
       var diagram = picture(config.scene, Number(range.value), variant ? variant.value : null,
-        upperRange ? Number(upperRange.value) : null);
+        secondaryRange ? Number(secondaryRange.value) : null);
       handle = diagram.handle;
-      upperHandle = diagram.upperHandle;
+      secondaryHandle = diagram.secondaryHandle;
       track = diagram.track;
+      secondaryTrack = diagram.secondaryTrack;
       if (track) {
         image.className = "demo-image" + (track[0][0] === track[1][0] ? " demo-image-vertical" :
           track[0][1] === track[1][1] ? "" : " demo-image-diagonal");
@@ -371,62 +386,79 @@
       image.src = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(diagram.svg);
       image.alt = card.querySelector("h3").textContent + "。" + diagram.result;
       readout.textContent = diagram.result;
-      if (nextStage) {
-        nextStage.disabled = Number(range.value) < max || variant.selectedIndex === variant.options.length - 1;
-      }
     }
 
     function stop() {
       if (frameId !== null) { cancelAnimationFrame(frameId); frameId = null; }
-      play.textContent = upperRange ? (movingRange === upperRange ? "播放上端" : "播放下端") : "播放演示";
+      play.textContent = config.scene === "two-roads" ? (movingRange === secondaryRange ? "播放上端" : "播放下端") : "播放演示";
     }
 
     play.addEventListener("click", function () {
       var min = Number(movingRange.min);
       var max = Number(movingRange.max);
-      var playbackInitial = movingRange === upperRange ? upperInitial : initial;
+      var playbackInitial = movingRange === secondaryRange ? secondaryInitial : initial;
       if (frameId !== null) {
         stop();
         status.textContent = "已暂停，可以拖动金色点或操作滑块。";
         return;
       }
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        if (config.playback === "sequence") {
+          range.value = range.max;
+          movingRange = secondaryRange;
+          max = Number(secondaryRange.max);
+        }
         draw(max);
         status.textContent = "已按减少动态效果设置展示另一端；可用滑块逐步比较。";
         return;
       }
-      var keys;
-      if (config.playback === "forward") {
-        if (Number(movingRange.value) === max) { draw(min); }
-        keys = [Number(movingRange.value), max];
+      var steps = [];
+      if (config.playback === "sequence") {
+        if (Number(range.value) === Number(range.max) && Number(secondaryRange.value) === Number(secondaryRange.max)) {
+          movingRange = range;
+          secondaryRange.value = String(secondaryInitial);
+          draw(initial);
+        }
+        [range, secondaryRange].forEach(function (control) {
+          if (Number(control.value) < Number(control.max)) {
+            steps.push({ control: control, from: Number(control.value), to: Number(control.max) });
+          }
+        });
       } else {
+        var keys;
         keys = [Number(movingRange.value), min, max, playbackInitial];
         if (keys[0] === min) { keys.shift(); }
+        for (var i = 0; i < keys.length - 1; i += 1) {
+          steps.push({ control: movingRange, from: keys[i], to: keys[i + 1] });
+        }
       }
-      var segmentCount = keys.length - 1;
+      var segmentCount = steps.length;
       var started = null;
       play.textContent = "暂停演示";
-      status.textContent = (upperRange ? (movingRange === upperRange ? "正在移动上端。" : "正在移动下端。") : "") +
-        "正在比较两端与中间位置，注意底、高和面积。";
+      status.textContent = config.playback === "sequence" ? "连续演示中：先移动左点，再接着移动右点，中途可暂停。" :
+        (config.scene === "two-roads" ? (movingRange === secondaryRange ? "正在移动上端。" : "正在移动下端。") : "") +
+          "正在比较两端与中间位置，注意底、高和面积。";
       function frame(time) {
         if (started === null) { started = time; }
         var progress = Math.min(segmentCount, (time - started) / 1800);
         var segment = Math.min(segmentCount - 1, Math.floor(progress));
         var local = progress - segment;
         var eased = local * local * (3 - 2 * local);
-        draw(keys[segment] + (keys[segment + 1] - keys[segment]) * eased);
+        for (var i = 0; i < segment; i += 1) { steps[i].control.value = String(steps[i].to); }
+        var step = steps[segment];
+        movingRange = step.control;
+        draw(step.from + (step.to - step.from) * eased);
         if (progress < segmentCount) { frameId = requestAnimationFrame(frame); }
         else {
           frameId = null;
           stop();
-          status.textContent = nextStage && !nextStage.disabled ? "本步完成，点击“下一拉”继续。" :
-            "演示结束。继续拖动金色点，或用方向键操作滑块。";
+          status.textContent = "演示结束。继续拖动金色点，或用方向键操作滑块。";
         }
       }
       frameId = requestAnimationFrame(frame);
     });
 
-    (upperRange ? [range, upperRange] : [range]).forEach(function (control) {
+    (secondaryRange ? [range, secondaryRange] : [range]).forEach(function (control) {
       control.addEventListener("input", function () {
         movingRange = control;
         stop();
@@ -436,7 +468,7 @@
     });
     reset.addEventListener("click", function () {
       movingRange = range;
-      if (upperRange) { upperRange.value = String(upperInitial); }
+      if (secondaryRange) { secondaryRange.value = String(secondaryInitial); }
       stop();
       draw(initial);
       status.textContent = "已恢复初始位置。";
@@ -452,13 +484,6 @@
         status.textContent = "已切换，进度已复位；可播放或操作滑块。";
       };
       variant.addEventListener("change", changeVariant);
-      if (nextStage) {
-        nextStage.addEventListener("click", function () {
-          variant.selectedIndex += 1;
-          changeVariant();
-          range.focus();
-        });
-      }
     }
 
     function position(event) {
@@ -468,8 +493,8 @@
 
     image.addEventListener("pointerdown", function (event) {
       var p = position(event);
-      if (upperHandle && Math.hypot(p[0] - upperHandle[0], p[1] - upperHandle[1]) <= 34) {
-        movingRange = upperRange;
+      if (secondaryHandle && Math.hypot(p[0] - secondaryHandle[0], p[1] - secondaryHandle[1]) <= 34) {
+        movingRange = secondaryRange;
       } else if (Math.hypot(p[0] - handle[0], p[1] - handle[1]) <= 34) {
         movingRange = range;
       } else { return; }
@@ -487,10 +512,11 @@
           200 + (p[0] - 280) * Math.sin(angle) + (p[1] - 200) * Math.cos(angle)];
       }
       var value;
-      if (track) {
-        var dx = track[1][0] - track[0][0];
-        var dy = track[1][1] - track[0][1];
-        value = ((p[0] - track[0][0]) * dx + (p[1] - track[0][1]) * dy) / (dx * dx + dy * dy) * 100;
+      var movingTrack = movingRange === secondaryRange ? secondaryTrack : track;
+      if (movingTrack) {
+        var dx = movingTrack[1][0] - movingTrack[0][0];
+        var dy = movingTrack[1][1] - movingTrack[0][1];
+        value = ((p[0] - movingTrack[0][0]) * dx + (p[1] - movingTrack[0][1]) * dy) / (dx * dx + dy * dy) * 100;
       } else {
         value = config.axis === "y" ? (Number(config.origin) - p[1]) / Number(config.scale) :
           (p[0] - Number(config.origin)) / Number(config.scale);
@@ -506,7 +532,7 @@
     image.addEventListener("lostpointercapture", endDrag);
 
     draw(initial);
-    if (upperRange) { upperRange.disabled = false; stop(); }
+    if (secondaryRange) { secondaryRange.disabled = false; stop(); }
     range.disabled = false;
     play.disabled = false;
     reset.disabled = false;
