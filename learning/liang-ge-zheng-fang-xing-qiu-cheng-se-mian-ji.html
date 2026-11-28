@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="description" content="五年级附加题：两个正方形边长 4 cm 和 5 cm，EC = 3 cm，求橙色面积。分步讲解，并可继续进入拉窗帘图形题库。">
+    <meta name="description" content="五年级附加题：两个正方形边长 4 cm 和 5 cm，EC = 3 cm，求橙色面积。保留原题，补充适合上海五年级的11类面积转化方法、20道代表题与可控动画，讲解默认折叠。">
     <meta name="theme-color" content="#f6f4ed">
-    <title>学习 / 两个正方形求橙色面积 · 渔夫的小站</title>
+    <title>两个正方形与面积转化题库 · 渔夫的小站</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/liang-ge-zheng-fang-xing-qiu-cheng-se-mian-ji.css">
+    <link rel="stylesheet" href="../assets/css/area-transformations.css?v=23a3012f7863">
   </head>
   <body>
     <a class="skip-link" href="#main">跳至正文</a>
@@ -21,7 +22,10 @@
       </header>
 
       <main id="main">
-      <header class="problem">
+      <nav class="area-page-nav" aria-label="本页内容">
+        <a href="#original-problem">两正方形原题</a><a href="#area-methods">面积方法目录</a><a href="#area-challenge">组合挑战</a><a href="../index.html#learning">学习目录</a>
+      </nav>
+      <header class="problem" id="original-problem">
         <h1>两个正方形，<span class="hl">橙色</span>部分有多大？</h1>
         <p class="problem-text">
           左边是一个边长 <b>4 cm</b> 的正方形 <b>ABCD</b>，右边斜放着一个边长 <b>5 cm</b> 的大正方形，
@@ -36,6 +40,9 @@
         <p class="article-meta">2026 年 11 月 27 日 · 五年级数学互动讲解</p>
       </header>
 
+      <figure class="area-original-question"><img src="../assets/images/area-transformations/original-question.svg" width="560" height="470" alt="正方形 ABCD 边长4厘米，正方形 DEFG 边长5厘米，E 在 BC 上且 EC 为3厘米；三块橙色总面积待求。"></figure>
+      <details class="area-solution area-original-solution">
+        <summary>查看两正方形原题的完整讲解与旋转演示</summary>
       <div class="stage">
         <div class="board-card">
           <svg id="board" data-step="1" viewBox="0 0 560 470" role="img"
@@ -171,6 +178,719 @@
         </div>
       </section>
 
+      </details>
+
+      <section class="area-library" id="area-methods" aria-labelledby="area-library-title">
+        <header class="area-library-intro">
+          <p class="area-eyebrow">给上海五年级同学的面积思考课</p>
+          <h2 id="area-library-title">面积题，换个思路。</h2>
+          <p>从上面的两正方形出发，补齐 11 类常用思路，再用组合题把它们连起来。分类用来帮助理解，不是要求背下来的口诀，也不表示穷尽所有题目变式。</p>
+          <p>先自己画一画；卡住时只展开提示，最后再看完整讲解。每题需要的知识都会在讲解中说明，动画可以暂停、分步和复位。未启用 JavaScript 时，仍可看关键对照图与完整文字。</p>
+          <details class="area-prerequisites">
+            <summary>开始前：底、高、面积相加和一半</summary>
+            <p>长方形面积 = 长 × 宽；正方形面积 = 边长 × 边长。三角形的高必须垂直于所选底边所在的直线，高也可以落在底边延长线上。</p>
+            <p>无缝、无重叠地拼起来，面积可以相加；两份完全相同的图形，总面积是一份的两倍。后面会用剪拼解释三角形、梯形和平行四边形公式，不要求先记住公式。</p>
+            <p>“同高看底”的意思是：高相同时，底长几倍，面积就是几倍；“同底看高”同理。燕尾、蝴蝶等是这些关系的组合，属于提高题，不代表五年级必考内容。</p>
+          </details>
+        </header>
+        <nav class="area-method-nav" aria-label="面积方法目录">
+          <a href="#area-whole"><span>01</span>整体观察与分割</a>
+          <a href="#area-complement"><span>02</span>补全求差</a>
+          <a href="#area-shift"><span>03</span>割补与平移</a>
+          <a href="#area-double"><span>04</span>复制与倍拼</a>
+          <a href="#area-rotate"><span>05</span>旋转找关系</a>
+          <a href="#area-fold"><span>06</span>对称与翻折</a>
+          <a href="#area-equal"><span>07</span>等积变形</a>
+          <a href="#area-replace"><span>08</span>公共部分与等量替换</a>
+          <a href="#area-ratio"><span>09</span>等分与面积倍数</a>
+          <a href="#area-inverse"><span>10</span>面积差与逆推</a>
+          <a href="#area-grid"><span>11</span>方格与估测</a>
+          <a href="#area-challenge"><span>12</span>组合挑战</a>
+        </nav>
+        <section class="area-method" id="area-whole" aria-labelledby="area-whole-title">
+          <header class="area-method-heading"><p class="area-eyebrow">01 / 方法</p><h3 id="area-whole-title">整体观察与分割</h3><p>先看边界，再决定分还是合。</p></header>
+          <article class="area-problem" id="problem-whole" aria-labelledby="title-whole">
+            <h4 id="title-whole"><span class="area-problem-number">01</span>三块阴影，先看外轮廓</h4>
+            <div class="area-question">
+              <p>在长 12 cm、宽 6 cm 的长方形中，连接左上与右下顶点，再从左上顶点连到底边上的两个分点。求图中三块橙色的面积和，两个分点的位置不必知道。</p>
+              <figure><img src="../assets/images/area-transformations/whole.svg" width="480" height="340" loading="lazy" alt="三块阴影，先看外轮廓的题面示意图；标注条件见题目文字。"><figcaption>先看题面，不按图上量出的长度作答。</figcaption></figure>
+            </div>
+            <details class="area-hint"><summary>看一点提示</summary><p>用手遮住三角形内部的两条线。阴影的外轮廓改变了吗？</p></details>
+            <details class="area-solution">
+              <summary>查看完整讲解与演示</summary>
+              <div class="area-demo" data-area-demo="whole">
+                <figure><img class="area-demo-image" src="../assets/images/area-transformations/whole-solution.svg" width="480" height="340" loading="lazy" alt="三块阴影，先看外轮廓的关键转化图；详细理由见下方步骤。"><figcaption>橙色为重点区域；青色、黄色辅助比较。动画是观察工具，成立的理由在下方。</figcaption></figure>
+                <div class="area-demo-controls" hidden>
+                  <div class="area-demo-buttons">
+                    <button type="button" data-action="previous" aria-label="上一步：三块阴影，先看外轮廓">上一步</button>
+                    <button type="button" data-action="play" aria-label="播放演示：三块阴影，先看外轮廓">播放演示</button>
+                    <button type="button" data-action="next" aria-label="下一步：三块阴影，先看外轮廓">下一步</button>
+                    <button type="button" data-action="reset" aria-label="复位演示：三块阴影，先看外轮廓">复位</button>
+                  </div>
+                  <label class="area-progress-label">转化进度<input type="range" min="0" max="2" step="0.01" value="0" aria-label="转化进度：三块阴影，先看外轮廓"></label>
+                  <p class="area-demo-status" aria-live="polite"></p>
+                </div>
+              </div>
+              <ol class="area-steps">
+                <li>先认外轮廓：三块之间没有空隙，也没有重叠，合起来就是长方形的一半。</li>
+                <li>暂时忽略内部切分线。大三角形的底是 12 cm，对应的垂直高是 6 cm。</li>
+                <li>三角形面积用底乘高再除以二；不必分别求两处分点和每小块的面积。</li>
+              </ol>
+              <p class="area-answer">12 × 6 ÷ 2 = 36（cm²）</p>
+              <p class="area-check"><b>想明白再走：</b>能合看，是因为各块刚好铺满同一个大三角形；隔着空白的几块不能直接当作整体。</p>
+            </details>
+            <a class="area-back-link" href="#area-methods">返回方法目录 ↑</a>
+          </article>
+        </section>
+        <section class="area-method" id="area-complement" aria-labelledby="area-complement-title">
+          <header class="area-method-heading"><p class="area-eyebrow">02 / 方法</p><h3 id="area-complement-title">补全求差</h3><p>先装进熟悉的大图形，再减掉空白。</p></header>
+          <article class="area-problem" id="problem-complement" aria-labelledby="title-complement">
+            <h4 id="title-complement"><span class="area-problem-number">02</span>缺了一角的纸板</h4>
+            <div class="area-question">
+              <p>一块纸板原来是长 12 cm、宽 8 cm 的长方形，右上角剪掉长 4 cm、宽 3 cm 的小长方形。求剩下的橙色面积。</p>
+              <figure><img src="../assets/images/area-transformations/complement.svg" width="480" height="340" loading="lazy" alt="缺了一角的纸板的题面示意图；标注条件见题目文字。"><figcaption>先看题面，不按图上量出的长度作答。</figcaption></figure>
+            </div>
+            <details class="area-hint"><summary>看一点提示</summary><p>缺角不好直接套公式，可以先把剪掉的一角补回来。</p></details>
+            <details class="area-solution">
+              <summary>查看完整讲解与演示</summary>
+              <div class="area-demo" data-area-demo="complement">
+                <figure><img class="area-demo-image" src="../assets/images/area-transformations/complement-solution.svg" width="480" height="340" loading="lazy" alt="缺了一角的纸板的关键转化图；详细理由见下方步骤。"><figcaption>橙色为重点区域；青色、黄色辅助比较。动画是观察工具，成立的理由在下方。</figcaption></figure>
+                <div class="area-demo-controls" hidden>
+                  <div class="area-demo-buttons">
+                    <button type="button" data-action="previous" aria-label="上一步：缺了一角的纸板">上一步</button>
+                    <button type="button" data-action="play" aria-label="播放演示：缺了一角的纸板">播放演示</button>
+                    <button type="button" data-action="next" aria-label="下一步：缺了一角的纸板">下一步</button>
+                    <button type="button" data-action="reset" aria-label="复位演示：缺了一角的纸板">复位</button>
+                  </div>
+                  <label class="area-progress-label">转化进度<input type="range" min="0" max="2" step="0.01" value="0" aria-label="转化进度：缺了一角的纸板"></label>
+                  <p class="area-demo-status" aria-live="polite"></p>
+                </div>
+              </div>
+              <ol class="area-steps">
+                <li>先补回右上角。补完后，整个长方形的长 12 cm、宽 8 cm，面积是 96 cm²。</li>
+                <li>补上的小长方形长 4 cm、宽 3 cm，面积是 12 cm²。</li>
+                <li>橙色是整个长方形减去缺角：96 − 12。也可分成 8 × 8 和 4 × 5 两块验算。</li>
+              </ol>
+              <p class="area-answer">12 × 8 − 4 × 3 = 84（cm²）</p>
+              <p class="area-check"><b>想明白再走：</b>做减法前，检查被减掉的部分是否恰好是缺口，不能多减或漏减。</p>
+            </details>
+            <a class="area-back-link" href="#area-methods">返回方法目录 ↑</a>
+          </article>
+        </section>
+        <section class="area-method" id="area-shift" aria-labelledby="area-shift-title">
+          <header class="area-method-heading"><p class="area-eyebrow">03 / 方法</p><h3 id="area-shift-title">割补与平移</h3><p>剪下去的每一块，原样搬到新位置。</p></header>
+          <article class="area-problem" id="problem-shift" aria-labelledby="title-shift">
+            <h4 id="title-shift"><span class="area-problem-number">03</span>斜着的地块，剪一块再平移</h4>
+            <div class="area-question">
+              <p>橙色平行四边形的底是 12 cm，垂直高是 8 cm。求面积，并说明为什么不需要斜边的长度。</p>
+              <figure><img src="../assets/images/area-transformations/shift.svg" width="480" height="340" loading="lazy" alt="斜着的地块，剪一块再平移的题面示意图；标注条件见题目文字。"><figcaption>先看题面，不按图上量出的长度作答。</figcaption></figure>
+            </div>
+            <details class="area-hint"><summary>看一点提示</summary><p>从左上顶点向底边作垂线，把左边的三角形移到右边。</p></details>
+            <details class="area-solution">
+              <summary>查看完整讲解与演示</summary>
+              <div class="area-demo" data-area-demo="shift">
+                <figure><img class="area-demo-image" src="../assets/images/area-transformations/shift-solution.svg" width="480" height="340" loading="lazy" alt="斜着的地块，剪一块再平移的关键转化图；详细理由见下方步骤。"><figcaption>橙色为重点区域；青色、黄色辅助比较。动画是观察工具，成立的理由在下方。</figcaption></figure>
+                <div class="area-demo-controls" hidden>
+                  <div class="area-demo-buttons">
+                    <button type="button" data-action="previous" aria-label="上一步：斜着的地块，剪一块再平移">上一步</button>
+                    <button type="button" data-action="play" aria-label="播放演示：斜着的地块，剪一块再平移">播放演示</button>
+                    <button type="button" data-action="next" aria-label="下一步：斜着的地块，剪一块再平移">下一步</button>
+                    <button type="button" data-action="reset" aria-label="复位演示：斜着的地块，剪一块再平移">复位</button>
+                  </div>
+                  <label class="area-progress-label">转化进度<input type="range" min="0" max="2" step="0.01" value="0" aria-label="转化进度：斜着的地块，剪一块再平移"></label>
+                  <p class="area-demo-status" aria-live="polite"></p>
+                </div>
+              </div>
+              <ol class="area-steps">
+                <li>先沿垂直于底边的线剪开左端，分出一个直角三角形。注意：8 cm 是垂直高，不是斜边。</li>
+                <li>把剪下的三角形向右平移一个底边长。没有拉伸，也没有转动，正好填满右侧缺口。</li>
+                <li>拼成的长方形底仍为 12 cm，高仍为 8 cm；剪拼没有空隙和重叠，所以面积不变。</li>
+              </ol>
+              <p class="area-answer">12 × 8 = 96（cm²）</p>
+              <p class="area-check"><b>想明白再走：</b>平移时每个顶点移动相同的方向和距离；不能把剪下的小块随意拉长。</p>
+            </details>
+            <a class="area-back-link" href="#area-methods">返回方法目录 ↑</a>
+          </article>
+        </section>
+        <section class="area-method" id="area-double" aria-labelledby="area-double-title">
+          <header class="area-method-heading"><p class="area-eyebrow">04 / 方法</p><h3 id="area-double-title">复制与倍拼</h3><p>算的是几份，最后就还原为几份。</p></header>
+          <article class="area-problem" id="problem-double-triangle" aria-labelledby="title-double-triangle">
+            <h4 id="title-double-triangle"><span class="area-problem-number">04</span>复制一个三角形，为什么要除以二？</h4>
+            <div class="area-question">
+              <p>一个三角形的底长 8 cm，对应的高是 6 cm。复制一个完全相同的三角形，试着拼成平行四边形，再求原三角形面积。</p>
+              <figure><img src="../assets/images/area-transformations/double-triangle.svg" width="480" height="340" loading="lazy" alt="复制一个三角形，为什么要除以二？的题面示意图；标注条件见题目文字。"><figcaption>先看题面，不按图上量出的长度作答。</figcaption></figure>
+            </div>
+            <details class="area-hint"><summary>看一点提示</summary><p>拼完后得到的是一份原图，还是两份原图？</p></details>
+            <details class="area-solution">
+              <summary>查看完整讲解与演示</summary>
+              <div class="area-demo" data-area-demo="double-triangle">
+                <figure><img class="area-demo-image" src="../assets/images/area-transformations/double-triangle-solution.svg" width="480" height="340" loading="lazy" alt="复制一个三角形，为什么要除以二？的关键转化图；详细理由见下方步骤。"><figcaption>橙色为重点区域；青色、黄色辅助比较。动画是观察工具，成立的理由在下方。</figcaption></figure>
+                <div class="area-demo-controls" hidden>
+                  <div class="area-demo-buttons">
+                    <button type="button" data-action="previous" aria-label="上一步：复制一个三角形，为什么要除以二？">上一步</button>
+                    <button type="button" data-action="play" aria-label="播放演示：复制一个三角形，为什么要除以二？">播放演示</button>
+                    <button type="button" data-action="next" aria-label="下一步：复制一个三角形，为什么要除以二？">下一步</button>
+                    <button type="button" data-action="reset" aria-label="复位演示：复制一个三角形，为什么要除以二？">复位</button>
+                  </div>
+                  <label class="area-progress-label">转化进度<input type="range" min="0" max="2" step="0.01" value="0" aria-label="转化进度：复制一个三角形，为什么要除以二？"></label>
+                  <p class="area-demo-status" aria-live="polite"></p>
+                </div>
+              </div>
+              <ol class="area-steps">
+                <li>认清一组底和高：底长 8 cm，高是到这条底所在直线的垂直距离 6 cm。</li>
+                <li>复制一份，绕右侧斜边的中点旋转半周。两份三角形沿这条边拼接，没有空隙和重叠。</li>
+                <li>新平行四边形的底 8 cm、高 6 cm，面积是 48 cm²。这是两份原三角形，所以一份要除以二。</li>
+              </ol>
+              <p class="area-answer">8 × 6 ÷ 2 = 24（cm²）</p>
+              <p class="area-check"><b>想明白再走：</b>两份必须完全相同；“除以二”来自份数，不是看见三角形就机械套一个二。</p>
+            </details>
+            <a class="area-back-link" href="#area-methods">返回方法目录 ↑</a>
+          </article>
+          <article class="area-problem" id="problem-double-trapezoid" aria-labelledby="title-double-trapezoid">
+            <h4 id="title-double-trapezoid"><span class="area-problem-number">05</span>两个梯形，上下底接成一条底</h4>
+            <div class="area-question">
+              <p>梯形上底 6 cm、下底 12 cm、垂直高 7 cm。用两个完全相同的梯形拼图，求一个梯形的面积。</p>
+              <figure><img src="../assets/images/area-transformations/double-trapezoid.svg" width="480" height="340" loading="lazy" alt="两个梯形，上下底接成一条底的题面示意图；标注条件见题目文字。"><figcaption>先看题面，不按图上量出的长度作答。</figcaption></figure>
+            </div>
+            <details class="area-hint"><summary>看一点提示</summary><p>把第二个梯形倒过来，观察新图形的底由哪两段组成。</p></details>
+            <details class="area-solution">
+              <summary>查看完整讲解与演示</summary>
+              <div class="area-demo" data-area-demo="double-trapezoid">
+                <figure><img class="area-demo-image" src="../assets/images/area-transformations/double-trapezoid-solution.svg" width="480" height="340" loading="lazy" alt="两个梯形，上下底接成一条底的关键转化图；详细理由见下方步骤。"><figcaption>橙色为重点区域；青色、黄色辅助比较。动画是观察工具，成立的理由在下方。</figcaption></figure>
+                <div class="area-demo-controls" hidden>
+                  <div class="area-demo-buttons">
+                    <button type="button" data-action="previous" aria-label="上一步：两个梯形，上下底接成一条底">上一步</button>
+                    <button type="button" data-action="play" aria-label="播放演示：两个梯形，上下底接成一条底">播放演示</button>
+                    <button type="button" data-action="next" aria-label="下一步：两个梯形，上下底接成一条底">下一步</button>
+                    <button type="button" data-action="reset" aria-label="复位演示：两个梯形，上下底接成一条底">复位</button>
+                  </div>
+                  <label class="area-progress-label">转化进度<input type="range" min="0" max="2" step="0.01" value="0" aria-label="转化进度：两个梯形，上下底接成一条底"></label>
+                  <p class="area-demo-status" aria-live="polite"></p>
+                </div>
+              </div>
+              <ol class="area-steps">
+                <li>上底 6 cm、下底 12 cm，两条底互相平行；7 cm 是它们之间的垂直距离。</li>
+                <li>复制一份，绕右腰中点旋转半周，两份沿右腰拼接。新平行四边形的底为 6 + 12 = 18 cm，高仍为 7 cm。</li>
+                <li>先求两份的总面积 18 × 7，再除以二。不能只取下底乘高。</li>
+              </ol>
+              <p class="area-answer">(6 + 12) × 7 ÷ 2 = 63（cm²）</p>
+              <p class="area-check"><b>想明白再走：</b>上底平移、腰变斜都不会改变这个推导，前提是上下底和垂直高不变。</p>
+            </details>
+            <a class="area-back-link" href="#area-methods">返回方法目录 ↑</a>
+          </article>
+        </section>
+        <section class="area-method" id="area-rotate" aria-labelledby="area-rotate-title">
+          <header class="area-method-heading"><p class="area-eyebrow">05 / 方法</p><h3 id="area-rotate-title">旋转找关系</h3><p>认准旋转中心、角度和重合的边。</p></header>
+          <article class="area-problem" id="problem-rotate" aria-labelledby="title-rotate">
+            <h4 id="title-rotate"><span class="area-problem-number">06</span>四个角一样，斜正方形有多大？</h4>
+            <div class="area-question">
+              <p>边长 7 cm 的大正方形内，四个角各放一个完全相同的直角三角形，直角边分别长 3 cm 和 4 cm。中间橙色部分已知是正方形，求它的面积。</p>
+              <figure><img src="../assets/images/area-transformations/rotate.svg" width="480" height="340" loading="lazy" alt="四个角一样，斜正方形有多大？的题面示意图；标注条件见题目文字。"><figcaption>先看题面，不按图上量出的长度作答。</figcaption></figure>
+            </div>
+            <details class="area-hint"><summary>看一点提示</summary><p>斜正方形的边长不知道，但整个大正方形和四个角能不能算？</p></details>
+            <details class="area-solution">
+              <summary>查看完整讲解与演示</summary>
+              <div class="area-demo" data-area-demo="rotate">
+                <figure><img class="area-demo-image" src="../assets/images/area-transformations/rotate-solution.svg" width="480" height="340" loading="lazy" alt="四个角一样，斜正方形有多大？的关键转化图；详细理由见下方步骤。"><figcaption>橙色为重点区域；青色、黄色辅助比较。动画是观察工具，成立的理由在下方。</figcaption></figure>
+                <div class="area-demo-controls" hidden>
+                  <div class="area-demo-buttons">
+                    <button type="button" data-action="previous" aria-label="上一步：四个角一样，斜正方形有多大？">上一步</button>
+                    <button type="button" data-action="play" aria-label="播放演示：四个角一样，斜正方形有多大？">播放演示</button>
+                    <button type="button" data-action="next" aria-label="下一步：四个角一样，斜正方形有多大？">下一步</button>
+                    <button type="button" data-action="reset" aria-label="复位演示：四个角一样，斜正方形有多大？">复位</button>
+                  </div>
+                  <label class="area-progress-label">转化进度<input type="range" min="0" max="2" step="0.01" value="0" aria-label="转化进度：四个角一样，斜正方形有多大？"></label>
+                  <p class="area-demo-status" aria-live="polite"></p>
+                </div>
+              </div>
+              <ol class="area-steps">
+                <li>每个角的直角三角形面积是 3 × 4 ÷ 2 = 6 cm²。图中边长 7 cm，也等于 3 + 4。</li>
+                <li>把一个角的三角形绕大正方形中心旋转，可以依次与其他三个角重合。四个角既然完全相同，总面积就是 4 × 6。</li>
+                <li>大正方形面积 7 × 7 = 49 cm²，减去四个角的 24 cm²，得到中间面积；不用先求斜边。</li>
+              </ol>
+              <p class="area-answer">7 × 7 − 4 × (3 × 4 ÷ 2) = 25（cm²）</p>
+              <p class="area-check"><b>想明白再走：</b>本题已说明四个角完全相同、中间是正方形。不能仅因图画得像，就把它们当作已知条件。</p>
+            </details>
+            <a class="area-back-link" href="#area-methods">返回方法目录 ↑</a>
+          </article>
+        </section>
+        <section class="area-method" id="area-fold" aria-labelledby="area-fold-title">
+          <header class="area-method-heading"><p class="area-eyebrow">06 / 方法</p><h3 id="area-fold-title">对称与翻折</h3><p>先分清材料面积与覆盖面积。</p></header>
+          <article class="area-problem" id="problem-fold" aria-labelledby="title-fold">
+            <h4 id="title-fold"><span class="area-problem-number">07</span>折成两层，覆盖面积要算几份？</h4>
+            <div class="area-question">
+              <p>一张边长 8 cm 的正方形纸，沿左上到右下的对角线对折。折好后纸在桌面上覆盖多少平方厘米？纸本身的总面积有没有改变？</p>
+              <figure><img src="../assets/images/area-transformations/fold.svg" width="480" height="340" loading="lazy" alt="折成两层，覆盖面积要算几份？的题面示意图；标注条件见题目文字。"><figcaption>先看题面，不按图上量出的长度作答。</figcaption></figure>
+            </div>
+            <details class="area-hint"><summary>看一点提示</summary><p>区分“纸有多少”和“桌面被覆盖多少”。叠起来的两层不能在桌面上算两次。</p></details>
+            <details class="area-solution">
+              <summary>查看完整讲解与演示</summary>
+              <div class="area-demo" data-area-demo="fold">
+                <figure><img class="area-demo-image" src="../assets/images/area-transformations/fold-solution.svg" width="480" height="340" loading="lazy" alt="折成两层，覆盖面积要算几份？的关键转化图；详细理由见下方步骤。"><figcaption>橙色为重点区域；青色、黄色辅助比较。动画是观察工具，成立的理由在下方。</figcaption></figure>
+                <div class="area-demo-controls" hidden>
+                  <div class="area-demo-buttons">
+                    <button type="button" data-action="previous" aria-label="上一步：折成两层，覆盖面积要算几份？">上一步</button>
+                    <button type="button" data-action="play" aria-label="播放演示：折成两层，覆盖面积要算几份？">播放演示</button>
+                    <button type="button" data-action="next" aria-label="下一步：折成两层，覆盖面积要算几份？">下一步</button>
+                    <button type="button" data-action="reset" aria-label="复位演示：折成两层，覆盖面积要算几份？">复位</button>
+                  </div>
+                  <label class="area-progress-label">转化进度<input type="range" min="0" max="2" step="0.01" value="0" aria-label="转化进度：折成两层，覆盖面积要算几份？"></label>
+                  <p class="area-demo-status" aria-live="polite"></p>
+                </div>
+              </div>
+              <ol class="area-steps">
+                <li>对角线把正方形分成两个完全相同的直角三角形。正方形总面积是 8 × 8 = 64 cm²。</li>
+                <li>沿对角线翻折，上半张与下半张完全重合。动画中的压扁再展开表示翻到另一面，不是把纸剪小。</li>
+                <li>桌面只覆盖半个正方形，因此是 32 cm²；纸本身仍有 64 cm²，只是变成了两层。</li>
+              </ol>
+              <p class="area-answer">覆盖面积：8 × 8 ÷ 2 = 32（cm²）；纸面积仍为 64 cm²。</p>
+              <p class="area-check"><b>想明白再走：</b>面积是否变化，要先说明测量的对象：材料面积与重叠后的覆盖面积是两回事。</p>
+            </details>
+            <a class="area-back-link" href="#area-methods">返回方法目录 ↑</a>
+          </article>
+        </section>
+        <section class="area-method" id="area-equal" aria-labelledby="area-equal-title">
+          <header class="area-method-heading"><p class="area-eyebrow">07 / 方法</p><h3 id="area-equal-title">等积变形</h3><p>底和对应的高不变，面积才不变。</p></header>
+          <article class="area-problem" id="problem-slide" aria-labelledby="title-slide">
+            <h4 id="title-slide"><span class="area-problem-number">08</span>顶点跑到外面，面积还一样吗？</h4>
+            <div class="area-question">
+              <p>三角形底 BC = 6 cm，顶点 P 沿着与 BC 平行的直线移动。这两条平行线相距 5 cm。当 P 移到 B 的左侧时，三角形面积是多少？</p>
+              <figure><img src="../assets/images/area-transformations/slide.svg" width="480" height="340" loading="lazy" alt="顶点跑到外面，面积还一样吗？的题面示意图；标注条件见题目文字。"><figcaption>先看题面，不按图上量出的长度作答。</figcaption></figure>
+            </div>
+            <details class="area-hint"><summary>看一点提示</summary><p>高量到的是底边“所在直线”，不要求垂足在底边这一小段上。</p></details>
+            <details class="area-solution">
+              <summary>查看完整讲解与演示</summary>
+              <div class="area-demo" data-area-demo="slide">
+                <figure><img class="area-demo-image" src="../assets/images/area-transformations/slide-solution.svg" width="480" height="340" loading="lazy" alt="顶点跑到外面，面积还一样吗？的关键转化图；详细理由见下方步骤。"><figcaption>橙色为重点区域；青色、黄色辅助比较。动画是观察工具，成立的理由在下方。</figcaption></figure>
+                <div class="area-demo-controls" hidden>
+                  <div class="area-demo-buttons">
+                    <button type="button" data-action="previous" aria-label="上一步：顶点跑到外面，面积还一样吗？">上一步</button>
+                    <button type="button" data-action="play" aria-label="播放演示：顶点跑到外面，面积还一样吗？">播放演示</button>
+                    <button type="button" data-action="next" aria-label="下一步：顶点跑到外面，面积还一样吗？">下一步</button>
+                    <button type="button" data-action="reset" aria-label="复位演示：顶点跑到外面，面积还一样吗？">复位</button>
+                  </div>
+                  <label class="area-progress-label">转化进度<input type="range" min="0" max="2" step="0.01" value="0" aria-label="转化进度：顶点跑到外面，面积还一样吗？"></label>
+                  <p class="area-demo-status" aria-live="polite"></p>
+                </div>
+              </div>
+              <ol class="area-steps">
+                <li>先固定底 BC。P 所在的轨迹与 BC 平行，两线距离始终是 5 cm。</li>
+                <li>P 向左移到 B 的外侧后，高落在 BC 的延长线上；底还是 6 cm，高还是 5 cm。</li>
+                <li>形状变了，底和高没有变，面积仍是 6 × 5 ÷ 2。这就是拉窗帘成立的条件。</li>
+              </ol>
+              <p class="area-answer">6 × 5 ÷ 2 = 15（cm²）</p>
+              <p class="area-check"><b>想明白再走：</b>能保持面积的是沿平行线移动，不能只说“点动了但底没变”。</p>
+            </details>
+            <a class="area-back-link" href="#area-methods">返回方法目录 ↑</a>
+          </article>
+          <article class="area-problem" id="problem-counterexample" aria-labelledby="title-counterexample">
+            <h4 id="title-counterexample"><span class="area-problem-number">09</span>底一样，面积就一定一样？</h4>
+            <div class="area-question">
+              <p>两个三角形共用长 6 cm 的底 BC。原来 P 到底边所在直线的距离是 5 cm，后来变为 2 cm。两次面积是否相等？</p>
+              <figure><img src="../assets/images/area-transformations/counterexample.svg" width="480" height="340" loading="lazy" alt="底一样，面积就一定一样？的题面示意图；标注条件见题目文字。"><figcaption>先看题面，不按图上量出的长度作答。</figcaption></figure>
+            </div>
+            <details class="area-hint"><summary>看一点提示</summary><p>这次 P 没有沿平行于底边的直线移动。比较的是垂直距离，不是斜边。</p></details>
+            <details class="area-solution">
+              <summary>查看完整讲解与演示</summary>
+              <div class="area-demo" data-area-demo="counterexample">
+                <figure><img class="area-demo-image" src="../assets/images/area-transformations/counterexample-solution.svg" width="480" height="340" loading="lazy" alt="底一样，面积就一定一样？的关键转化图；详细理由见下方步骤。"><figcaption>橙色为重点区域；青色、黄色辅助比较。动画是观察工具，成立的理由在下方。</figcaption></figure>
+                <div class="area-demo-controls" hidden>
+                  <div class="area-demo-buttons">
+                    <button type="button" data-action="previous" aria-label="上一步：底一样，面积就一定一样？">上一步</button>
+                    <button type="button" data-action="play" aria-label="播放演示：底一样，面积就一定一样？">播放演示</button>
+                    <button type="button" data-action="next" aria-label="下一步：底一样，面积就一定一样？">下一步</button>
+                    <button type="button" data-action="reset" aria-label="复位演示：底一样，面积就一定一样？">复位</button>
+                  </div>
+                  <label class="area-progress-label">转化进度<input type="range" min="0" max="2" step="0.01" value="0" aria-label="转化进度：底一样，面积就一定一样？"></label>
+                  <p class="area-demo-status" aria-live="polite"></p>
+                </div>
+              </div>
+              <ol class="area-steps">
+                <li>原三角形的底 6 cm、高 5 cm，面积为 15 cm²。</li>
+                <li>把 P 向底边靠近。底没有变，但垂直高由 5 cm 变成 2 cm。</li>
+                <li>新面积为 6 × 2 ÷ 2 = 6 cm²。两次相差 9 cm²；“同底”等积还缺“等高”。</li>
+              </ol>
+              <p class="area-answer">原来 15 cm²，后来 6 cm²，不相等。</p>
+              <p class="area-check"><b>想明白再走：</b>遇到移动点，先检查轨迹是否平行于选定的底；只看到一条底不变不够。</p>
+            </details>
+            <a class="area-back-link" href="#area-methods">返回方法目录 ↑</a>
+          </article>
+        </section>
+        <section class="area-method" id="area-replace" aria-labelledby="area-replace-title">
+          <header class="area-method-heading"><p class="area-eyebrow">08 / 方法</p><h3 id="area-replace-title">公共部分与等量替换</h3><p>两边加减同一块，面积差保持不变。</p></header>
+          <article class="area-problem" id="problem-overlap" aria-labelledby="title-overlap">
+            <h4 id="title-overlap"><span class="area-problem-number">10</span>交叠多少不知道，仍能比较两块</h4>
+            <div class="area-question">
+              <p>边长 8 cm 和 6 cm 的两个正方形部分重叠。橙色只属于大正方形，青色只属于小正方形，黄色是公共部分。橙色比青色大多少？公共部分的边长没有给出。</p>
+              <figure><img src="../assets/images/area-transformations/overlap.svg" width="480" height="340" loading="lazy" alt="交叠多少不知道，仍能比较两块的题面示意图；标注条件见题目文字。"><figcaption>先看题面，不按图上量出的长度作答。</figcaption></figure>
+            </div>
+            <details class="area-hint"><summary>看一点提示</summary><p>给橙色、青色都加上同一块黄色部分，面积差会变吗？</p></details>
+            <details class="area-solution">
+              <summary>查看完整讲解与演示</summary>
+              <div class="area-demo" data-area-demo="overlap">
+                <figure><img class="area-demo-image" src="../assets/images/area-transformations/overlap-solution.svg" width="480" height="340" loading="lazy" alt="交叠多少不知道，仍能比较两块的关键转化图；详细理由见下方步骤。"><figcaption>橙色为重点区域；青色、黄色辅助比较。动画是观察工具，成立的理由在下方。</figcaption></figure>
+                <div class="area-demo-controls" hidden>
+                  <div class="area-demo-buttons">
+                    <button type="button" data-action="previous" aria-label="上一步：交叠多少不知道，仍能比较两块">上一步</button>
+                    <button type="button" data-action="play" aria-label="播放演示：交叠多少不知道，仍能比较两块">播放演示</button>
+                    <button type="button" data-action="next" aria-label="下一步：交叠多少不知道，仍能比较两块">下一步</button>
+                    <button type="button" data-action="reset" aria-label="复位演示：交叠多少不知道，仍能比较两块">复位</button>
+                  </div>
+                  <label class="area-progress-label">转化进度<input type="range" min="0" max="2" step="0.01" value="0" aria-label="转化进度：交叠多少不知道，仍能比较两块"></label>
+                  <p class="area-demo-status" aria-live="polite"></p>
+                </div>
+              </div>
+              <ol class="area-steps">
+                <li>把黄色公共部分补回橙色，就得到整个大正方形，面积 64 cm²。</li>
+                <li>给青色也补回同一块黄色，得到小正方形，面积 36 cm²。两边加的是同一块，差不变。</li>
+                <li>所以橙色减青色，等于大正方形减小正方形。不需要先算公共部分；本题不能单独求出橙色面积。</li>
+              </ol>
+              <p class="area-answer">8 × 8 − 6 × 6 = 28（cm²）</p>
+              <p class="area-check"><b>想明白再走：</b>“能求两块的差”不等于“能分别求每一块”；重叠面积未知时，要看题目究竟问什么。</p>
+            </details>
+            <a class="area-back-link" href="#area-methods">返回方法目录 ↑</a>
+          </article>
+        </section>
+        <section class="area-method" id="area-ratio" aria-labelledby="area-ratio-title">
+          <header class="area-method-heading"><p class="area-eyebrow">09 / 方法</p><h3 id="area-ratio-title">等分与面积倍数</h3><p>不急着列比例式，先把图分成相同的份。</p></header>
+          <article class="area-problem" id="problem-fan" aria-labelledby="title-fan">
+            <h4 id="title-fan"><span class="area-problem-number">11</span>一条底分成 1 份和 3 份</h4>
+            <div class="area-question">
+              <p>三角形 ABC 中，M 在 BC 上，BM = 4 cm、MC = 12 cm。已知橙色三角形 ABM 面积为 12 cm²，求三角形 AMC 的面积。</p>
+              <figure><img src="../assets/images/area-transformations/fan.svg" width="480" height="340" loading="lazy" alt="一条底分成 1 份和 3 份的题面示意图；标注条件见题目文字。"><figcaption>先看题面，不按图上量出的长度作答。</figcaption></figure>
+            </div>
+            <details class="area-hint"><summary>看一点提示</summary><p>两个小三角形的高是哪一条？每 4 cm 的底对应多少面积？</p></details>
+            <details class="area-solution">
+              <summary>查看完整讲解与演示</summary>
+              <div class="area-demo" data-area-demo="fan">
+                <figure><img class="area-demo-image" src="../assets/images/area-transformations/fan-solution.svg" width="480" height="340" loading="lazy" alt="一条底分成 1 份和 3 份的关键转化图；详细理由见下方步骤。"><figcaption>橙色为重点区域；青色、黄色辅助比较。动画是观察工具，成立的理由在下方。</figcaption></figure>
+                <div class="area-demo-controls" hidden>
+                  <div class="area-demo-buttons">
+                    <button type="button" data-action="previous" aria-label="上一步：一条底分成 1 份和 3 份">上一步</button>
+                    <button type="button" data-action="play" aria-label="播放演示：一条底分成 1 份和 3 份">播放演示</button>
+                    <button type="button" data-action="next" aria-label="下一步：一条底分成 1 份和 3 份">下一步</button>
+                    <button type="button" data-action="reset" aria-label="复位演示：一条底分成 1 份和 3 份">复位</button>
+                  </div>
+                  <label class="area-progress-label">转化进度<input type="range" min="0" max="2" step="0.01" value="0" aria-label="转化进度：一条底分成 1 份和 3 份"></label>
+                  <p class="area-demo-status" aria-live="polite"></p>
+                </div>
+              </div>
+              <ol class="area-steps">
+                <li>从 A 向 BC 作高。两个小三角形同在 BC 所在直线上，共用这条高。</li>
+                <li>把 MC 分成三个 4 cm，每一小段与 A 连成的三角形，都和 ABM 同底长、同高，面积各为 12 cm²。</li>
+                <li>AMC 包含三份这样的面积，所以是 12 × 3。不必先求出高；这种共顶点分底结构有时称为鸟头模型。</li>
+              </ol>
+              <p class="area-answer">12 × (12 ÷ 4) = 36（cm²）</p>
+              <p class="area-check"><b>想明白再走：</b>只能在同高时按底边倍数比较面积；底长三倍但高不同，面积不一定三倍。</p>
+            </details>
+            <a class="area-back-link" href="#area-methods">返回方法目录 ↑</a>
+          </article>
+        </section>
+        <section class="area-method" id="area-inverse" aria-labelledby="area-inverse-title">
+          <header class="area-method-heading"><p class="area-eyebrow">10 / 方法</p><h3 id="area-inverse-title">面积差与逆推</h3><p>从增加或减少的面积中找回长度。</p></header>
+          <article class="area-problem" id="problem-inverse" aria-labelledby="title-inverse">
+            <h4 id="title-inverse"><span class="area-problem-number">12</span>面积增加了，边长增加多少？</h4>
+            <div class="area-question">
+              <p>一个长方形高 6 cm、原来长 10 cm。只把长增加一段，高不变，面积增加了 18 cm²。增加的这段长是多少厘米？</p>
+              <figure><img src="../assets/images/area-transformations/inverse.svg" width="480" height="340" loading="lazy" alt="面积增加了，边长增加多少？的题面示意图；标注条件见题目文字。"><figcaption>先看题面，不按图上量出的长度作答。</figcaption></figure>
+            </div>
+            <details class="area-hint"><summary>看一点提示</summary><p>先把增加的面积单独看成一条长方形。它的另一条边知道吗？</p></details>
+            <details class="area-solution">
+              <summary>查看完整讲解与演示</summary>
+              <div class="area-demo" data-area-demo="inverse">
+                <figure><img class="area-demo-image" src="../assets/images/area-transformations/inverse-solution.svg" width="480" height="340" loading="lazy" alt="面积增加了，边长增加多少？的关键转化图；详细理由见下方步骤。"><figcaption>橙色为重点区域；青色、黄色辅助比较。动画是观察工具，成立的理由在下方。</figcaption></figure>
+                <div class="area-demo-controls" hidden>
+                  <div class="area-demo-buttons">
+                    <button type="button" data-action="previous" aria-label="上一步：面积增加了，边长增加多少？">上一步</button>
+                    <button type="button" data-action="play" aria-label="播放演示：面积增加了，边长增加多少？">播放演示</button>
+                    <button type="button" data-action="next" aria-label="下一步：面积增加了，边长增加多少？">下一步</button>
+                    <button type="button" data-action="reset" aria-label="复位演示：面积增加了，边长增加多少？">复位</button>
+                  </div>
+                  <label class="area-progress-label">转化进度<input type="range" min="0" max="2" step="0.01" value="0" aria-label="转化进度：面积增加了，边长增加多少？"></label>
+                  <p class="area-demo-status" aria-live="polite"></p>
+                </div>
+              </div>
+              <ol class="area-steps">
+                <li>原长方形保留不动，把增加的一条用橙色标出；它与原图一样高，都是 6 cm。</li>
+                <li>增加部分本身就是长方形，面积为 18 cm²。要求的是它的宽，不是原图的长。</li>
+                <li>用面积除以已知高：18 ÷ 6 = 3 cm。原长 10 cm 不参与这一步，也可以算新面积 78 cm² 再验算。</li>
+              </ol>
+              <p class="area-answer">18 ÷ 6 = 3（cm）</p>
+              <p class="area-check"><b>想明白再走：</b>只增加一个方向时才是一条长方形；四周同时加边框，不能直接套用这一步。</p>
+            </details>
+            <a class="area-back-link" href="#area-methods">返回方法目录 ↑</a>
+          </article>
+        </section>
+        <section class="area-method" id="area-grid" aria-labelledby="area-grid-title">
+          <header class="area-method-heading"><p class="area-eyebrow">11 / 方法</p><h3 id="area-grid-title">方格与估测</h3><p>整格、半格、残格，分别处理。</p></header>
+          <article class="area-problem" id="problem-grid" aria-labelledby="title-grid">
+            <h4 id="title-grid"><span class="area-problem-number">13</span>整格和半格，怎样不漏数？</h4>
+            <div class="area-question">
+              <p>每个小方格的边长是 1 cm。橙色纸片的顶点都在格点上，斜线恰好沿小方格的对角线。求面积。</p>
+              <figure><img src="../assets/images/area-transformations/grid.svg" width="480" height="340" loading="lazy" alt="整格和半格，怎样不漏数？的题面示意图；标注条件见题目文字。"><figcaption>先看题面，不按图上量出的长度作答。</figcaption></figure>
+            </div>
+            <details class="area-hint"><summary>看一点提示</summary><p>先数整格，再把沿对角线切开的半格单独标记。</p></details>
+            <details class="area-solution">
+              <summary>查看完整讲解与演示</summary>
+              <div class="area-demo" data-area-demo="grid">
+                <figure><img class="area-demo-image" src="../assets/images/area-transformations/grid-solution.svg" width="480" height="340" loading="lazy" alt="整格和半格，怎样不漏数？的关键转化图；详细理由见下方步骤。"><figcaption>橙色为重点区域；青色、黄色辅助比较。动画是观察工具，成立的理由在下方。</figcaption></figure>
+                <div class="area-demo-controls" hidden>
+                  <div class="area-demo-buttons">
+                    <button type="button" data-action="previous" aria-label="上一步：整格和半格，怎样不漏数？">上一步</button>
+                    <button type="button" data-action="play" aria-label="播放演示：整格和半格，怎样不漏数？">播放演示</button>
+                    <button type="button" data-action="next" aria-label="下一步：整格和半格，怎样不漏数？">下一步</button>
+                    <button type="button" data-action="reset" aria-label="复位演示：整格和半格，怎样不漏数？">复位</button>
+                  </div>
+                  <label class="area-progress-label">转化进度<input type="range" min="0" max="2" step="0.01" value="0" aria-label="转化进度：整格和半格，怎样不漏数？"></label>
+                  <p class="area-demo-status" aria-live="polite"></p>
+                </div>
+              </div>
+              <ol class="area-steps">
+                <li>按行数整格：从上到下依次是 3、2、2、3 个，共 10 个整格。每格面积 1 cm²。</li>
+                <li>青色标出的 4 个边缘格都恰好是一半，因为斜线连接小方格的两个对角顶点。两个半格合一整格。</li>
+                <li>4 个半格合成 2 个整格，加上原来的 10 个，得到 12 cm²。也可用 4 × 4 减去缺口三角形的 4 cm² 验算。</li>
+              </ol>
+              <p class="area-answer">10 + 4 ÷ 2 = 12（cm²）</p>
+              <p class="area-check"><b>想明白再走：</b>顶点在格点上，不代表每个不完整格都是半格。本题能按半格数，是因为斜线沿小格对角线。</p>
+            </details>
+            <a class="area-back-link" href="#area-methods">返回方法目录 ↑</a>
+          </article>
+          <article class="area-problem" id="problem-estimate" aria-labelledby="title-estimate">
+            <h4 id="title-estimate"><span class="area-problem-number">14</span>弯曲边界，能把每个残格都算半格吗？</h4>
+            <div class="area-question">
+              <p>图中的花坛铺在方格图上，每个小格面积 1 m²。只用数格法，不用圆面积公式，判断它的面积范围。所有与花坛相交的格子都画在图中。</p>
+              <figure><img src="../assets/images/area-transformations/estimate.svg" width="480" height="340" loading="lazy" alt="弯曲边界，能把每个残格都算半格吗？的题面示意图；标注条件见题目文字。"><figcaption>先看题面，不按图上量出的长度作答。</figcaption></figure>
+            </div>
+            <details class="area-hint"><summary>看一点提示</summary><p>完整在花坛里的格子能确定；边界穿过的格子，只知道占了一部分。</p></details>
+            <details class="area-solution">
+              <summary>查看完整讲解与演示</summary>
+              <div class="area-demo" data-area-demo="estimate">
+                <figure><img class="area-demo-image" src="../assets/images/area-transformations/estimate-solution.svg" width="480" height="340" loading="lazy" alt="弯曲边界，能把每个残格都算半格吗？的关键转化图；详细理由见下方步骤。"><figcaption>橙色为重点区域；青色、黄色辅助比较。动画是观察工具，成立的理由在下方。</figcaption></figure>
+                <div class="area-demo-controls" hidden>
+                  <div class="area-demo-buttons">
+                    <button type="button" data-action="previous" aria-label="上一步：弯曲边界，能把每个残格都算半格吗？">上一步</button>
+                    <button type="button" data-action="play" aria-label="播放演示：弯曲边界，能把每个残格都算半格吗？">播放演示</button>
+                    <button type="button" data-action="next" aria-label="下一步：弯曲边界，能把每个残格都算半格吗？">下一步</button>
+                    <button type="button" data-action="reset" aria-label="复位演示：弯曲边界，能把每个残格都算半格吗？">复位</button>
+                  </div>
+                  <label class="area-progress-label">转化进度<input type="range" min="0" max="2" step="0.01" value="0" aria-label="转化进度：弯曲边界，能把每个残格都算半格吗？"></label>
+                  <p class="area-demo-status" aria-live="polite"></p>
+                </div>
+              </div>
+              <ol class="area-steps">
+                <li>先数完全在花坛内部的整格，青色共 12 个。因此花坛面积大于 12 m²。</li>
+                <li>再把被边界穿过的 4 个格子全部算上，一共 16 格，必然比实际面积大。</li>
+                <li>所以实际面积严格在 12 与 16 m² 之间。想估得更准，可以把格子继续细分；不能把每个残格都直接当作半格。</li>
+              </ol>
+              <p class="area-answer">12 m² &lt; 花坛面积 &lt; 16 m²（这是范围，不是精确答案）</p>
+              <p class="area-check"><b>想明白再走：</b>估测要保留“约”或范围。本题只数方格，不要求知道弯曲边界的面积公式。</p>
+            </details>
+            <a class="area-back-link" href="#area-methods">返回方法目录 ↑</a>
+          </article>
+        </section>
+        <section class="area-method" id="area-challenge" aria-labelledby="area-challenge-title">
+          <header class="area-method-heading"><p class="area-eyebrow">12 / 组合运用</p><h3 id="area-challenge-title">组合挑战</h3><p>把前面的方法接起来，不背模型口诀。</p></header>
+          <article class="area-problem" id="problem-swallow" aria-labelledby="title-swallow">
+            <h4 id="title-swallow"><span class="area-problem-number">15</span>燕尾结构：中间的点位置没给</h4>
+            <div class="area-question">
+              <p>三角形 ABC 中，D 在 BC 上，BD = 3 cm、DC = 6 cm；E 是 AD 内部任意一点。已知橙色三角形 ABE 面积为 9 cm²，求三角形 ACE 面积。</p>
+              <figure><img src="../assets/images/area-transformations/swallow.svg" width="480" height="340" loading="lazy" alt="燕尾结构：中间的点位置没给的题面示意图；标注条件见题目文字。"><figcaption>先看题面，不按图上量出的长度作答。</figcaption></figure>
+            </div>
+            <details class="area-hint"><summary>看一点提示</summary><p>先比较 ABD 和 ACD，再比较 EBD 和 ECD。两次都是同高看底。</p></details>
+            <details class="area-solution">
+              <summary>查看完整讲解与演示</summary>
+              <div class="area-demo" data-area-demo="swallow">
+                <figure><img class="area-demo-image" src="../assets/images/area-transformations/swallow-solution.svg" width="480" height="340" loading="lazy" alt="燕尾结构：中间的点位置没给的关键转化图；详细理由见下方步骤。"><figcaption>橙色为重点区域；青色、黄色辅助比较。动画是观察工具，成立的理由在下方。</figcaption></figure>
+                <div class="area-demo-controls" hidden>
+                  <div class="area-demo-buttons">
+                    <button type="button" data-action="previous" aria-label="上一步：燕尾结构：中间的点位置没给">上一步</button>
+                    <button type="button" data-action="play" aria-label="播放演示：燕尾结构：中间的点位置没给">播放演示</button>
+                    <button type="button" data-action="next" aria-label="下一步：燕尾结构：中间的点位置没给">下一步</button>
+                    <button type="button" data-action="reset" aria-label="复位演示：燕尾结构：中间的点位置没给">复位</button>
+                  </div>
+                  <label class="area-progress-label">转化进度<input type="range" min="0" max="2" step="0.01" value="0" aria-label="转化进度：燕尾结构：中间的点位置没给"></label>
+                  <p class="area-demo-status" aria-live="polite"></p>
+                </div>
+              </div>
+              <ol class="area-steps">
+                <li>把 ADC、ADB 两个大三角形一起看：它们到 BC 的高相同，DC 是 BD 的两倍，所以右边大面积是左边的两倍。</li>
+                <li>下方 EDC 和 EDB 也同高，右边下方面积仍是左边的两倍。E 在 AD 上的具体位置不会破坏这个关系。</li>
+                <li>分别从左右大三角形中减去下方部分，右边剩下的 ACE 就是左边 ABE 的两倍：9 × 2。不能因为 E 看着居中，就假定它是中点。</li>
+              </ol>
+              <p class="area-answer">9 × (6 ÷ 3) = 18（cm²）</p>
+              <p class="area-check"><b>想明白再走：</b>E 必须在 AD 上，D 必须在 BC 上；点的位置关系也是已知条件的一部分。</p>
+            </details>
+            <a class="area-back-link" href="#area-methods">返回方法目录 ↑</a>
+          </article>
+          <article class="area-problem" id="problem-butterfly" aria-labelledby="title-butterfly">
+            <h4 id="title-butterfly"><span class="area-problem-number">16</span>蝴蝶结构：为什么不是只乘三？</h4>
+            <div class="area-question">
+              <p>梯形 ABCD 的 AB ∥ DC，上底 AB = 4 cm、下底 DC = 12 cm。对角线 AC、BD 交于 O。已知上方橙色三角形 AOB 面积为 2 cm²，求下方三角形 COD 面积。</p>
+              <figure><img src="../assets/images/area-transformations/butterfly.svg" width="480" height="340" loading="lazy" alt="蝴蝶结构：为什么不是只乘三？的题面示意图；标注条件见题目文字。"><figcaption>先看题面，不按图上量出的长度作答。</figcaption></figure>
+            </div>
+            <details class="area-hint"><summary>看一点提示</summary><p>先把上底、下底作为底比较两个大三角形，再换成共同的对角线 BD 作底。底的三倍关系会用到两次。</p></details>
+            <details class="area-solution">
+              <summary>查看完整讲解与演示</summary>
+              <div class="area-demo" data-area-demo="butterfly">
+                <figure><img class="area-demo-image" src="../assets/images/area-transformations/butterfly-solution.svg" width="480" height="340" loading="lazy" alt="蝴蝶结构：为什么不是只乘三？的关键转化图；详细理由见下方步骤。"><figcaption>橙色为重点区域；青色、黄色辅助比较。动画是观察工具，成立的理由在下方。</figcaption></figure>
+                <div class="area-demo-controls" hidden>
+                  <div class="area-demo-buttons">
+                    <button type="button" data-action="previous" aria-label="上一步：蝴蝶结构：为什么不是只乘三？">上一步</button>
+                    <button type="button" data-action="play" aria-label="播放演示：蝴蝶结构：为什么不是只乘三？">播放演示</button>
+                    <button type="button" data-action="next" aria-label="下一步：蝴蝶结构：为什么不是只乘三？">下一步</button>
+                    <button type="button" data-action="reset" aria-label="复位演示：蝴蝶结构：为什么不是只乘三？">复位</button>
+                  </div>
+                  <label class="area-progress-label">转化进度<input type="range" min="0" max="2" step="0.01" value="0" aria-label="转化进度：蝴蝶结构：为什么不是只乘三？"></label>
+                  <p class="area-demo-status" aria-live="polite"></p>
+                </div>
+              </div>
+              <ol class="area-steps">
+                <li>看大三角形 ABD 和 CBD。以 AB、CD 为底时，它们的高都是梯形的高，因此 CBD 面积是 ABD 的三倍。再改用共同底 BD：说明 C 到 BD 的垂直距离，是 A 到 BD 的三倍。</li>
+                <li>小三角形 AOB 和 COB 共用底 BO，也使用刚才的两条高，因此 COB = 3 × AOB = 6 cm²。另外 ABD 与 ABC 同底 AB、等高；同时减去 AOB，得到 AOD = BOC = 6 cm²。</li>
+                <li>最后看 AOD 和 COD，它们共用底 DO，C 到 BD 的距离仍是 A 到 BD 的三倍，所以 COD = 3 × AOD = 18 cm²。先乘三，再乘三，全程不用相似三角形定理。</li>
+              </ol>
+              <p class="area-answer">2 × 3 × 3 = 18（cm²）</p>
+              <p class="area-check"><b>想明白再走：</b>上下两块的面积不是简单按上下底一倍地比较；这里通过两次换底，把中间的两侧面积关系连起来。</p>
+            </details>
+            <a class="area-back-link" href="#area-methods">返回方法目录 ↑</a>
+          </article>
+          <article class="area-problem" id="problem-two-squares" aria-labelledby="title-two-squares">
+            <h4 id="title-two-squares"><span class="area-problem-number">17</span>两个并排正方形，三角形跨在中间</h4>
+            <div class="area-question">
+              <p>边长 8 cm 和 5 cm 的正方形并排放在同一条底线上，共用部分侧边。P 是大正方形左上顶点，Q 是两正方形相接处的底端，R 是小正方形右上顶点。求橙色三角形 PQR 的面积。</p>
+              <figure><img src="../assets/images/area-transformations/two-squares.svg" width="480" height="340" loading="lazy" alt="两个并排正方形，三角形跨在中间的题面示意图；标注条件见题目文字。"><figcaption>先看题面，不按图上量出的长度作答。</figcaption></figure>
+            </div>
+            <details class="area-hint"><summary>看一点提示</summary><p>把两正方形装进一个长 13 cm、宽 8 cm 的长方形。三角形外面还剩哪三块？</p></details>
+            <details class="area-solution">
+              <summary>查看完整讲解与演示</summary>
+              <div class="area-demo" data-area-demo="two-squares">
+                <figure><img class="area-demo-image" src="../assets/images/area-transformations/two-squares-solution.svg" width="480" height="340" loading="lazy" alt="两个并排正方形，三角形跨在中间的关键转化图；详细理由见下方步骤。"><figcaption>橙色为重点区域；青色、黄色辅助比较。动画是观察工具，成立的理由在下方。</figcaption></figure>
+                <div class="area-demo-controls" hidden>
+                  <div class="area-demo-buttons">
+                    <button type="button" data-action="previous" aria-label="上一步：两个并排正方形，三角形跨在中间">上一步</button>
+                    <button type="button" data-action="play" aria-label="播放演示：两个并排正方形，三角形跨在中间">播放演示</button>
+                    <button type="button" data-action="next" aria-label="下一步：两个并排正方形，三角形跨在中间">下一步</button>
+                    <button type="button" data-action="reset" aria-label="复位演示：两个并排正方形，三角形跨在中间">复位</button>
+                  </div>
+                  <label class="area-progress-label">转化进度<input type="range" min="0" max="2" step="0.01" value="0" aria-label="转化进度：两个并排正方形，三角形跨在中间"></label>
+                  <p class="area-demo-status" aria-live="polite"></p>
+                </div>
+              </div>
+              <ol class="area-steps">
+                <li>补成长方形：长 8 + 5 = 13 cm，高 8 cm，面积 104 cm²。右上方比小正方形多出的高为 8 − 5 = 3 cm。</li>
+                <li>橙色外面恰好有三个直角三角形：左下 8 × 8 ÷ 2；右下 5 × 5 ÷ 2；右上 13 × 3 ÷ 2。它们没有重叠，也刚好填满空白。</li>
+                <li>用大长方形减去这三块：104 − 32 − 12.5 − 19.5 = 40 cm²。关键是补完以后认清每一块的底和高。</li>
+              </ol>
+              <p class="area-answer">13 × 8 − 8 × 8 ÷ 2 − 5 × 5 ÷ 2 − 13 × 3 ÷ 2 = 40（cm²）</p>
+              <p class="area-check"><b>想明白再走：</b>右上空白三角形的底横跨整个 13 cm，不是只用小正方形的 5 cm。</p>
+            </details>
+            <a class="area-back-link" href="#area-methods">返回方法目录 ↑</a>
+          </article>
+          <article class="area-problem" id="problem-roads" aria-labelledby="title-roads">
+            <h4 id="title-roads"><span class="area-problem-number">18</span>两条路相交，重叠部分算几次？</h4>
+            <div class="area-question">
+              <p>长方形草地长 12 m、宽 8 m。一条横向小路宽 1 m，另一条纵向小路宽 2 m，两路互相垂直并贯通草地。求小路总面积，再求剩余草地面积。</p>
+              <figure><img src="../assets/images/area-transformations/roads.svg" width="480" height="340" loading="lazy" alt="两条路相交，重叠部分算几次？的题面示意图；标注条件见题目文字。"><figcaption>先看题面，不按图上量出的长度作答。</figcaption></figure>
+            </div>
+            <details class="area-hint"><summary>看一点提示</summary><p>把横路和竖路分别算一遍，交叉的小长方形被算了几次？</p></details>
+            <details class="area-solution">
+              <summary>查看完整讲解与演示</summary>
+              <div class="area-demo" data-area-demo="roads">
+                <figure><img class="area-demo-image" src="../assets/images/area-transformations/roads-solution.svg" width="480" height="340" loading="lazy" alt="两条路相交，重叠部分算几次？的关键转化图；详细理由见下方步骤。"><figcaption>橙色为重点区域；青色、黄色辅助比较。动画是观察工具，成立的理由在下方。</figcaption></figure>
+                <div class="area-demo-controls" hidden>
+                  <div class="area-demo-buttons">
+                    <button type="button" data-action="previous" aria-label="上一步：两条路相交，重叠部分算几次？">上一步</button>
+                    <button type="button" data-action="play" aria-label="播放演示：两条路相交，重叠部分算几次？">播放演示</button>
+                    <button type="button" data-action="next" aria-label="下一步：两条路相交，重叠部分算几次？">下一步</button>
+                    <button type="button" data-action="reset" aria-label="复位演示：两条路相交，重叠部分算几次？">复位</button>
+                  </div>
+                  <label class="area-progress-label">转化进度<input type="range" min="0" max="2" step="0.01" value="0" aria-label="转化进度：两条路相交，重叠部分算几次？"></label>
+                  <p class="area-demo-status" aria-live="polite"></p>
+                </div>
+              </div>
+              <ol class="area-steps">
+                <li>横路面积是 12 × 1 = 12 m²，纵路面积是 8 × 2 = 16 m²。先相加得到 28 m²。</li>
+                <li>交叉处是长 2 m、宽 1 m 的长方形，面积 2 m²。分别算两条路时它被算了两次，实际只需要一次，所以减去一次。</li>
+                <li>小路总面积为 12 + 16 − 2 = 26 m²。整块草地原面积 96 m²，剩余草地为 96 − 26 = 70 m²。</li>
+              </ol>
+              <p class="area-answer">小路 26 m²；剩余草地 70 m²。</p>
+              <p class="area-check"><b>想明白再走：</b>道路宽度要量垂直于道路延伸方向的距离；这题道路横竖放置，宽度的含义是明确的。</p>
+            </details>
+            <a class="area-back-link" href="#area-methods">返回方法目录 ↑</a>
+          </article>
+          <article class="area-problem" id="problem-midpoints" aria-labelledby="title-midpoints">
+            <h4 id="title-midpoints"><span class="area-problem-number">19</span>连起三个中点，倒三角形占多少？</h4>
+            <div class="area-question">
+              <p>三角形 ABC 的底 BC = 12 cm、对应高 8 cm。D、E、F 分别是 AB、AC、BC 的中点，连接 DE、EF、FD。求中间橙色三角形 DEF 的面积。</p>
+              <figure><img src="../assets/images/area-transformations/midpoints.svg" width="480" height="340" loading="lazy" alt="连起三个中点，倒三角形占多少？的题面示意图；标注条件见题目文字。"><figcaption>先看题面，不按图上量出的长度作答。</figcaption></figure>
+            </div>
+            <details class="area-hint"><summary>看一点提示</summary><p>不用先求 DE 长度。试着证明三个角上的小三角形，每个都是大三角形的四分之一。</p></details>
+            <details class="area-solution">
+              <summary>查看完整讲解与演示</summary>
+              <div class="area-demo" data-area-demo="midpoints">
+                <figure><img class="area-demo-image" src="../assets/images/area-transformations/midpoints-solution.svg" width="480" height="340" loading="lazy" alt="连起三个中点，倒三角形占多少？的关键转化图；详细理由见下方步骤。"><figcaption>橙色为重点区域；青色、黄色辅助比较。动画是观察工具，成立的理由在下方。</figcaption></figure>
+                <div class="area-demo-controls" hidden>
+                  <div class="area-demo-buttons">
+                    <button type="button" data-action="previous" aria-label="上一步：连起三个中点，倒三角形占多少？">上一步</button>
+                    <button type="button" data-action="play" aria-label="播放演示：连起三个中点，倒三角形占多少？">播放演示</button>
+                    <button type="button" data-action="next" aria-label="下一步：连起三个中点，倒三角形占多少？">下一步</button>
+                    <button type="button" data-action="reset" aria-label="复位演示：连起三个中点，倒三角形占多少？">复位</button>
+                  </div>
+                  <label class="area-progress-label">转化进度<input type="range" min="0" max="2" step="0.01" value="0" aria-label="转化进度：连起三个中点，倒三角形占多少？"></label>
+                  <p class="area-demo-status" aria-live="polite"></p>
+                </div>
+              </div>
+              <ol class="area-steps">
+                <li>大三角形面积为 12 × 8 ÷ 2 = 48 cm²。先连接 BE：因为 E 是 AC 中点，ABE 与 ABC 共用从 B 到 AC 的高，ABE 面积是 24 cm²。</li>
+                <li>D 是 AB 中点。ADE 与 ABE 共用从 E 到 AB 的高，底 AD 是 AB 的一半，因此 ADE 面积是 12 cm²。用同样的“两次取半”，另两个角上的三角形也各为 12 cm²。</li>
+                <li>中间部分恰好是大三角形减去三个角：48 − 12 − 12 − 12 = 12 cm²。不需要使用三角形中位线定理。</li>
+              </ol>
+              <p class="area-answer">12 × 8 ÷ 2 ÷ 4 = 12（cm²）</p>
+              <p class="area-check"><b>想明白再走：</b>三边都要有中点条件。若只知道某一边被平分，不能就把中间部分认成四分之一。</p>
+            </details>
+            <a class="area-back-link" href="#area-methods">返回方法目录 ↑</a>
+          </article>
+          <article class="area-problem" id="problem-opposite" aria-labelledby="title-opposite">
+            <h4 id="title-opposite"><span class="area-problem-number">20</span>四块面积，先找相对的两块</h4>
+            <div class="area-question">
+              <p>长 12 cm、宽 8 cm 的长方形内有一点 P，连接 P 与四个顶点。上方三角形面积 18 cm²，左方三角形面积 14 cm²。求右方橙色三角形面积。</p>
+              <figure><img src="../assets/images/area-transformations/opposite.svg" width="480" height="340" loading="lazy" alt="四块面积，先找相对的两块的题面示意图；标注条件见题目文字。"><figcaption>先看题面，不按图上量出的长度作答。</figcaption></figure>
+            </div>
+            <details class="area-hint"><summary>看一点提示</summary><p>左右两个三角形若分别以长方形的两条竖边作底，它们的两条高加起来是多少？</p></details>
+            <details class="area-solution">
+              <summary>查看完整讲解与演示</summary>
+              <div class="area-demo" data-area-demo="opposite">
+                <figure><img class="area-demo-image" src="../assets/images/area-transformations/opposite-solution.svg" width="480" height="340" loading="lazy" alt="四块面积，先找相对的两块的关键转化图；详细理由见下方步骤。"><figcaption>橙色为重点区域；青色、黄色辅助比较。动画是观察工具，成立的理由在下方。</figcaption></figure>
+                <div class="area-demo-controls" hidden>
+                  <div class="area-demo-buttons">
+                    <button type="button" data-action="previous" aria-label="上一步：四块面积，先找相对的两块">上一步</button>
+                    <button type="button" data-action="play" aria-label="播放演示：四块面积，先找相对的两块">播放演示</button>
+                    <button type="button" data-action="next" aria-label="下一步：四块面积，先找相对的两块">下一步</button>
+                    <button type="button" data-action="reset" aria-label="复位演示：四块面积，先找相对的两块">复位</button>
+                  </div>
+                  <label class="area-progress-label">转化进度<input type="range" min="0" max="2" step="0.01" value="0" aria-label="转化进度：四块面积，先找相对的两块"></label>
+                  <p class="area-demo-status" aria-live="polite"></p>
+                </div>
+              </div>
+              <ol class="area-steps">
+                <li>左右两个三角形的底都可选长方形的竖边，底长都是 8 cm。它们对应的高分别是 P 到左右边的水平距离。</li>
+                <li>这两条水平距离刚好拼成长方形的长 12 cm。因此左右两块面积之和是 8 × 12 ÷ 2 = 48 cm²，与 P 的具体位置无关。</li>
+                <li>减去已知左方面积 14 cm²，右方就是 34 cm²。上方的 18 cm² 对这个问题不是必要条件；若要算下方，才用 48 − 18 = 30。</li>
+              </ol>
+              <p class="area-answer">8 × 12 ÷ 2 − 14 = 34（cm²）</p>
+              <p class="area-check"><b>想明白再走：</b>面积用底与对应的垂直高。这里换成竖边作底，高就是水平方向，不一定画成竖线。</p>
+            </details>
+            <a class="area-back-link" href="#area-methods">返回方法目录 ↑</a>
+          </article>
+        </section>
+        <section class="area-reading-note" aria-labelledby="area-reading-title">
+          <h3 id="area-reading-title">做完一题，问自己三句话</h3>
+          <ol><li>我保留了什么：长度、角度、底和高，还是两块面积的差？</li><li>我凭什么这样做：图上的已知条件，还是只因为看着像？</li><li>算出的是一份、两份、材料面积、覆盖面积，还是一个估计范围？</li></ol>
+          <p>本页按多边形面积和直观转化组织，组合挑战属于拓展，不要求用勾股或相似定理。弯曲边界只用于数格估测，不把圆面积公式作为前置知识。具体教材册次和校内进度可能不同，不能把“能用小学知识解释”当成“学校已经讲过”。</p>
+          <p>课程依据：<a href="https://www.moe.gov.cn/srcsite/A26/s8001/202204/t20220420_619921.html">教育部《义务教育数学课程标准（2022年版）》发布页</a>。方法分类是本页的教学编排，不是官方题型目录。</p>
+        </section>
+      </section>
+
       <section class="more" aria-labelledby="curtain-title">
         <h2 id="curtain-title">继续练：拉窗帘与图形面积</h2>
         <div class="summary">
@@ -188,5 +908,6 @@
       </footer>
     </div>
     <script src="../assets/js/liang-ge-zheng-fang-xing-qiu-cheng-se-mian-ji.js"></script>
+    <script src="../assets/js/area-transformations.js?v=17dec74bb1c0"></script>
   </body>
 </html>
