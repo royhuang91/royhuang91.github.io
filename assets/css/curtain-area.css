@@ -143,6 +143,10 @@ body {
   touch-action: pan-x;
 }
 
+.demo-image-diagonal {
+  touch-action: none;
+}
+
 .demo-controls {
   min-width: 0;
 }
@@ -158,6 +162,17 @@ body {
   height: 44px;
   margin: 8px 0;
   accent-color: var(--curtain-teal);
+}
+
+.demo-controls select {
+  width: 100%;
+  min-height: 44px;
+  margin: 8px 0 16px;
+  padding: 8px;
+  border: 1px solid var(--color-line);
+  background: var(--curtain-panel);
+  color: var(--color-ink);
+  font: inherit;
 }
 
 .demo-buttons {
@@ -183,7 +198,7 @@ body {
   color: #ffffff;
 }
 
-.curtain-section :is(button, input, summary):focus-visible {
+.curtain-section :is(button, input, select, summary):focus-visible {
   outline: 3px solid var(--color-accent);
   outline-offset: 4px;
 }
@@ -235,6 +250,16 @@ body {
   background: var(--curtain-panel);
 }
 
+.practice-card-wide {
+  grid-column: 1 / -1;
+}
+
+.square-figures {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
 .practice-card > p {
   margin: 10px 0;
 }
@@ -264,7 +289,8 @@ body {
 
 @media (max-width: 900px) {
   .curtain-demo,
-  .practice-grid {
+  .practice-grid,
+  .square-figures {
     grid-template-columns: minmax(0, 1fr);
   }
 

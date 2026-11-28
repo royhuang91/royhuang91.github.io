@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 360" font-family="sans-serif" font-weight="600"><title>共顶排列的三个正方形，P、E、R 共线</title><rect width="560" height="360" fill="#17573a"/>
+  <polygon points="56,148 308,80 504,276" fill="#f4f8f4" fill-opacity="0.04" stroke="#f4f8f4" stroke-width="2.5" stroke-linejoin="round"/>
+  <polygon points="56,148 308,80 308,220" fill="#f59145" fill-opacity="0.72" stroke="#f59145" stroke-width="2.5" stroke-linejoin="round"/>
+  <polygon points="504,276 308,80 308,220" fill="#83dce0" fill-opacity="0.72" stroke="#83dce0" stroke-width="2.5" stroke-linejoin="round"/>
+  <polygon points="56,80 168,80 168,192 56,192" fill="none" fill-opacity="0.72" stroke="#f4f8f4" stroke-width="2.5" stroke-linejoin="round"/>
+  <polygon points="168,80 308,80 308,220 168,220" fill="none" fill-opacity="0.72" stroke="#f4f8f4" stroke-width="2.5" stroke-linejoin="round"/>
+  <polygon points="308,80 504,80 504,276 308,276" fill="none" fill-opacity="0.72" stroke="#f4f8f4" stroke-width="2.5" stroke-linejoin="round"/>
+  <line x1="308" y1="80" x2="308" y2="276" stroke="#ffd23e" stroke-width="2.5" stroke-dasharray="7 6"/>
+  <line x1="56" y1="148" x2="308" y2="148" stroke="#83dce0" stroke-width="2.5" stroke-dasharray="7 6"/>
+  <line x1="308" y1="276" x2="504" y2="276" stroke="#83dce0" stroke-width="2.5" stroke-dasharray="7 6"/>
+  <line x1="296" y1="148" x2="296" y2="160" stroke="#83dce0" stroke-width="2.5"/>
+  <line x1="296" y1="160" x2="308" y2="160" stroke="#83dce0" stroke-width="2.5"/>
+  <text x="75" y="53" fill="#ffd23e" font-size="32">8 m</text>
+  <text x="205" y="53" fill="#ffd23e" font-size="32">10 m</text>
+  <text x="410" y="53" fill="#ffd23e" font-size="32" text-anchor="end">14 m</text>
+  <text x="320" y="113" fill="#f4f8f4" font-size="32">D</text>
+  <text x="320" y="253" fill="#f4f8f4" font-size="32">E</text>
+  <text x="540" y="313" fill="#f4f8f4" font-size="32" text-anchor="end">R</text>
+  <circle cx="56" cy="148" r="15" fill="none" stroke="#ffd23e" stroke-width="2"/>
+  <circle cx="56" cy="148" r="7" fill="#ffd23e"/>
+  <text x="72" y="186" fill="#ffd23e" font-size="32">P</text>
+  </svg>

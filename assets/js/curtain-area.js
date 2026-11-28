@@ -26,10 +26,10 @@
       (x > 400 ? ' text-anchor="end"' : "") + '>' + escaped + '</text>';
   }
 
-  function point(x, y, name) {
+  function point(x, y, name, below) {
     return '<circle cx="' + x + '" cy="' + y + '" r="15" fill="none" stroke="' + gold +
       '" stroke-width="2"/><circle cx="' + x + '" cy="' + y + '" r="7" fill="' + gold + '"/>' +
-      label(x + 16, y - 14, name || "P", gold);
+      label(x + 16, y + (below ? 38 : -14), name || "P", gold);
   }
 
   function height(x, top, bottom) {
@@ -44,13 +44,93 @@
       (y + tall) + " " + x + "," + (y + tall));
   }
 
-  function picture(type, value) {
+  function pairedSquares(value, variant) {
+    var source;
+    var target;
+    var b;
+    var c;
+    var names;
+    var result;
+    var construction = "";
+    switch (variant) {
+      case "small-horizontal":
+        source = [76, 300]; target = [316, 300]; b = [316, 132]; c = [484, 132];
+        names = label(40, 336, "A") + label(290, 112, "B") + label(520, 112, "C") +
+          label(520, 336, "D") + label(320, 336, "A′");
+        construction = line(40, 132, 520, 132, teal, true);
+        result = "固定底 BC，A 沿水平线移到 A′。底 BC = 7 cm，高 = 7 cm，面积始终为 24.5 cm²；10 cm 不必代入面积公式。";
+        break;
+      case "small-diagonal":
+        source = [76, 60]; target = [316, 300]; b = [316, 132]; c = [484, 300];
+        names = label(40, 52, "A") + label(290, 112, "B") + label(520, 336, "C") + label(320, 336, "D");
+        result = "固定斜底 BC，沿与 BC 平行的 AD 移动，面积不变。移到 D 后改选底 DC = 7 cm、高 BD = 7 cm，面积为 24.5 cm²。";
+        break;
+      case "mixed-height":
+        source = [76, 60]; target = [316, 60]; b = [316, 300]; c = [484, 300];
+        names = label(40, 52, "A") + label(290, 336, "B") + label(520, 336, "C") + label(325, 104, "D");
+        result = "固定底 BC，A 沿大正方形的上边移到 D。底 BC = 7 cm，高 DB = 10 cm，面积始终为 35 cm²。";
+        break;
+      case "large-diagonal":
+        source = [484, 132]; target = [316, 300]; b = [76, 300]; c = [316, 60];
+        names = label(540, 174, "A") + label(40, 336, "B") + label(325, 104, "C") + label(320, 336, "D");
+        result = "固定大正方形的斜底 BC，A 沿 AD 移到 D。移到 D 后改选底 BD = 10 cm、高 CD = 10 cm，面积为 50 cm²；不是小正方形的一半。";
+        break;
+    }
+    var x = source[0] + (target[0] - source[0]) * value / 100;
+    var y = source[1] + (target[1] - source[1]) * value / 100;
+    if (variant === "small-horizontal") { construction += height(x, 300, 132); }
+    if (variant === "mixed-height") { construction += height(x, 60, 300); }
+    return {
+      drawing: polygon(source.join(",") + " " + b.join(",") + " " + c.join(","), chalk, 0.04) +
+        polygon(target.join(",") + " " + b.join(",") + " " + c.join(","), teal, 0.12) +
+        polygon(x + "," + y + " " + b.join(",") + " " + c.join(","), orange) +
+        rectangle(76, 60, 240, 240) + rectangle(316, 132, 168, 168) + construction +
+        line(source[0], source[1], target[0], target[1], teal, true) +
+        line(b[0], b[1], c[0], c[1], gold) + names +
+        label(150, 338, "10 cm", gold) + label(390, 338, "7 cm", gold) +
+        point(x, y, value === 0 ? "P=A" : value === 100 ? (variant === "small-horizontal" ? "P=A′" : "P=D") : "P"),
+      result: result,
+      handle: [x, y],
+      track: [source, target]
+    };
+  }
+
+  function doubleCurtain(value, stage) {
+    var first = stage === "first";
+    var source = first ? [40, 240] : [520, 160];
+    var target = first ? [180, 300] : [380, 300];
+    var x = source[0] + (target[0] - source[0]) * value / 100;
+    var y = source[1] + (target[1] - source[1]) * value / 100;
+    var current = first ? x + "," + y + " 520,160 380,100" : "180,300 " + x + "," + y + " 380,100";
+    var before = first ? "40,240 520,160 380,100" : "180,300 520,160 380,100";
+    var result = first ? "第一拉：固定 BC，沿 AD 把 A 移到 D，△ABC 与 △DBC 等积。完成后继续第二拉。" :
+      value === 100 ? "两次等积替换：△ABC = △DBC = △DEC 的面积 = 10 × 10 ÷ 2 = 50 cm²。" :
+        "第二拉：A 已移到 D。固定 DC，沿 BE 把 B 移到 E，终点将成为大正方形的一半。";
+    return {
+      drawing: polygon(before, chalk, 0.04) + polygon(current, orange) +
+        rectangle(40, 100, 140, 140) + rectangle(180, 100, 200, 200) + rectangle(380, 160, 140, 140) +
+        (first ? line(40, 300, 180, 300, teal, true) + line(40, 240, 40, 300, teal, true) +
+          line(380, 100, 520, 100, teal, true) + line(520, 100, 520, 160, teal, true) : "") +
+        line(source[0], source[1], target[0], target[1], teal, true) +
+        (first ? line(520, 160, 380, 100, gold) : line(180, 300, 380, 100, gold)) +
+        label(20, 274, "A") + label(550, 195, "B") + label(350, 88, "C") +
+        label(155, 335, "D") + label(390, 335, "E") +
+        label(80, 70, "7 cm", gold) + label(225, 70, "10 cm", gold) + label(485, 70, "7 cm", gold) +
+        point(x, y, value === 0 ? (first ? "P=A" : "P=B") : value === 100 ? (first ? "P=D" : "P=E") : "P"),
+      result: result,
+      handle: [x, y],
+      track: [source, target]
+    };
+  }
+
+  function picture(type, value, variant) {
     var drawing = "";
     var result = "";
     var handle;
     var x;
     var y;
     var intersection;
+    var track;
     switch (type) {
       case "triangle":
         x = 130 + value * 30;
@@ -187,12 +267,43 @@
           " cm²；两高之和 8 cm，面积总和始终为 48 cm²。";
         handle = [280, y];
         break;
+      case "paired-squares":
+        var paired = pairedSquares(value, variant);
+        drawing = paired.drawing;
+        result = paired.result;
+        handle = paired.handle;
+        track = paired.track;
+        break;
+      case "double-curtain":
+        var doubleStep = doubleCurtain(value, variant);
+        drawing = doubleStep.drawing;
+        result = doubleStep.result;
+        handle = doubleStep.handle;
+        track = doubleStep.track;
+        break;
+      case "three-squares":
+        y = 148 - 68 * value / 100;
+        drawing = polygon("56,148 308,80 504,276", chalk, 0.04) +
+          polygon("56," + y + " 308,80 308,220", orange) +
+          polygon("504,276 308,80 308,220", teal) +
+          rectangle(56, 80, 112, 112) + rectangle(168, 80, 140, 140) + rectangle(308, 80, 196, 196) +
+          line(308, 80, 308, 276, gold, true) + line(56, y, 308, y, teal, true) +
+          line(308, 276, 504, 276, teal, true) +
+          line(296, y, 296, y + 12, teal) + line(296, y + 12, 308, y + 12, teal) +
+          label(75, 53, "8 m", gold) + label(205, 53, "10 m", gold) + label(410, 53, "14 m", gold) +
+          label(320, 113, "D") + label(320, 253, "E") + label(540, 313, "R") + point(56, y, "P", true);
+        result = "共用竖直底 DE = 10 m；左、右两高分别为 18 m、14 m，面积为 90 m²、70 m²，总和 160 m²。" +
+          (value === 0 ? "起点时 P、E、R 共线，两块合成原阴影三角形。" : "移动后两块仍等积，外轮廓通常已不是原来的三角形。不要把 PR 当作一直不变的直线边。");
+        handle = [56, y];
+        track = [[56, 148], [56, 80]];
+        break;
     }
     return {
       svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 360" font-family="sans-serif" font-weight="600">' +
         '<rect width="560" height="360" fill="#17573a"/>' + drawing + '</svg>',
       result: result,
-      handle: handle
+      handle: handle,
+      track: track
     };
   }
 
@@ -203,6 +314,8 @@
     var readout = card.querySelector("output");
     var status = card.querySelector(".demo-status");
     var config = card.dataset;
+    var variant = card.querySelector(".square-variant");
+    var nextStage = card.querySelector(".demo-next-stage");
     var initial = Number(range.value);
     var min = Number(range.min);
     var max = Number(range.max);
@@ -210,6 +323,7 @@
     var frameId = null;
     var dragging = false;
     var handle;
+    var track;
     image.width = 560;
     image.height = 360;
     image.draggable = false;
@@ -218,11 +332,19 @@
 
     function draw(value) {
       range.value = String(value);
-      var diagram = picture(config.scene, Number(range.value));
+      var diagram = picture(config.scene, Number(range.value), variant ? variant.value : null);
       handle = diagram.handle;
+      track = diagram.track;
+      if (track) {
+        image.className = "demo-image" + (track[0][0] === track[1][0] ? " demo-image-vertical" :
+          track[0][1] === track[1][1] ? "" : " demo-image-diagonal");
+      }
       image.src = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(diagram.svg);
       image.alt = card.querySelector("h3").textContent + "。" + diagram.result;
       readout.textContent = diagram.result;
+      if (nextStage) {
+        nextStage.disabled = Number(range.value) < max || variant.selectedIndex === variant.options.length - 1;
+      }
     }
 
     function stop() {
@@ -241,22 +363,31 @@
         status.textContent = "已按减少动态效果设置展示另一端；可用滑块逐步比较。";
         return;
       }
-      var keys = [Number(range.value), min, max, initial];
+      var keys;
+      if (config.playback === "forward") {
+        if (Number(range.value) === max) { draw(min); }
+        keys = [Number(range.value), max];
+      } else {
+        keys = [Number(range.value), min, max, initial];
+        if (keys[0] === min) { keys.shift(); }
+      }
+      var segmentCount = keys.length - 1;
       var started = null;
       play.textContent = "暂停演示";
       status.textContent = "正在比较两端与中间位置，注意底、高和面积。";
       function frame(time) {
         if (started === null) { started = time; }
-        var progress = Math.min(3, (time - started) / 1800);
-        var segment = Math.min(2, Math.floor(progress));
+        var progress = Math.min(segmentCount, (time - started) / 1800);
+        var segment = Math.min(segmentCount - 1, Math.floor(progress));
         var local = progress - segment;
         var eased = local * local * (3 - 2 * local);
         draw(keys[segment] + (keys[segment + 1] - keys[segment]) * eased);
-        if (progress < 3) { frameId = requestAnimationFrame(frame); }
+        if (progress < segmentCount) { frameId = requestAnimationFrame(frame); }
         else {
           frameId = null;
           play.textContent = "播放演示";
-          status.textContent = "演示结束。继续拖动金色点，或用方向键操作滑块。";
+          status.textContent = nextStage && !nextStage.disabled ? "本步完成，点击“下一拉”继续。" :
+            "演示结束。继续拖动金色点，或用方向键操作滑块。";
         }
       }
       frameId = requestAnimationFrame(frame);
@@ -272,6 +403,25 @@
       draw(initial);
       status.textContent = "已恢复初始位置。";
     });
+    if (variant) {
+      variant.disabled = false;
+      var changeVariant = function () {
+        stop();
+        card.querySelectorAll("[data-square-case]").forEach(function (note) {
+          note.hidden = note.dataset.squareCase !== variant.value;
+        });
+        draw(initial);
+        status.textContent = "已切换，进度已复位；可播放或操作滑块。";
+      };
+      variant.addEventListener("change", changeVariant);
+      if (nextStage) {
+        nextStage.addEventListener("click", function () {
+          variant.selectedIndex += 1;
+          changeVariant();
+          range.focus();
+        });
+      }
+    }
 
     function position(event) {
       var bounds = image.getBoundingClientRect();
@@ -294,8 +444,15 @@
         p = [280 + (p[0] - 280) * Math.cos(angle) - (p[1] - 200) * Math.sin(angle),
           200 + (p[0] - 280) * Math.sin(angle) + (p[1] - 200) * Math.cos(angle)];
       }
-      var value = config.axis === "y" ? (Number(config.origin) - p[1]) / Number(config.scale) :
-        (p[0] - Number(config.origin)) / Number(config.scale);
+      var value;
+      if (track) {
+        var dx = track[1][0] - track[0][0];
+        var dy = track[1][1] - track[0][1];
+        value = ((p[0] - track[0][0]) * dx + (p[1] - track[0][1]) * dy) / (dx * dx + dy * dy) * 100;
+      } else {
+        value = config.axis === "y" ? (Number(config.origin) - p[1]) / Number(config.scale) :
+          (p[0] - Number(config.origin)) / Number(config.scale);
+      }
       draw(Math.max(min, Math.min(max, value)));
     });
     function endDrag() {
