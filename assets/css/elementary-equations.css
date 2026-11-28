@@ -4,6 +4,8 @@
   --equation-panel: #fffcf5;
   --equation-grid: #e9e7dd;
   --equation-known: #ece8d8;
+  --equation-ochre: #8b4b13;
+  --equation-ochre-soft: #f4e4cb;
 }
 
 html {
@@ -175,6 +177,17 @@ html {
   overflow-wrap: anywhere;
 }
 
+.equation-system {
+  margin-block: 20px;
+  padding-left: 12px;
+  border-left: 3px solid var(--equation-blue);
+}
+
+.equation-system .equation {
+  margin-block: 6px;
+  font-size: clamp(18px, 2.7vw, 28px);
+}
+
 .model {
   margin: 16px 0;
   padding: 24px;
@@ -258,6 +271,13 @@ html {
   font-weight: 700;
 }
 
+.tile-second {
+  border: 2px solid var(--equation-ochre);
+  background: var(--equation-ochre-soft);
+  color: var(--equation-ochre);
+  font-weight: 700;
+}
+
 .tile-removed {
   border-style: dashed;
   text-decoration: line-through;
@@ -302,6 +322,31 @@ html {
   border: 2px solid var(--equation-blue);
   background: var(--equation-blue-soft);
   color: var(--equation-blue);
+}
+
+.bar-second {
+  border: 2px solid var(--equation-ochre);
+  background: var(--equation-ochre-soft);
+  color: var(--equation-ochre);
+}
+
+.comparison {
+  display: grid;
+  gap: 16px;
+}
+
+.comparison-row {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 80px;
+  align-items: center;
+  gap: 12px;
+}
+
+.comparison-total {
+  color: var(--equation-blue);
+  font-size: 17px;
+  font-weight: 600;
+  text-align: center;
 }
 
 .step-reason {
@@ -502,6 +547,15 @@ html {
     min-height: 40px;
     padding: 4px 8px;
     font-size: 16px;
+  }
+
+  .comparison-row {
+    grid-template-columns: 32px minmax(0, 1fr) 56px;
+    gap: 6px;
+  }
+
+  .comparison-total {
+    font-size: 15px;
   }
 
   .bar-part {
