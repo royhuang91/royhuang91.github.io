@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="description" content="五年级附加题：两个正方形边长 4 cm 和 5 cm，EC = 3 cm，求橙色面积。保留原题，补充适合上海五年级的11类面积转化方法、20道代表题与可控动画，讲解默认折叠。">
+    <meta name="description" content="五年级附加题：两个正方形边长 4 cm 和 5 cm，EC = 3 cm，求橙色面积。保留原题，补充适合上海五年级的11类面积转化方法、23道代表题、图形模型推导与可控动画，讲解默认折叠。">
     <meta name="theme-color" content="#f6f4ed">
     <title>两个正方形与面积转化题库 · 渔夫的小站</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
@@ -23,7 +23,7 @@
 
       <main id="main">
       <nav class="area-page-nav" aria-label="本页内容">
-        <a href="#original-problem">两正方形原题</a><a href="#area-methods">面积方法目录</a><a href="#area-challenge">组合挑战</a><a href="../index.html#learning">学习目录</a>
+        <a href="#original-problem">两正方形原题</a><a href="#area-methods">面积方法目录</a><a href="#area-models">图形模型</a><a href="#area-challenge">组合挑战</a><a href="../index.html#learning">学习目录</a>
       </nav>
       <header class="problem" id="original-problem">
         <h1>两个正方形，<span class="hl">橙色</span>部分有多大？</h1>
@@ -184,7 +184,7 @@
         <header class="area-library-intro">
           <p class="area-eyebrow">给上海五年级同学的面积思考课</p>
           <h2 id="area-library-title">面积题，换个思路。</h2>
-          <p>从上面的两正方形出发，补齐 11 类常用思路，再用组合题把它们连起来。分类用来帮助理解，不是要求背下来的口诀，也不表示穷尽所有题目变式。</p>
+          <p>从上面的两正方形出发，补齐 11 类常用思路，增加图形模型的识别与推导，再用组合题把它们连起来。分类用来帮助理解，不是要求背下来的口诀，也不表示穷尽所有题目变式。</p>
           <p>先自己画一画；卡住时只展开提示，最后再看完整讲解。每题需要的知识都会在讲解中说明，动画可以暂停、分步和复位。未启用 JavaScript 时，仍可看关键对照图与完整文字。</p>
           <details class="area-prerequisites">
             <summary>开始前：底、高、面积相加和一半</summary>
@@ -205,7 +205,8 @@
           <a href="#area-ratio"><span>09</span>等分与面积倍数</a>
           <a href="#area-inverse"><span>10</span>面积差与逆推</a>
           <a href="#area-grid"><span>11</span>方格与估测</a>
-          <a href="#area-challenge"><span>12</span>组合挑战</a>
+          <a href="#area-models"><span>12</span>图形模型解题</a>
+          <a href="#area-challenge"><span>13</span>组合挑战</a>
         </nav>
         <section class="area-method" id="area-whole" aria-labelledby="area-whole-title">
           <header class="area-method-heading"><p class="area-eyebrow">01 / 方法</p><h3 id="area-whole-title">整体观察与分割</h3><p>先看边界，再决定分还是合。</p></header>
@@ -578,7 +579,7 @@
               <ol class="area-steps">
                 <li>从 A 向 BC 作高。两个小三角形同在 BC 所在直线上，共用这条高。</li>
                 <li>把 MC 分成三个 4 cm，每一小段与 A 连成的三角形，都和 ABM 同底长、同高，面积各为 12 cm²。</li>
-                <li>AMC 包含三份这样的面积，所以是 12 × 3。不必先求出高；这种共顶点分底结构有时称为鸟头模型。</li>
+                <li>AMC 包含三份这样的面积，所以是 12 × 3。不必先求出高；这种同高分底的方法，也是后面共角模型推导的基础。</li>
               </ol>
               <p class="area-answer">12 × (12 ÷ 4) = 36（cm²）</p>
               <p class="area-check"><b>想明白再走：</b>只能在同高时按底边倍数比较面积；底长三倍但高不同，面积不一定三倍。</p>
@@ -688,8 +689,180 @@
             <a class="area-back-link" href="#area-methods">返回方法目录 ↑</a>
           </article>
         </section>
+        <section class="area-method" id="area-models" aria-labelledby="area-models-title">
+          <header class="area-method-heading"><p class="area-eyebrow">12 / 图形模型</p><h3 id="area-models-title">认图、核条件，再用模型解题</h3><p>六种常用结构：等高分底、共角（鸟头）、燕尾、蝴蝶、沙漏、中点。每个结论都从底和高推出来，先自己想，再展开讲解。</p></header>
+          <details class="area-prerequisites">
+            <summary>先弄清名称：蝴蝶、沙漏和鸟头有什么关系？</summary>
+            <p>这些名称便于记住图形，教辅中的叫法会有重叠。这里把任意凸四边形的对角线面积关系称为“通用蝴蝶”；增加两底平行的条件，才有“梯形蝴蝶”的两侧等面积和底长平方关系。</p>
+            <p>“沙漏”单独看两个共交点、对应边共线、底边平行的三角形；补上两条外边，就是梯形蝴蝶的上下两块。因此二者有共同的面积关系。“鸟头”在不少讲解中也叫“共角”；下面明确写出点在哪些边上。</p>
+            <p>名称参考：<a href="https://file.xueersi.com/handout/2013/08/05/13756697432464.pdf">学而思《蝴蝶模型》原始讲义</a>区分了一般四边形和梯形情形。以下图形与题解为本页编写，具体以每题给出的条件为准。</p>
+          </details>
+          <nav class="area-method-nav" aria-label="图形模型目录">
+            <a href="#model-equal-base"><span>M1</span>等高分底</a>
+            <a href="#model-common-angle"><span>M2</span>共角（鸟头）</a>
+            <a href="#model-swallow"><span>M3</span>燕尾</a>
+            <a href="#model-butterfly"><span>M4</span>通用蝴蝶</a>
+            <a href="#model-hourglass"><span>M5</span>沙漏</a>
+            <a href="#model-midpoints"><span>M6</span>中点结构</a>
+          </nav>
+          <article class="area-problem" id="model-equal-base" aria-labelledby="title-model-equal-base">
+            <h4 id="title-model-equal-base"><span class="area-problem-number">M1</span>等高分底：先看底边分成几份</h4>
+            <div class="area-question">
+              <p>识别图形：几个三角形的顶点相同，底都在同一直线上。先认清它们到这条直线的垂直高，而不是比较斜边。</p>
+              <figure><img src="../assets/images/area-transformations/fan.svg" width="480" height="340" loading="lazy" alt="等高分底：先看底边分成几份的识别图；条件见题目文字。"><figcaption>先核对平行、共线和中点等条件，不能只看图像什么。</figcaption></figure>
+            </div>
+            <details class="area-solution">
+              <summary>查看模型推导与例题入口</summary>
+              <ol class="area-steps">
+                <li>成立条件：底边共线、顶点相同，所以对应的高相同。更一般地，只要高相等，也可以按底边倍数比较面积。</li>
+                <li>底相同长的每一小段，对应的三角形等面积。底分成几份，就有几份这样的面积。</li>
+                <li>例如第 11 题把 12 cm 的底分成三个 4 cm，每份面积都是 12 cm²，所以右边三份共 36 cm²。</li>
+              </ol>
+              <p class="area-answer">同高时：底长几倍，面积就是几倍。</p>
+              <p class="area-check"><b>适用条件再检查：</b>不能只看共顶点；如果底不在同一直线上，又没有其他等高条件，就不能直接按底分份。</p>
+              <p class="area-check"><a class="area-back-link" href="#problem-fan">去看第 11 题：分底倍数 →</a></p>
+            </details>
+            <a class="area-back-link" href="#area-models">返回模型目录 ↑</a>
+          </article>
+          <article class="area-problem" id="model-common-angle" aria-labelledby="title-model-common-angle">
+            <h4 id="title-model-common-angle"><span class="area-problem-number">M2</span>共角（鸟头）：两条边分别取几份</h4>
+            <div class="area-question">
+              <p>三角形 ABC 的面积是 60 cm²。D 是 AB 的中点，E 在线段 AC 上，AE : EC = 2 : 1。连接 DE，求橙色三角形 ADE 的面积。两图共用顶点 A 处的角。</p>
+              <figure><img src="../assets/images/area-transformations/model-common-angle.svg" width="480" height="340" loading="lazy" alt="共角（鸟头）：两条边分别取几份的识别图；条件见题目文字。"><figcaption>先核对平行、共线和中点等条件，不能只看图像什么。</figcaption></figure>
+            </div>
+            <details class="area-hint"><summary>看一点提示</summary><p>先连接 DC：第一次按 AD 与 AB 比，第二次按 AE 与 AC 比。注意 AE : EC 不等于 AE : AC。</p></details>
+            <details class="area-solution">
+              <summary>查看模型推导与分步演示</summary>
+              <div class="area-demo" data-area-demo="model-common-angle">
+                <figure><img class="area-demo-image" src="../assets/images/area-transformations/model-common-angle-solution.svg" width="480" height="340" loading="lazy" alt="共角（鸟头）：两条边分别取几份的关键推导图；详细理由见下方步骤。"><figcaption>逐步标出共同底和要比较的面积；请把图与下面的三步推理对应起来。</figcaption></figure>
+                <div class="area-demo-controls" hidden>
+                  <div class="area-demo-buttons">
+                    <button type="button" data-action="previous" aria-label="上一步：共角（鸟头）：两条边分别取几份">上一步</button>
+                    <button type="button" data-action="play" aria-label="播放演示：共角（鸟头）：两条边分别取几份">播放演示</button>
+                    <button type="button" data-action="next" aria-label="下一步：共角（鸟头）：两条边分别取几份">下一步</button>
+                    <button type="button" data-action="reset" aria-label="复位：共角（鸟头）：两条边分别取几份">复位</button>
+                  </div>
+                  <label class="area-progress-label">推导进度<input type="range" min="0" max="2" step="0.01" value="0" aria-label="推导进度：共角（鸟头）：两条边分别取几份"></label>
+                  <p class="area-demo-status" aria-live="polite"></p>
+                </div>
+              </div>
+              <ol class="area-steps">
+                <li>连接 DC。D 是 AB 的中点，所以三角形 ADC 与 ABC 同高，底 AD 是 AB 的一半，面积是 60 ÷ 2 = 30 cm²。</li>
+                <li>在三角形 ADC 内比较 ADE 与 ADC：它们以 AE、AC 为底，共用从 D 到 AC 的高。AE : EC = 2 : 1，说明 AE 占整个 AC 的三份之二。</li>
+                <li>所以 ADE 面积是 30 ÷ 3 × 2 = 20 cm²。两次按底分份连起来，就是共角关系：面积所占份数，等于两条夹边各占份数的乘积。</li>
+              </ol>
+              <p class="area-answer">60 ÷ 2 ÷ 3 × 2 = 20（cm²）</p>
+              <p class="area-check"><b>适用条件再检查：</b>本例 D、E 分别在线段 AB、AC 上。两条边都缩短了，不能只取一次一半；也不能把 AE : EC 直接当成 AE : AC。</p>
+            </details>
+            <a class="area-back-link" href="#area-models">返回模型目录 ↑</a>
+          </article>
+          <article class="area-problem" id="model-swallow" aria-labelledby="title-model-swallow">
+            <h4 id="title-model-swallow"><span class="area-problem-number">M3</span>燕尾：大块与小块保持同一个倍数</h4>
+            <div class="area-question">
+              <p>识别图形：D 在三角形 ABC 的底 BC 上，E 在 AD 内部；连接 BE、CE，看上方两块的面积怎样比较。E 不需要是中点。</p>
+              <figure><img src="../assets/images/area-transformations/swallow.svg" width="480" height="340" loading="lazy" alt="燕尾：大块与小块保持同一个倍数的识别图；条件见题目文字。"><figcaption>先核对平行、共线和中点等条件，不能只看图像什么。</figcaption></figure>
+            </div>
+            <details class="area-solution">
+              <summary>查看模型推导与例题入口</summary>
+              <ol class="area-steps">
+                <li>D 在 BC 上时，大三角形 ABD、ACD 同高，面积按 BD、DC 的倍数比较。</li>
+                <li>E 在 AD 上时，下方三角形 EBD、ECD 也同高，仍然按同一组 BD、DC 比较。</li>
+                <li>两边分别减去下方部分，倍数关系保持：ABE 与 ACE 的面积比等于 BD 与 DC 的长度比。第 15 题的右边两倍关系正是这样得到的。</li>
+              </ol>
+              <p class="area-answer">面积 ABE : 面积 ACE = BD : DC。</p>
+              <p class="area-check"><b>适用条件再检查：</b>E 必须在 AD 上，D 必须在 BC 上；缺了这些共线条件，不能只因图像燕尾就套结论。</p>
+              <p class="area-check"><a class="area-back-link" href="#problem-swallow">去看第 15 题：燕尾结构 →</a></p>
+            </details>
+            <a class="area-back-link" href="#area-models">返回模型目录 ↑</a>
+          </article>
+          <article class="area-problem" id="model-butterfly" aria-labelledby="title-model-butterfly">
+            <h4 id="title-model-butterfly"><span class="area-problem-number">M4</span>通用蝴蝶：对边不平行，也能求面积</h4>
+            <div class="area-question">
+              <p>凸四边形 ABCD 的对角线 AC、BD 交于内部一点 O。上方 AOB 面积 6 cm²，右方 BOC 面积 18 cm²，下方 COD 面积 24 cm²，求左方 AOD 面积。本题没有给出 AB 与 DC 平行。</p>
+              <figure><img src="../assets/images/area-transformations/model-butterfly.svg" width="480" height="340" loading="lazy" alt="通用蝴蝶：对边不平行，也能求面积的识别图；条件见题目文字。"><figcaption>先核对平行、共线和中点等条件，不能只看图像什么。</figcaption></figure>
+            </div>
+            <details class="area-hint"><summary>看一点提示</summary><p>先把 BO 当作共同底，再换成 DO 作共同底。两次比较沿用的是同一对高。</p></details>
+            <details class="area-solution">
+              <summary>查看模型推导与分步演示</summary>
+              <div class="area-demo" data-area-demo="model-butterfly">
+                <figure><img class="area-demo-image" src="../assets/images/area-transformations/model-butterfly-solution.svg" width="480" height="340" loading="lazy" alt="通用蝴蝶：对边不平行，也能求面积的关键推导图；详细理由见下方步骤。"><figcaption>逐步标出共同底和要比较的面积；请把图与下面的三步推理对应起来。</figcaption></figure>
+                <div class="area-demo-controls" hidden>
+                  <div class="area-demo-buttons">
+                    <button type="button" data-action="previous" aria-label="上一步：通用蝴蝶：对边不平行，也能求面积">上一步</button>
+                    <button type="button" data-action="play" aria-label="播放演示：通用蝴蝶：对边不平行，也能求面积">播放演示</button>
+                    <button type="button" data-action="next" aria-label="下一步：通用蝴蝶：对边不平行，也能求面积">下一步</button>
+                    <button type="button" data-action="reset" aria-label="复位：通用蝴蝶：对边不平行，也能求面积">复位</button>
+                  </div>
+                  <label class="area-progress-label">推导进度<input type="range" min="0" max="2" step="0.01" value="0" aria-label="推导进度：通用蝴蝶：对边不平行，也能求面积"></label>
+                  <p class="area-demo-status" aria-live="polite"></p>
+                </div>
+              </div>
+              <ol class="area-steps">
+                <li>AOB 与 COB 共用底 BO。右方面积 18 是上方 6 的三倍，所以 C 到直线 BD 的垂直距离，是 A 到直线 BD 的三倍。</li>
+                <li>换成 DO 作共同底，比较 AOD 与 COD。仍然用 A、C 到同一直线 BD 的两条高，所以 COD 面积也必然是 AOD 的三倍。</li>
+                <li>下方 24 ÷ 3 = 8 cm²，就是左方面积。把这两次关系合起来，也可写成“上方面积 × 下方面积 = 左方面积 × 右方面积”：6 × 24 = 8 × 18。</li>
+              </ol>
+              <p class="area-answer">24 ÷ (18 ÷ 6) = 8（cm²）</p>
+              <p class="area-check"><b>适用条件再检查：</b>本题左右两块是 8 和 18，并不相等。一般凸四边形只保证相对面积的乘积关系，不能套用梯形才有的左右等积。</p>
+              <p class="area-check"><a class="area-back-link" href="#problem-butterfly">再看第 16 题：梯形蝴蝶特例 →</a></p>
+            </details>
+            <a class="area-back-link" href="#area-models">返回模型目录 ↑</a>
+          </article>
+          <article class="area-problem" id="model-hourglass" aria-labelledby="title-model-hourglass">
+            <h4 id="title-model-hourglass"><span class="area-problem-number">M5</span>沙漏：两条底平行，怎样连用两次倍数</h4>
+            <div class="area-question">
+              <p>A、O、C 在同一直线上，B、O、D 在另一条直线上，O 分别在 AC、BD 内部。AB ∥ DC，AB = 4 cm、DC = 6 cm。上方三角形 AOB 面积 8 cm²，求下方三角形 COD 面积。</p>
+              <figure><img src="../assets/images/area-transformations/model-hourglass.svg" width="480" height="340" loading="lazy" alt="沙漏：两条底平行，怎样连用两次倍数的识别图；条件见题目文字。"><figcaption>先核对平行、共线和中点等条件，不能只看图像什么。</figcaption></figure>
+            </div>
+            <details class="area-hint"><summary>看一点提示</summary><p>先补连 AD、BC，外面就出现一个梯形。把底长 4 : 6 看成 2 : 3，连续比较两次。</p></details>
+            <details class="area-solution">
+              <summary>查看模型推导与分步演示</summary>
+              <div class="area-demo" data-area-demo="model-hourglass">
+                <figure><img class="area-demo-image" src="../assets/images/area-transformations/model-hourglass-solution.svg" width="480" height="340" loading="lazy" alt="沙漏：两条底平行，怎样连用两次倍数的关键推导图；详细理由见下方步骤。"><figcaption>逐步标出共同底和要比较的面积；请把图与下面的三步推理对应起来。</figcaption></figure>
+                <div class="area-demo-controls" hidden>
+                  <div class="area-demo-buttons">
+                    <button type="button" data-action="previous" aria-label="上一步：沙漏：两条底平行，怎样连用两次倍数">上一步</button>
+                    <button type="button" data-action="play" aria-label="播放演示：沙漏：两条底平行，怎样连用两次倍数">播放演示</button>
+                    <button type="button" data-action="next" aria-label="下一步：沙漏：两条底平行，怎样连用两次倍数">下一步</button>
+                    <button type="button" data-action="reset" aria-label="复位：沙漏：两条底平行，怎样连用两次倍数">复位</button>
+                  </div>
+                  <label class="area-progress-label">推导进度<input type="range" min="0" max="2" step="0.01" value="0" aria-label="推导进度：沙漏：两条底平行，怎样连用两次倍数"></label>
+                  <p class="area-demo-status" aria-live="polite"></p>
+                </div>
+              </div>
+              <ol class="area-steps">
+                <li>补连 AD、BC。大三角形 ABD、CBD 以 AB、CD 为底时等高，面积比为 4 : 6 = 2 : 3。改以 BD 为共同底，说明 A、C 到直线 BD 的高也是 2 : 3。</li>
+                <li>AOB 与 COB 共用底 BO，因此右方 COB = 8 ÷ 2 × 3 = 12 cm²。又因为 ABD 与 ABC 同底 AB、等高，减去共同的 AOB，得到左方 AOD 也是 12 cm²。</li>
+                <li>最后以 DO 为共同底，AOD 与 COD 的高仍是 2 : 3，所以 COD = 12 ÷ 2 × 3 = 18 cm²。这相当于底长 2 : 3，面积为 4 : 9；这里的倍数用了两次，不是只乘一次。</li>
+              </ol>
+              <p class="area-answer">8 ÷ 2 × 3 ÷ 2 × 3 = 18（cm²）</p>
+              <p class="area-check"><b>适用条件再检查：</b>两组对应边共线、交点在两组端点内部、两底平行，三个条件都要核对。没有平行条件时，不能只凭两条底的长度使用这条关系。</p>
+            </details>
+            <a class="area-back-link" href="#area-models">返回模型目录 ↑</a>
+          </article>
+          <article class="area-problem" id="model-midpoints" aria-labelledby="title-model-midpoints">
+            <h4 id="title-model-midpoints"><span class="area-problem-number">M6</span>中点结构：一次取半，再取半</h4>
+            <div class="area-question">
+              <p>识别图形：三角形三边各有一个中点，连接三个中点，得到三个角上的三角形和中间的倒三角形。先用等高关系解释，不预设中位线定理。</p>
+              <figure><img src="../assets/images/area-transformations/midpoints.svg" width="480" height="340" loading="lazy" alt="中点结构：一次取半，再取半的识别图；条件见题目文字。"><figcaption>先核对平行、共线和中点等条件，不能只看图像什么。</figcaption></figure>
+            </div>
+            <details class="area-solution">
+              <summary>查看模型推导与例题入口</summary>
+              <ol class="area-steps">
+                <li>先连接一个顶点与对边中点。共用高、底减半，得到大三角形的一半。</li>
+                <li>再利用另一条边上的中点，把刚才的一半再分成两份等面积。角上的一块因此是整体的四分之一。</li>
+                <li>另两个角同理各占四分之一。中间倒三角形是整体减去三个角，也占四分之一；可以到第 19 题看完整作图。</li>
+              </ol>
+              <p class="area-answer">三边中点都给出时：四块各占原三角形面积的四分之一。</p>
+              <p class="area-check"><b>适用条件再检查：</b>只给一条边中点，不足以推出四块等面积；要先核对三个中点条件是否齐全。</p>
+              <p class="area-check"><a class="area-back-link" href="#problem-midpoints">去看第 19 题：三边中点 →</a></p>
+            </details>
+            <a class="area-back-link" href="#area-models">返回模型目录 ↑</a>
+          </article>
+        </section>
+
         <section class="area-method" id="area-challenge" aria-labelledby="area-challenge-title">
-          <header class="area-method-heading"><p class="area-eyebrow">12 / 组合运用</p><h3 id="area-challenge-title">组合挑战</h3><p>把前面的方法接起来，不背模型口诀。</p></header>
+          <header class="area-method-heading"><p class="area-eyebrow">13 / 组合运用</p><h3 id="area-challenge-title">组合挑战</h3><p>把前面的方法接起来，不背模型口诀。</p></header>
           <article class="area-problem" id="problem-swallow" aria-labelledby="title-swallow">
             <h4 id="title-swallow"><span class="area-problem-number">15</span>燕尾结构：中间的点位置没给</h4>
             <div class="area-question">
@@ -723,24 +896,24 @@
             <a class="area-back-link" href="#area-methods">返回方法目录 ↑</a>
           </article>
           <article class="area-problem" id="problem-butterfly" aria-labelledby="title-butterfly">
-            <h4 id="title-butterfly"><span class="area-problem-number">16</span>蝴蝶结构：为什么不是只乘三？</h4>
+            <h4 id="title-butterfly"><span class="area-problem-number">16</span>梯形蝴蝶：为什么不是只乘三？</h4>
             <div class="area-question">
               <p>梯形 ABCD 的 AB ∥ DC，上底 AB = 4 cm、下底 DC = 12 cm。对角线 AC、BD 交于 O。已知上方橙色三角形 AOB 面积为 2 cm²，求下方三角形 COD 面积。</p>
-              <figure><img src="../assets/images/area-transformations/butterfly.svg" width="480" height="340" loading="lazy" alt="蝴蝶结构：为什么不是只乘三？的题面示意图；标注条件见题目文字。"><figcaption>先看题面，不按图上量出的长度作答。</figcaption></figure>
+              <figure><img src="../assets/images/area-transformations/butterfly.svg" width="480" height="340" loading="lazy" alt="梯形蝴蝶：为什么不是只乘三？的题面示意图；标注条件见题目文字。"><figcaption>先看题面，不按图上量出的长度作答。</figcaption></figure>
             </div>
             <details class="area-hint"><summary>看一点提示</summary><p>先把上底、下底作为底比较两个大三角形，再换成共同的对角线 BD 作底。底的三倍关系会用到两次。</p></details>
             <details class="area-solution">
               <summary>查看完整讲解与演示</summary>
               <div class="area-demo" data-area-demo="butterfly">
-                <figure><img class="area-demo-image" src="../assets/images/area-transformations/butterfly-solution.svg" width="480" height="340" loading="lazy" alt="蝴蝶结构：为什么不是只乘三？的关键转化图；详细理由见下方步骤。"><figcaption>橙色为重点区域；青色、黄色辅助比较。动画是观察工具，成立的理由在下方。</figcaption></figure>
+                <figure><img class="area-demo-image" src="../assets/images/area-transformations/butterfly-solution.svg" width="480" height="340" loading="lazy" alt="梯形蝴蝶：为什么不是只乘三？的关键转化图；详细理由见下方步骤。"><figcaption>橙色为重点区域；青色、黄色辅助比较。动画是观察工具，成立的理由在下方。</figcaption></figure>
                 <div class="area-demo-controls" hidden>
                   <div class="area-demo-buttons">
-                    <button type="button" data-action="previous" aria-label="上一步：蝴蝶结构：为什么不是只乘三？">上一步</button>
-                    <button type="button" data-action="play" aria-label="播放演示：蝴蝶结构：为什么不是只乘三？">播放演示</button>
-                    <button type="button" data-action="next" aria-label="下一步：蝴蝶结构：为什么不是只乘三？">下一步</button>
-                    <button type="button" data-action="reset" aria-label="复位演示：蝴蝶结构：为什么不是只乘三？">复位</button>
+                    <button type="button" data-action="previous" aria-label="上一步：梯形蝴蝶：为什么不是只乘三？">上一步</button>
+                    <button type="button" data-action="play" aria-label="播放演示：梯形蝴蝶：为什么不是只乘三？">播放演示</button>
+                    <button type="button" data-action="next" aria-label="下一步：梯形蝴蝶：为什么不是只乘三？">下一步</button>
+                    <button type="button" data-action="reset" aria-label="复位演示：梯形蝴蝶：为什么不是只乘三？">复位</button>
                   </div>
-                  <label class="area-progress-label">转化进度<input type="range" min="0" max="2" step="0.01" value="0" aria-label="转化进度：蝴蝶结构：为什么不是只乘三？"></label>
+                  <label class="area-progress-label">转化进度<input type="range" min="0" max="2" step="0.01" value="0" aria-label="转化进度：梯形蝴蝶：为什么不是只乘三？"></label>
                   <p class="area-demo-status" aria-live="polite"></p>
                 </div>
               </div>
@@ -908,6 +1081,6 @@
       </footer>
     </div>
     <script src="../assets/js/liang-ge-zheng-fang-xing-qiu-cheng-se-mian-ji.js"></script>
-    <script src="../assets/js/area-transformations.js?v=17dec74bb1c0"></script>
+    <script src="../assets/js/area-transformations.js?v=22ace05920ea"></script>
   </body>
 </html>
