@@ -123,7 +123,7 @@
     };
   }
 
-  function picture(type, value, variant) {
+  function picture(type, value, variant, upperValue) {
     var drawing = "";
     var result = "";
     var handle;
@@ -131,6 +131,7 @@
     var y;
     var intersection;
     var track;
+    var upperHandle;
     switch (type) {
       case "triangle":
         x = 130 + value * 30;
@@ -256,13 +257,19 @@
         break;
       case "two-roads":
         x = 82 + (4 + value) * 22;
+        var upperX = 170 + upperValue * 22;
         drawing = polygon("82,60 478,60 478,280 82,280", teal, 0.12) +
-          polygon("170,60 192,60 " + (x + 22) + ",280 " + x + ",280", chalk, 0.75) +
-          polygon("324,60 368,60 " + (x + 198) + ",280 " + (x + 154) + ",280", chalk, 0.75) +
-          rectangle(82, 60, 396, 220) + label(132, 43, "截段 1 m", gold) + label(312, 43, "截段 2 m", gold) +
-          label(225, 324, "18 m", gold) + label(550, 195, "10 m", teal) + point(x, 280);
-        result = "两条路互不相交，面积 (1 + 2) × 10 = 30 m²；草地 180 − 30 = 150 m²。";
+          polygon(upperX + ",60 " + (upperX + 22) + ",60 " + (x + 22) + ",280 " + x + ",280", chalk, 0.75) +
+          polygon((upperX + 154) + ",60 " + (upperX + 198) + ",60 " + (x + 198) + ",280 " + (x + 154) + ",280", chalk, 0.75) +
+          line(upperX, 60, upperX, 280, teal, true) + line(upperX + 22, 60, upperX + 22, 280, teal, true) +
+          line(upperX + 154, 60, upperX + 154, 280, teal, true) + line(upperX + 198, 60, upperX + 198, 280, teal, true) +
+          rectangle(82, 60, 396, 220) + '<g transform="translate(' + upperX + ' 0)" text-anchor="middle">' +
+          label(11, 43, "截段 1 m", gold) + label(176, 43, "截段 2 m", gold) + '</g>' +
+          label(225, 324, "18 m", gold) + label(550, 195, "10 m", teal) + point(x, 280, "下") + point(upperX, 60, "上", true);
+        result = "上端位移 " + number(upperValue) + " m，下端位移 " + number(value) +
+          " m。两条路互不相交，面积 (1 + 2) × 10 = 30 m²；草地 180 − 30 = 150 m²。";
         handle = [x, 280];
+        upperHandle = [upperX, 60];
         break;
       case "opposite":
         y = 290 - value * 25;
@@ -319,12 +326,15 @@
         '<rect width="560" height="360" fill="#17573a"/>' + drawing + '</svg>',
       result: result,
       handle: handle,
-      track: track
+      track: track,
+      upperHandle: upperHandle
     };
   }
 
   document.querySelectorAll(".curtain-demo").forEach(function (card) {
     var range = card.querySelector("input[type=range]");
+    var upperRange = card.querySelector(".demo-upper-range");
+    var movingRange = range;
     var play = card.querySelector(".demo-play");
     var reset = card.querySelector(".demo-reset");
     var readout = card.querySelector("output");
@@ -333,12 +343,13 @@
     var variant = card.querySelector(".square-variant");
     var nextStage = card.querySelector(".demo-next-stage");
     var initial = Number(range.value);
-    var min = Number(range.min);
+    var upperInitial = upperRange ? Number(upperRange.value) : null;
     var max = Number(range.max);
     var image = document.createElement("img");
     var frameId = null;
     var dragging = false;
     var handle;
+    var upperHandle;
     var track;
     image.width = 560;
     image.height = 360;
@@ -347,9 +358,11 @@
     card.querySelector(".demo-picture").replaceChildren(image);
 
     function draw(value) {
-      range.value = String(value);
-      var diagram = picture(config.scene, Number(range.value), variant ? variant.value : null);
+      movingRange.value = String(value);
+      var diagram = picture(config.scene, Number(range.value), variant ? variant.value : null,
+        upperRange ? Number(upperRange.value) : null);
       handle = diagram.handle;
+      upperHandle = diagram.upperHandle;
       track = diagram.track;
       if (track) {
         image.className = "demo-image" + (track[0][0] === track[1][0] ? " demo-image-vertical" :
@@ -365,10 +378,13 @@
 
     function stop() {
       if (frameId !== null) { cancelAnimationFrame(frameId); frameId = null; }
-      play.textContent = "播放演示";
+      play.textContent = upperRange ? (movingRange === upperRange ? "播放上端" : "播放下端") : "播放演示";
     }
 
     play.addEventListener("click", function () {
+      var min = Number(movingRange.min);
+      var max = Number(movingRange.max);
+      var playbackInitial = movingRange === upperRange ? upperInitial : initial;
       if (frameId !== null) {
         stop();
         status.textContent = "已暂停，可以拖动金色点或操作滑块。";
@@ -381,16 +397,17 @@
       }
       var keys;
       if (config.playback === "forward") {
-        if (Number(range.value) === max) { draw(min); }
-        keys = [Number(range.value), max];
+        if (Number(movingRange.value) === max) { draw(min); }
+        keys = [Number(movingRange.value), max];
       } else {
-        keys = [Number(range.value), min, max, initial];
+        keys = [Number(movingRange.value), min, max, playbackInitial];
         if (keys[0] === min) { keys.shift(); }
       }
       var segmentCount = keys.length - 1;
       var started = null;
       play.textContent = "暂停演示";
-      status.textContent = "正在比较两端与中间位置，注意底、高和面积。";
+      status.textContent = (upperRange ? (movingRange === upperRange ? "正在移动上端。" : "正在移动下端。") : "") +
+        "正在比较两端与中间位置，注意底、高和面积。";
       function frame(time) {
         if (started === null) { started = time; }
         var progress = Math.min(segmentCount, (time - started) / 1800);
@@ -401,7 +418,7 @@
         if (progress < segmentCount) { frameId = requestAnimationFrame(frame); }
         else {
           frameId = null;
-          play.textContent = "播放演示";
+          stop();
           status.textContent = nextStage && !nextStage.disabled ? "本步完成，点击“下一拉”继续。" :
             "演示结束。继续拖动金色点，或用方向键操作滑块。";
         }
@@ -409,12 +426,17 @@
       frameId = requestAnimationFrame(frame);
     });
 
-    range.addEventListener("input", function () {
-      stop();
-      draw(Number(range.value));
-      status.textContent = "已手动调整，当前数据见图下方。";
+    (upperRange ? [range, upperRange] : [range]).forEach(function (control) {
+      control.addEventListener("input", function () {
+        movingRange = control;
+        stop();
+        draw(Number(control.value));
+        status.textContent = "已手动调整，当前数据见图下方。";
+      });
     });
     reset.addEventListener("click", function () {
+      movingRange = range;
+      if (upperRange) { upperRange.value = String(upperInitial); }
       stop();
       draw(initial);
       status.textContent = "已恢复初始位置。";
@@ -446,7 +468,11 @@
 
     image.addEventListener("pointerdown", function (event) {
       var p = position(event);
-      if (Math.hypot(p[0] - handle[0], p[1] - handle[1]) > 34) { return; }
+      if (upperHandle && Math.hypot(p[0] - upperHandle[0], p[1] - upperHandle[1]) <= 34) {
+        movingRange = upperRange;
+      } else if (Math.hypot(p[0] - handle[0], p[1] - handle[1]) <= 34) {
+        movingRange = range;
+      } else { return; }
       stop();
       dragging = true;
       image.setPointerCapture(event.pointerId);
@@ -469,7 +495,7 @@
         value = config.axis === "y" ? (Number(config.origin) - p[1]) / Number(config.scale) :
           (p[0] - Number(config.origin)) / Number(config.scale);
       }
-      draw(Math.max(min, Math.min(max, value)));
+      draw(Math.max(Number(movingRange.min), Math.min(Number(movingRange.max), value)));
     });
     function endDrag() {
       if (dragging) { status.textContent = "已移动金色点，当前数据见图下方。"; }
@@ -480,6 +506,7 @@
     image.addEventListener("lostpointercapture", endDrag);
 
     draw(initial);
+    if (upperRange) { upperRange.disabled = false; stop(); }
     range.disabled = false;
     play.disabled = false;
     reset.disabled = false;

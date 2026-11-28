@@ -267,19 +267,22 @@
             <header>
               <p class="demo-tag">演示 11 / 组合应用 · 可以直接相加的条件</p>
               <h3>两条互不相交的小路</h3>
-              <p>18 m × 10 m 的草坪中，两条平行四边形小路贯穿上下边，在上下边的截段分别长 1 m、2 m。两路始终不相交，并一起改变倾斜程度。</p>
+              <p>18 m × 10 m 的草坪中，两条平行四边形小路贯穿上下边，在上下边的截段分别长 1 m、2 m。拖动“上”“下”两个金色点，可以分别移动两路的上端或下端；两路始终不相交。竖直虚线标出按当前上端位置拉直后的两条长方形小路。</p>
             </header>
             <div class="demo-picture"><p>交互图形需要 JavaScript，已知条件见题面。</p></div>
             <div class="demo-controls">
               <label for="range-two-roads">两路下端相对初始位置的水平位移（m）</label>
               <input id="range-two-roads" type="range" min="-4" max="5" step="0.1" value="2" disabled>
+              <label for="range-two-roads-upper">两路上端相对初始位置的水平位移（m）</label>
+              <input class="demo-upper-range" id="range-two-roads-upper" type="range" min="-4" max="5" step="0.1" value="0" disabled>
+              <p>操作哪一端的滑块或拖点，播放就演示哪一端；复位同时恢复上下端。</p>
               <div class="demo-buttons">
                 <button class="demo-play" type="button" disabled>播放演示</button>
                 <button class="demo-reset" type="button" disabled>复位</button>
               </div>
-              <output for="range-two-roads" aria-live="off">移动后，在这里比较底、高和面积。</output>
+              <output for="range-two-roads range-two-roads-upper" aria-live="off">移动后，在这里比较底、高和面积。</output>
               <p class="demo-status" aria-live="polite">滑块与拖动功能需要 JavaScript。</p>
-              <details><summary>为什么？展开讲解</summary><p>两路没有重叠，面积可以直接相加：(1 + 2) × 10 = 30 m²。草地面积为 18 × 10 − 30 = 150 m²。如果小路相交，就不能直接扣掉两路面积之和。</p></details>
+              <details><summary>为什么？展开讲解</summary><p>上端或下端横移时，两路的水平截段仍分别为 1 m、2 m，高都保持 10 m。沿竖直虚线比较拉直后的长方形，面积分别为 10 m²、20 m²。两路没有重叠，面积可以直接相加：(1 + 2) × 10 = 30 m²。草地面积为 18 × 10 − 30 = 150 m²。如果小路相交，就不能直接扣掉两路面积之和。</p></details>
             </div>
           </article>
           <article class="curtain-demo" id="demo-crossroads" data-scene="crossroads" data-axis="x" data-origin="80" data-scale="25">
