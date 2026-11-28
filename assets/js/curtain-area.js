@@ -282,20 +282,28 @@
         track = doubleStep.track;
         break;
       case "three-squares":
-        y = 148 - 68 * value / 100;
+        var moveLeft = variant === "first";
+        var leftY = moveLeft ? 148 + 72 * value / 100 : 220;
+        var rightY = moveLeft ? 276 : 276 - 56 * value / 100;
         drawing = polygon("56,148 308,80 504,276", chalk, 0.04) +
-          polygon("56," + y + " 308,80 308,220", orange) +
-          polygon("504,276 308,80 308,220", teal) +
+          polygon("56," + leftY + " 308,80 308,220", orange) +
+          polygon("504," + rightY + " 308,80 308,220", teal) +
           rectangle(56, 80, 112, 112) + rectangle(168, 80, 140, 140) + rectangle(308, 80, 196, 196) +
-          line(308, 80, 308, 276, gold, true) + line(56, y, 308, y, teal, true) +
-          line(308, 276, 504, 276, teal, true) +
-          line(296, y, 296, y + 12, teal) + line(296, y + 12, 308, y + 12, teal) +
+          line(308, 80, 308, 220, gold) + line(308, 220, 308, rightY, teal, true) +
+          line(35, 220, 530, 220, teal, true) + line(56, 192, 56, 220, teal, true) +
+          line(56, leftY, 308, leftY, teal, true) + line(308, rightY, 504, rightY, teal, true) +
+          line(296, leftY, 296, leftY - 12, teal) + line(296, leftY - 12, 308, leftY - 12, teal) +
+          line(308, rightY - 12, 320, rightY - 12, teal) + line(320, rightY - 12, 320, rightY, teal) +
           label(75, 53, "8 m", gold) + label(205, 53, "10 m", gold) + label(410, 53, "14 m", gold) +
-          label(320, 113, "D") + label(320, 253, "E") + label(540, 313, "R") + point(56, y, "P", true);
-        result = "共用竖直底 DE = 10 m；左、右两高分别为 18 m、14 m，面积为 90 m²、70 m²，总和 160 m²。" +
-          (value === 0 ? "起点时 P、E、R 共线，两块合成原阴影三角形。" : "移动后两块仍等积，外轮廓通常已不是原来的三角形。不要把 PR 当作一直不变的直线边。");
-        handle = [56, y];
-        track = [[56, 148], [56, 80]];
+          label(320, 113, "D") + label(320, 253, "E") + label(30, 253, "F") + label(550, 253, "G") +
+          label(540, 313, "R") + (moveLeft ? point(56, leftY, value === 100 ? "P=F" : "P", true) :
+            point(504, rightY, value === 100 ? "R=G" : "R"));
+        result = moveLeft ? "第一拉：固定 DE，沿左侧竖边的延长线把 P 下移到 F。左块面积不变，右块暂时不动。" +
+          (value === 100 ? "左点已到位，点击“下一拉”继续移动右点 R。" : "F 与 E 等高，在小正方形下边下方 2 m。") :
+          value === 100 ? "两点均到位：F、E、G 共线。底 FG = 8 + 10 + 14 = 32 m，高 DE = 10 m，△FDG 面积 = 160 m²。" :
+            "第二拉：保持左点在 F，仍固定 DE，把 R 沿大正方形右边上移到 G。G 比 R 的原位置高 4 m。";
+        handle = moveLeft ? [56, leftY] : [504, rightY];
+        track = moveLeft ? [[56, 148], [56, 220]] : [[504, 276], [504, 220]];
         break;
     }
     return {

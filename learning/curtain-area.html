@@ -26,7 +26,8 @@
           <a href="#rules">先懂规则</a>
           <a href="#demos">16 个演示</a>
           <a href="#demo-paired-squares">正方形专题</a>
-          <a href="#demo-double-curtain">连续两次拉窗帘</a>
+          <a href="#demo-three-squares">两点连拉</a>
+          <a href="#demo-double-curtain">换底连拉</a>
           <a href="#basic">基础 5 题</a>
           <a href="#intermediate">进阶 7 题</a>
           <a href="#challenge">挑战 5 题</a>
@@ -44,7 +45,7 @@
         <section class="curtain-section" id="demos" aria-labelledby="demos-title">
           <h2 id="demos-title">16 个演示：成立条件、反例与应用</h2>
           <p>演示覆盖本页练习使用的模型。每张图都能播放、暂停、拖动和复位；也可以使用滑块及键盘方向键。示意图不按统一比例绘制，以标注条件为准。</p>
-          <p>新增<a href="#demo-paired-squares">两个正方形的四种拉法</a>与<a href="#demo-three-squares">三个正方形的拆分</a>：同一组边长，阴影位置不同，底、高与面积可能完全不同。</p>
+          <p>新增<a href="#demo-paired-squares">两个正方形的四种拉法</a>与<a href="#demo-three-squares">三个正方形的两点移动</a>：同一组边长，阴影位置不同，底、高与面积可能完全不同。</p>
           <noscript><p>交互演示需要启用 JavaScript。题面、演示解释、下方全部静态练习图和解答仍可阅读。</p></noscript>
           <ul class="scenario-list">
             <li><a href="#demo-rectangle">01 · 长方形：中间、端点都一样</a></li>
@@ -61,7 +62,7 @@
             <li><a href="#demo-crossroads">12 · 两条路相交：重叠只能扣一次</a></li>
             <li><a href="#demo-opposite">13 · 对边上的两个三角形，一增一减</a></li>
             <li><a href="#demo-paired-squares">14 · 两个正方形：四种摆法对比</a></li>
-            <li><a href="#demo-three-squares">15 · 三个正方形：先拆成同底三角形</a></li>
+            <li><a href="#demo-three-squares">15 · 三个正方形：左、右两点分两次拉</a></li>
             <li><a href="#demo-double-curtain">16 · 错位正方形：连续两次拉窗帘</a></li>
           </ul>
           <article class="curtain-demo" id="demo-rectangle" data-scene="triangle" data-axis="x" data-origin="130" data-scale="30">
@@ -342,21 +343,33 @@
               <details data-square-case="large-diagonal" hidden><summary>为什么？展开讲解</summary><p>固定大正方形对角线 BC。两条同向对角线与公共底边都成 45° 角，因此小正方形的对角线 AD 与 BC 平行，A 可以移到 D，面积不变。终点三角形 DBC 是大正方形的一半，改选底 BD = 10 cm、高 CD = 10 cm，面积为 50 cm²。这次 7 cm 不必代入面积公式。</p></details>
             </div>
           </article>
-          <article class="curtain-demo" id="demo-three-squares" data-scene="three-squares">
+          <article class="curtain-demo" id="demo-three-squares" data-scene="three-squares" data-playback="forward">
             <header>
-              <p class="demo-tag">演示 15 / 面积拆分 · 同一条竖直底</p>
-              <h3>三个正方形：大三角形先拆成两块</h3>
-              <p>三个正方形左右紧邻，相邻竖边共用一段，上边共线；边长从左到右是 8 m、10 m、14 m。D、E 是中间正方形的右上、右下角，R 是大正方形右下角，P 在小正方形左边上。起点时 P、E、R 共线，求 △PDR 的面积。</p>
-              <p class="diagram-note">参考照片重绘并补写必要条件：P、E、R 共线。仅给出三个边长、却不限定左侧点 P 的位置，不能唯一确定这个阴影三角形的面积。</p>
+              <p class="demo-tag">演示 15 / 连续两次拉窗帘 · 两次都固定 DE</p>
+              <h3>三个正方形：把左右两个点拉到同一水平线</h3>
+              <p>三个正方形左右紧邻，相邻竖边共用一段，上边共线；从左到右边长 8 m、10 m、14 m。D、E 是中间正方形的右上、右下角，R 是大正方形右下角，P 在小正方形左边上。图中阴影下边经过 E，即 P、E、R 共线，求 △PDR 的面积。</p>
+              <p>过 E 的水平线与最左竖边的延长线交于 F，与大正方形右边交于 G。先把左点 P 下移到 F，再把右点 R 上移到 G。每步播放停在终点，完成第一拉后点“下一拉”。浅色轮廓保留原图供比较。</p>
+              <p data-square-case="first">第一拉：连接 DE，把原阴影分为左右两块。固定 DE，将左块顶点 P 沿竖直延长线下移到 F。F 比小正方形的左下角低 10 − 8 = 2 m；右块暂时不动。</p>
+              <p data-square-case="second" hidden>第二拉：左块保持 △FDE，仍固定 DE。把右块顶点 R 沿大正方形右边上移到 G，移动距离为 14 − 10 = 4 m。最后 F、E、G 在同一水平线上，两块重新合成 △FDG。</p>
             </header>
-            <div class="demo-picture"><p>交互图形需要 JavaScript，静态题图见下方三个正方形练习。</p></div>
+            <div class="demo-picture"><p>交互图形需要 JavaScript，原图和两步解题图见下方三个正方形练习。</p></div>
             <div class="demo-controls">
-              <label for="range-three-squares">把左侧点 P 上移（0 是原图，100 到左上角）</label>
+              <label for="three-squares-stage">当前移动哪一个点</label>
+              <select class="square-variant" id="three-squares-stage" disabled>
+                <option value="first">第一拉：左点 P 下移到 F</option>
+                <option value="second">第二拉：右点 R 上移到 G</option>
+              </select>
+              <label for="range-three-squares">本步移动进度（0 到 100）</label>
               <input id="range-three-squares" type="range" min="0" max="100" step="0.1" value="0" disabled>
-              <div class="demo-buttons"><button class="demo-play" type="button" disabled>播放演示</button><button class="demo-reset" type="button" disabled>复位</button></div>
-              <output for="range-three-squares" aria-live="off">先用 DE 把原来的阴影三角形分成两块。</output>
+              <div class="demo-buttons">
+                <button class="demo-play" type="button" disabled>播放演示</button>
+                <button class="demo-reset" type="button" disabled>本步复位</button>
+                <button class="demo-next-stage" type="button" disabled>下一拉 →</button>
+              </div>
+              <output for="range-three-squares" aria-live="off">先拉左点，再拉右点，使两块重新合成一个大三角形。</output>
               <p class="demo-status" aria-live="polite">滑块与拖动功能需要 JavaScript。</p>
-              <details><summary>为什么？展开讲解</summary><p>起点时 E 在 PR 上，连接 DE，把 △PDR 分成 △PDE 与 △RDE。两块共用竖直底 DE = 10 m：左高是横向距离 8 + 10 = 18 m，右高是大正方形的宽 14 m，所以面积和为 10 × 18 ÷ 2 + 10 × 14 ÷ 2 = 90 + 70 = 160 m²。</p><p>把左块的 P 沿左侧竖边上移，这条轨迹与 DE 平行，左块面积始终为 90 m²；右块保持不动，仍为 70 m²。移动后总面积不变，但 P、E、R 通常已不共线，外轮廓变成折线；保面积的是拆开的两块，不能把变化后的外轮廓仍当作原来的三角形。</p></details>
+              <details data-square-case="first"><summary>第一拉：为什么能把 P 下移？</summary><p>图中 P、E、R 共线，所以连接 DE 后，△PDR 正好分成 △PDE 与 △RDE。左块选竖直的 DE 为固定底，P 所在的最左竖线与 DE 平行。把 P 下移到 F，底和水平方向的高都不变，△PDE 与 △FDE 等积。F 比小正方形左下角低 2 m，这只是 F 的位置关系，不是说 P 只移动了 2 m。</p><p>第一拉后 F、E、R 还不共线，外轮廓暂时有一个折角，必须保留两块图形继续第二拉。</p></details>
+              <details data-square-case="second" hidden><summary>第二拉与最终面积</summary><p>保持左块 △FDE 不动，右块仍选 DE 为固定底。R 沿与 DE 平行的右侧竖边上移到 G，△RDE 与 △GDE 等积。G 比 R 高 4 m。现在 F、E、G 共线，左右两块合成一个完整的 △FDG。</p><p>底 FG 等于三个正方形的总宽 8 + 10 + 14 = 32 m，高是 DE = 10 m。因此原阴影面积 = 32 × 10 ÷ 2 = 160 m²。两次移动各保持一块的面积不变，最终合并后的总面积就等于原阴影。</p></details>
             </div>
           </article>
           <article class="curtain-demo" id="demo-double-curtain" data-scene="double-curtain" data-playback="forward">
@@ -574,11 +587,16 @@
             </article>
             <article class="practice-card" id="practice-three-squares" aria-labelledby="practice-title-three-squares">
               <p class="practice-tag">挑战 / 第 16 题</p>
-              <h3 id="practice-title-three-squares">共顶的三个正方形，怎样拆最省事？</h3>
-              <p>三个正方形左右紧邻，相邻竖边共用一段，上边共线；从左到右边长 8 m、10 m、14 m。D、E 为中间正方形的右上、右下角，R 为大正方形右下角，P 在最左侧边上，且 P、E、R 共线。求 △PDR 的面积。追问：如果去掉共线条件，仅给出三个边长，还能得到唯一答案吗？</p>
-              <figure><img class="practice-image" src="../assets/images/curtain-three-squares.svg" width="560" height="360" loading="lazy" alt="三个正方形共顶排列，边长8米、10米、14米；竖直线段 DE 长10米，阴影左点P、E和右下角R共线。"><figcaption class="diagram-note">按参考照片补全共线条件后重绘；橙、蓝两块合成原阴影。</figcaption></figure>
-              <details><summary>需要一点提示</summary><p>连接 DE，分成 △PDE 与 △RDE。两块都选竖直的 DE 作底，对应的高应取水平方向的距离。</p></details>
-              <details><summary>查看完整解答</summary><p>DE = 10 m。左侧三角形的高是前两个正方形的总宽 8 + 10 = 18 m，面积为 10 × 18 ÷ 2 = 90 m²；右侧三角形的高是大正方形宽 14 m，面积为 10 × 14 ÷ 2 = 70 m²。因此原阴影面积为 90 + 70 = 160 m²。不能把 18 和 14 随意当成原三角形的一组底和高。</p><p>去掉 P、E、R 共线条件后，答案不能唯一确定。例如把 P 放在左上角，PD 是水平线段，底 PD = 18 m、高为 14 m，面积就变成 18 × 14 ÷ 2 = 126 m²，与 160 m² 不同。图中点的位置关系也是条件，不能漏读。</p><p class="practice-answer">有共线条件：160 m²；没有该条件：不能唯一确定。</p></details>
+              <h3 id="practice-title-three-squares">8、10、14：把左右两个点分别拉到位</h3>
+              <p>三个正方形左右紧邻，相邻竖边共用一段，上边共线；从左到右边长 8 m、10 m、14 m。D、E 为中间正方形的右上、右下角，R 为大正方形右下角，P 在最左侧边上，阴影下边经过 E，P、E、R 共线。用两次拉窗帘将 △PDR 化成容易计算的大三角形，求面积，并指出每次固定的底与移动的点。</p>
+              <figure><img class="practice-image" src="../assets/images/curtain-three-squares.svg" width="560" height="360" loading="lazy" alt="三个正方形共顶排列，边长8米、10米、14米；阴影三角形PDR的下边经过中间正方形右下角E，连接DE可分成左右两块。"><figcaption class="diagram-note">按原图的位置关系重绘，橙、蓝两块合成原阴影。</figcaption></figure>
+              <details><summary>需要一点提示</summary><p>过 E 想一条水平线：把左点 P 竖直下移到这条线上，再把右点 R 竖直上移到这条线上。两块都固定同一条竖直底 DE，顶点的移动轨迹与 DE 平行。</p></details>
+              <details><summary>查看完整解答</summary><p><strong>第一拉：</strong>连接 DE，原阴影分成 △PDE 与 △RDE。过 E 的水平线与最左竖边的延长线交于 F。固定 DE，把左块顶点 P 下移到 F，左块等积，右块不动。F 比小正方形左下角低 10 − 8 = 2 m。</p>
+                <figure><img class="practice-image" src="../assets/images/curtain-three-squares-first.svg" width="560" height="360" loading="lazy" alt="第一拉结束，左点P移到与E等高的F，右点R仍在原位置。"><figcaption class="diagram-note">左点已到 F，右点 R 还需继续上移；此时外轮廓有折角。</figcaption></figure>
+                <p><strong>第二拉：</strong>仍固定 DE，将右块顶点 R 沿竖直边上移到与 E 等高的 G，右块也等积，左块保持不动。R 上移 14 − 10 = 4 m 后，F、E、G 共线，两块合成 △FDG。</p>
+                <figure><img class="practice-image" src="../assets/images/curtain-three-squares-end.svg" width="560" height="360" loading="lazy" alt="第二拉结束，左右点分别位于F、G，F、E、G水平共线，阴影合成底32米高10米的三角形FDG。"><figcaption class="diagram-note">两点都到位：最后用水平底 FG 与竖直高 DE 计算。</figcaption></figure>
+                <p>FG = 8 + 10 + 14 = 32 m，DE = 10 m，所以原阴影面积 = 32 × 10 ÷ 2 = 160 m²。也可以验算：左块 10 × 18 ÷ 2 = 90 m²，右块 10 × 14 ÷ 2 = 70 m²，合计仍为 160 m²。两点原来的高度不同，分两次拉到同一水平线后，才重新合成可直接计算的大三角形。</p><p class="practice-answer">160 m²；两次都固定 DE，先 P→F，再 R→G。</p>
+              </details>
             </article>
             <article class="practice-card practice-card-wide" id="practice-double-curtain" aria-labelledby="practice-title-double-curtain">
               <p class="practice-tag">挑战 / 第 17 题</p>
